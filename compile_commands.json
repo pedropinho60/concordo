@@ -1,0 +1,44 @@
+[
+{
+  "directory": "/home/pedro/Códigos/ufrn/concordo/build",
+  "command": "/usr/bin/c++  -I/home/pedro/Códigos/ufrn/concordo/include -std=gnu++11 -o CMakeFiles/program.dir/src/main.cpp.o -c /home/pedro/Códigos/ufrn/concordo/src/main.cpp",
+  "file": "/home/pedro/Códigos/ufrn/concordo/src/main.cpp",
+  "output": "CMakeFiles/program.dir/src/main.cpp.o"
+},
+{
+  "directory": "/home/pedro/Códigos/ufrn/concordo/build",
+  "command": "/usr/bin/c++  -I/home/pedro/Códigos/ufrn/concordo/include -std=gnu++11 -o CMakeFiles/program.dir/src/Usuario.cpp.o -c /home/pedro/Códigos/ufrn/concordo/src/Usuario.cpp",
+  "file": "/home/pedro/Códigos/ufrn/concordo/src/Usuario.cpp",
+  "output": "CMakeFiles/program.dir/src/Usuario.cpp.o"
+},
+{
+  "directory": "/home/pedro/Códigos/ufrn/concordo/build",
+  "command": "/usr/bin/c++  -I/home/pedro/Códigos/ufrn/concordo/include -std=gnu++11 -o CMakeFiles/program.dir/src/Mensagem.cpp.o -c /home/pedro/Códigos/ufrn/concordo/src/Mensagem.cpp",
+  "file": "/home/pedro/Códigos/ufrn/concordo/src/Mensagem.cpp",
+  "output": "CMakeFiles/program.dir/src/Mensagem.cpp.o"
+},
+{
+  "directory": "/home/pedro/Códigos/ufrn/concordo/build",
+  "command": "/usr/bin/c++  -I/home/pedro/Códigos/ufrn/concordo/include -std=gnu++11 -o CMakeFiles/program.dir/src/Canal.cpp.o -c /home/pedro/Códigos/ufrn/concordo/src/Canal.cpp",
+  "file": "/home/pedro/Códigos/ufrn/concordo/src/Canal.cpp",
+  "output": "CMakeFiles/program.dir/src/Canal.cpp.o"
+},
+{
+  "directory": "/home/pedro/Códigos/ufrn/concordo/build",
+  "command": "/usr/bin/c++  -I/home/pedro/Códigos/ufrn/concordo/include -std=gnu++11 -o CMakeFiles/program.dir/src/CanalTexto.cpp.o -c /home/pedro/Códigos/ufrn/concordo/src/CanalTexto.cpp",
+  "file": "/home/pedro/Códigos/ufrn/concordo/src/CanalTexto.cpp",
+  "output": "CMakeFiles/program.dir/src/CanalTexto.cpp.o"
+},
+{
+  "directory": "/home/pedro/Códigos/ufrn/concordo/build",
+  "command": "/usr/bin/c++  -I/home/pedro/Códigos/ufrn/concordo/include -std=gnu++11 -o CMakeFiles/program.dir/src/CanalVoz.cpp.o -c /home/pedro/Códigos/ufrn/concordo/src/CanalVoz.cpp",
+  "file": "/home/pedro/Códigos/ufrn/concordo/src/CanalVoz.cpp",
+  "output": "CMakeFiles/program.dir/src/CanalVoz.cpp.o"
+},
+{
+  "directory": "/home/pedro/Códigos/ufrn/concordo/build",
+  "command": "/usr/bin/c++  -I/home/pedro/Códigos/ufrn/concordo/include -std=gnu++11 -o CMakeFiles/program.dir/src/Servidor.cpp.o -c /home/pedro/Códigos/ufrn/concordo/src/Servidor.cpp",
+  "file": "/home/pedro/Códigos/ufrn/concordo/src/Servidor.cpp",
+  "output": "CMakeFiles/program.dir/src/Servidor.cpp.o"
+}
+]
