@@ -19,6 +19,15 @@ Usuario* Sistema::getUsuario(std::string email) {
     return nullptr;
 }
 
+Usuario* Sistema::getUsuario(int id) {
+    for(auto& usuario : usuarios) {
+        if(usuario.getId() == id) {
+            return &usuario;
+        }
+    }
+    return nullptr;
+}
+
 Servidor* Sistema::getServidor(std::string nome) {
     for(auto& servidor : servidores) {
         if(servidor.getNome() == nome) {
@@ -44,6 +53,7 @@ bool Sistema::lerComando() {
     std::getline(iss, args);
 
     if(command == "quit") {
+        std::cout << "Saindo do Concordo" << std::endl;
         return false;
     }
     else if(command == "create-user") {
@@ -67,8 +77,22 @@ bool Sistema::lerComando() {
     else if(command == "list-servers") {
         listServers();
     }
+    else if(command == "remove-server") {
+        removeServer(args);
+    }
+    else if(command == "enter-server") {
+        enterServer(args);
+    }
+    else if(command == "leave-server") {
+        leaveServer();
+    }
+    else if(command == "list-participants") {
+        listParticipants();
+    }
+    else{
+        std::cout << "Comando inválido!" << std::endl;
+    }
 
-    std::cout << "Comando inválido!" << std::endl;
     return true;
 }
 
@@ -164,7 +188,7 @@ void Sistema::setServerDesc(std::string args) {
 
     std::istringstream iss(args);
     std::getline(iss, nome, ' ');
-    iss.ignore('"');
+    iss.ignore();
     std::getline(iss, descricao, '"');
 
     Servidor* servidor = getServidor(nome);
@@ -181,7 +205,7 @@ void Sistema::setServerDesc(std::string args) {
     }
 
     servidor->setDescricao(descricao);
-    std::cout << "Descrição do servidor '" << servidorAtual->getNome() << "' modificada!" << std::endl;
+    std::cout << "Descrição do servidor '" << servidor->getNome() << "' modificada!" << std::endl;
 }
 
 void Sistema::setServerInviteCode(std::string args) {
@@ -305,4 +329,37 @@ void Sistema::enterServer(std::string args) {
     }
 
     std::cout << "Entrou no servidor com sucesso" << std::endl;
+}
+
+void Sistema::leaveServer() {
+    if(usuarioLogado == nullptr) {
+        std::cout << "Não está conectado" << std::endl;
+        return;
+    }
+
+    if(servidorAtual == nullptr) {
+        std::cout << "Você não está visualizando nenhum servidor" << std::endl;
+        return;
+    }
+
+    std::cout << "Saindo do servidor '" << servidorAtual->getNome()
+              << "'" << std::endl;
+    servidorAtual = nullptr;
+}
+
+void Sistema::listParticipants() {
+    if(usuarioLogado == nullptr) {
+        std::cout << "Não está conectado" << std::endl;
+        return;
+    }
+
+    if(servidorAtual == nullptr) {
+        std::cout << "Você não está visualizando nenhum servidor" << std::endl;
+        return;
+    }
+
+    for(auto usuarioId : servidorAtual->getParticipantesIds()) {
+        Usuario *usuario = getUsuario(usuarioId);
+        std::cout << usuario->getNome() << std::endl;
+    }
 }

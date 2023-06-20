@@ -1,0 +1,23 @@
+create-user email1@gmail.com senha1 nome1
+create-user email2@gmail.com senha2 nome2
+create-user email3@gmail.com senha3 nome3
+login email1@gmail.com senha1
+create-server servidor1
+set-server-desc servidor1 "Descrição"
+set-server-invite-code servidor1 1234
+enter-server servidor1
+disconnect
+login email2@gmail.com senha2
+enter-server servidor1
+list-participants
+disconnect
+login email3@gmail.com senha3
+list-servers
+enter-server servidor1 1234
+list-participants
+disconnect
+login email1@gmail.com senha1
+remove-server servidor1
+list-servers
+disconnect
+quit

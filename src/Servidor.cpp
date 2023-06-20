@@ -44,3 +44,7 @@ bool Servidor::isParticipante(Usuario *usuario) {
 void Servidor::adicionarParticipante(Usuario *usuario) {
     participantesIds.push_back(usuario->getId());
 }
+
+const std::vector<int> &Servidor::getParticipantesIds() {
+    return participantesIds;
+}

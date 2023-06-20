@@ -24,6 +24,7 @@ public:
 
     // Getters
     Usuario* getUsuario(std::string email);
+    Usuario* getUsuario(int id);
     Servidor* getServidor(std::string nome);
 
     // Comandos
@@ -38,6 +39,8 @@ public:
     void listServers();
     void removeServer(std::string nome);
     void enterServer(std::string args);
+    void leaveServer();
+    void listParticipants();
 
 };
 

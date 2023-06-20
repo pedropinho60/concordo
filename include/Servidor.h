@@ -24,6 +24,7 @@ public:
     std::string getNome();
     std::string getDescricao();
     std::string getCodigoConvite();
+    const std::vector<int>& getParticipantesIds();
 
     // Setters
     void setDescricao(std::string descricao);
