@@ -11,6 +11,15 @@ private:
     std::string email;
     std::string senha;
 
+public:
+    Usuario(std::string email, std::string senha, std::string nome, int id);
+    ~Usuario() = default;
+
+    int getId();
+    std::string getNome();
+    std::string getEmail();
+
+    bool checarSenha(std::string senha);
 };
 
 #endif // USUARIO_H
