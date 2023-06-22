@@ -38,7 +38,9 @@ Esses comandos só podem ser executados caso você seja o dono do servidor.
 servidor.
 - `remove-server <nome>` remove o servidor.
 
-### Servidor
+### Dentro de um servidor
+
+Esses comandos só podem ser executados dentro de um servidor.
 
 - `leave-server` sai do servidor.
 - `list-participants` lista os participantes do servidor.
