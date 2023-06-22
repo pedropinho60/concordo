@@ -34,7 +34,7 @@ utilizar o código.
 Esses comandos só podem ser executados caso você seja o dono do servidor.
 
 - `set-server-desc <nome> "<descrição>"` altera a descrição do servidor.
-- `set-server-invite-code <nome> <codigo>` altera o código de convite do 
+- `set-server-invite-code <nome> [codigo]` altera o código de convite do 
 servidor.
 - `remove-server <nome>` remove o servidor.
 

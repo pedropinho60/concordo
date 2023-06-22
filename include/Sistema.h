@@ -7,15 +7,17 @@
 #include "Canal.h"
 #include "Servidor.h"
 
+
+/// @brief Classe do sistema do Concordo. Guarda todos os usuários e servidores.
 class Sistema {
 
 private:
-    std::vector<Usuario> usuarios;
-    std::vector<Servidor> servidores;
-    Usuario *usuarioLogado;
-    Servidor *servidorAtual;
-    Canal *canalAtual;
-    int ultimoIdUsuario;
+    std::vector<Usuario> usuarios; //!< Vetor com os usuários cadastrados.
+    std::vector<Servidor> servidores; //!< Vetor com os servidores criados.
+    Usuario *usuarioLogado; //!< Usuário logado atualmente.
+    Servidor *servidorAtual; //!< Servidor atual.
+    Canal *canalAtual; //!< Canal atual.
+    int ultimoIdUsuario; //!< Id do último usuário criado.
 
 public:
     // Construtores e destrutores
@@ -27,9 +29,11 @@ public:
     Usuario* getUsuario(int id);
     Servidor* getServidor(std::string nome);
 
-    // Comandos
+    // Métodos
     void iniciar();
     bool lerComando();
+
+    // Comandos
     void createUser(std::string args);
     void login(std::string args);
     void disconnect();
@@ -41,7 +45,6 @@ public:
     void enterServer(std::string args);
     void leaveServer();
     void listParticipants();
-
 };
 
 #endif // SISTEMA_H
