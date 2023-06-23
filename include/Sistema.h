@@ -22,7 +22,6 @@ private:
 public:
     // Construtores e destrutores
     Sistema();
-    ~Sistema() = default;
 
     // Getters
     Usuario* getUsuario(std::string email);
