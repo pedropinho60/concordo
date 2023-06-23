@@ -7,15 +7,16 @@
 #include "Canal.h"
 #include "Usuario.h"
 
+/// @brief Classe que representa um servidor do sistema.
 class Servidor {
 
 private:
-    int usuarioDonoId;
-    std::string nome;
-    std::string descricao;
-    std::string codigoConvite;
-    std::vector<Canal *> canais;
-    std::vector<int> participantesIds;
+    int usuarioDonoId; //!< Id do usuário dono do servidor.
+    std::string nome; //!< Nome do servidor.
+    std::string descricao; //!< Descrição do servidor.
+    std::string codigoConvite; //!< Código de convite do servidor.
+    std::vector<Canal *> canais; //!< Vetor com os canais do servidor.
+    std::vector<int> participantesIds; //!< Vetor com os ids dos participantes do servidor.
 
 public:
     Servidor(std::string nome, Usuario *usuarioDono);

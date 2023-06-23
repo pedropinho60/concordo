@@ -3,7 +3,9 @@
 #include <iostream>
 #include <sstream>
 
-/// @brief Construtor padrão do sistema.
+// ================= CONSTRUTORES E DESTRUTORES ==================
+
+/// @brief Construtor padrão.
 Sistema::Sistema() {
     usuarioLogado = nullptr;
     servidorAtual = nullptr;
@@ -11,7 +13,7 @@ Sistema::Sistema() {
     ultimoIdUsuario = 0;
 }
 
-// ==================GETTERS==================
+// ======================== GETTERS ========================
 
 /**
  * @brief Busca pelo usuário com o email especificado.
@@ -58,7 +60,7 @@ Servidor* Sistema::getServidor(std::string nome) {
     return nullptr;
 } 
 
-// ==================MÉTODOS==================
+// ======================== MÉTODOS ========================
 
 /// @brief Inicia o sistema, que é encerrado apenas com o comando `quit`.
 void Sistema::iniciar() {
@@ -126,7 +128,7 @@ bool Sistema::lerComando() {
     return true;
 }
 
-// ==================COMANDOS==================
+// ======================== COMANDOS ========================
 
 /**
  * @brief Cria usuário com o email, senha e nome especificados. Executado com
