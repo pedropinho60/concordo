@@ -69,7 +69,7 @@ para demonstrar as funcionalidades do programa.
 
 A seguir, está a explicação de cada linha do script:
 
-```
+```bash
 create-user email1 password1 name1            # cria o usuário 1
 create-user email2 password2 name2            # cria o usuário 2
 create-user email3 password3 name3            # cria o usuário 3
