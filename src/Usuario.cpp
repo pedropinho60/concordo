@@ -37,7 +37,11 @@ std::string Usuario::getEmail(){
 
 // ======================== MÉTODOS ==============================
 
-/// @brief Verifica se a senha passada é correta.
+/**
+ * @brief Verifica se a senha passada é correta.
+ *
+ * @param senha Senha a ser verificada.
+ */
 bool Usuario::checarSenha(std::string senha){
     return this->senha == senha;
 }

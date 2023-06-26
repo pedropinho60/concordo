@@ -33,30 +33,47 @@ std::string Servidor::getCodigoConvite() {
     return codigoConvite;
 }
 
+/// @brief Reorna o vetor de ids dos participantes do servidor.
 const std::vector<int> &Servidor::getParticipantesIds() {
     return participantesIds;
 }
 
 // ======================== SETTERS ==============================
 
-/// @brief Altera a descrição do servidor.
+/**
+ * @brief Altera a descrição do servidor.
+ *
+ * @param descricao Nova descrição do servidor.
+ */
 void Servidor::setDescricao(std::string descricao) {
     this->descricao = descricao;
 }
 
-/// @brief Altera o código de convite do servidor.
+/**
+ * @brief Altera o código de convite do servidor.
+ *
+ * @param codigoConvite Novo código de convite do servidor.
+ */
 void Servidor::setCodigoConvite(std::string codigoConvite) {
     this->codigoConvite = codigoConvite;
 }
 
 // ======================== MÉTODOS ==============================
 
-/// @brief Verifica se o usuário passado é dono do servidor.
+/**
+ * @brief Verifica se o usuário passado é dono do servidor.
+ *
+ * @param usuario Usuário a ser verificado.
+ */
 bool Servidor::isDono(Usuario *usuario) {
     return usuario->getId() == usuarioDonoId;
 }
 
-/// @brief Verifica se o usuário passado é participante do servidor.
+/**
+ * @brief Verifica se o usuário passado é participante do servidor.
+ *
+ * @param usuario Usuário a ser verificado.
+ */
 bool Servidor::isParticipante(Usuario *usuario) {
     for(auto& participanteId : participantesIds) {
         if(participanteId == usuario->getId()) {
@@ -66,7 +83,11 @@ bool Servidor::isParticipante(Usuario *usuario) {
     return false;
 }
 
-/// @brief Adiciona um usuário como participante do servidor.
+/**
+ * @brief Adiciona um usuário como participante do servidor.
+ *
+ * @param usuario Usuário a ser adicionado.
+ */
 void Servidor::adicionarParticipante(Usuario *usuario) {
     participantesIds.push_back(usuario->getId());
 }
