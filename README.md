@@ -10,6 +10,10 @@ em C++.
 Essa é a versão 1 do projeto. Nela, é possível cadastrar usuários, fazer login,
 criar, configurar e entrar em servidores.
 
+## Autoria
+
+O projeto foi feito por Pedro Vinícius Oliveira Maciel Pinho.
+
 ## Comandos
 
 ### Deslogados
