@@ -6,6 +6,7 @@ Projeto de "Linguagem de Programação I"
 
 Esse projeto é uma "imitação" do [**Discord**](https://www.discord.com), feita
 em C++.
+
 Essa é a versão 1 do projeto. Nela, é possível cadastrar usuários, fazer login,
 criar, configurar e entrar em servidores.
 
@@ -103,3 +104,9 @@ O programa não verifica se o número de argumentos está correto para cada coma
 Por exemplo, se um usuário digitar `create-user <email> <senha>`, e não especificar
 o nome do usuário, o programa criará um usuário com email e senha, mas com o
 nome vazio, ao invés de causar um erro.
+
+## Documentação
+
+A documentação feita com [**Doxygen**](https://doxygen.nl) está disponível
+na pasta [**docs**](docs). Para acessá-la, abra o arquivo 
+[**index.html**](docs/html/index.html) utilizando um navegador.
