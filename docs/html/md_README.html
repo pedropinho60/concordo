@@ -1,0 +1,163 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="pt-BR">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.6"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Concordo: Concordo - Versão 1</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">Concordo<span id="projectnumber">&#160;1.0</span>
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Gerado por Doxygen 1.9.6 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Busca');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Carregando...</div>
+<div class="SRStatus" id="Searching">Procurando...</div>
+<div class="SRStatus" id="NoMatches">Nenhum resultado encontrado</div>
+</div>
+</div>
+</div>
+</div>
+
+</div><!-- top -->
+<div><div class="header">
+  <div class="headertitle"><div class="title">Concordo - Versão 1 </div></div>
+</div><!--header-->
+<div class="contents">
+<div class="textblock"><p>Projeto de "Linguagem de Programação I"</p>
+<h1><a class="anchor" id="autotoc_md1"></a>
+Descrição</h1>
+<p>Esse projeto é uma "imitação" do <a href="https://www.discord.com"><b>Discord</b></a>, feita em C++. Essa é a versão 1 do projeto. Nela, é possível cadastrar usuários, fazer login, criar, configurar e entrar em servidores.</p>
+<h1><a class="anchor" id="autotoc_md2"></a>
+Comandos</h1>
+<h2><a class="anchor" id="autotoc_md3"></a>
+Deslogados</h2>
+<p>Esses comandos podem ser executados caso o usuário não esteja logado.</p>
+<ul>
+<li><code>quit</code> sai do sistema.</li>
+<li><code>create-user &lt;email&gt; &lt;senha&gt; &lt;nome&gt;</code> cria um usuário. Apenas o nome pode ter espaços. Dois usuários não podem ter o mesmo email.</li>
+<li><code>login &lt;email&gt; &lt;senha&gt;</code> faz login em um usuário já criado.</li>
+</ul>
+<h2><a class="anchor" id="autotoc_md4"></a>
+Logados</h2>
+<p>Esses comandos só podem ser executados caso o usuário esteja logado.</p>
+<ul>
+<li><code>disconnect</code> desconecta o usuário logado.</li>
+<li><code>create-server &lt;nome&gt;</code> cria um servidor.</li>
+<li><code>list-servers</code> lista todos os servidores criados.</li>
+<li><code>enter-server &lt;nome&gt; [codigo]</code> entra no servidor especificado. O código só é necessário caso o servidor tenha um. O dono do servidor pode entrar sem utilizar o código.</li>
+</ul>
+<h2><a class="anchor" id="autotoc_md5"></a>
+Dono do servidor</h2>
+<p>Esses comandos só podem ser executados caso você seja o dono do servidor.</p>
+<ul>
+<li><code>set-server-desc &lt;nome&gt; "&lt;descrição&gt;"</code> altera a descrição do servidor.</li>
+<li><code>set-server-invite-code &lt;nome&gt; [codigo]</code> altera o código de convite do servidor.</li>
+<li><code>remove-server &lt;nome&gt;</code> remove o servidor.</li>
+</ul>
+<h2><a class="anchor" id="autotoc_md6"></a>
+Dentro de um servidor</h2>
+<p>Esses comandos só podem ser executados dentro de um servidor.</p>
+<ul>
+<li><code>leave-server</code> sai do servidor.</li>
+<li><code>list-participants</code> lista os participantes do servidor.</li>
+</ul>
+<h1><a class="anchor" id="autotoc_md7"></a>
+Compilação e execução</h1>
+<p>Para compilar o programa, é utilizado o <a href="https://cmake.org"><b>CMake</b></a>.</p>
+<p>Na pasta principal do projeto, execute os comandos a seguir:</p>
+<ul>
+<li><code>cmake -B build</code> para gerar os arquivos de compilação</li>
+<li><code>cmake --build build</code> para compilar o programa</li>
+</ul>
+<p>Após a compilação, o programa pode ser executado com <code>./build/program</code>.</p>
+<p>Para utilizar o script de exemplo, explicado abaixo, utilize o comando <code>./build/program &lt; script.txt</code></p>
+<h1><a class="anchor" id="autotoc_md8"></a>
+Script de exemplo</h1>
+<p>O repositório contém um <a href="script.txt"><b>script</b></a> de exemplo, que contém comandos para demonstrar as funcionalidades do programa.</p>
+<p>A seguir, está a explicação de cada linha do script:</p>
+<div class="fragment"><div class="line">create-user email1 password1 name1            # cria o usuário 1</div>
+<div class="line">create-user email2 password2 name2            # cria o usuário 2</div>
+<div class="line">create-user email3 password3 name3            # cria o usuário 3</div>
+<div class="line">login email1 password1                        # faz login no usuário 1</div>
+<div class="line">create-server server1                         # cria o servidor 1</div>
+<div class="line">set-server-desc server1 &quot;server1 description&quot; # altera a descrição do servidor</div>
+<div class="line">set-server-invite-code server1 invitecode     # adiciona o código de convite</div>
+<div class="line">enter-server server1                          # entra no servidor 1</div>
+<div class="line">disconnect                                    # desconecta do sistema</div>
+<div class="line">login email2 password2                        # faz login no usuário 2</div>
+<div class="line">list-servers                                  # lista os servidores (servidor 1)</div>
+<div class="line">create-server server2                         # cria o servidor 2</div>
+<div class="line">enter-server server1 invitecode               # entra no servidor 1 com o código</div>
+<div class="line">list-participants                             # lista os participantes (usuários 1 e 2)</div>
+<div class="line">disconnect                                    # desconecta do sistema</div>
+<div class="line">login email3 password3                        # faz login no usuário 3</div>
+<div class="line">list-servers                                  # lista os servidores (servidores 1 e 2)</div>
+<div class="line">enter-server server1                          # tenta entrar no servidor 1 sem o código (falha)</div>
+<div class="line">enter-server server2                          # entra no servidor 2</div>
+<div class="line">list-participants                             # lista os participantes (usuário 3)</div>
+<div class="line">disconnect                                    # desconecta do sistema</div>
+<div class="line">login email1 password1                        # faz login no usuário 1</div>
+<div class="line">remove-server server1                         # apaga o servidor 1</div>
+<div class="line">list-servers                                  # lista os servidores (servidor 2)</div>
+<div class="line">disconnect                                    # desconecta do sistema</div>
+<div class="line">quit                                          # encerra o programa</div>
+</div><!-- fragment --><h1><a class="anchor" id="autotoc_md9"></a>
+Limitações</h1>
+<p>O programa não verifica se o número de argumentos está correto para cada comando. Por exemplo, se um usuário digitar <code>create-user &lt;email&gt; &lt;senha&gt;</code>, e não especificar o nome do usuário, o programa criará um usuário com email e senha, mas com o nome vazio, ao invés de causar um erro. </p>
+</div></div><!-- contents -->
+</div><!-- PageDoc -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Gerado por&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.6
+</small></address>
+</body>
+</html>

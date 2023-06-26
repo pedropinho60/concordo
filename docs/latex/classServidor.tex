@@ -1,0 +1,166 @@
+\hypertarget{classServidor}{}\doxysection{Referência da Classe Servidor}
+\label{classServidor}\index{Servidor@{Servidor}}
+
+
+Classe que representa um servidor do sistema.  
+
+
+
+
+{\ttfamily \#include $<$Servidor.\+h$>$}
+
+\doxysubsection*{Membros Públicos}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classServidor_a115c42c8bbb9b27a24949900a7ab19c7}{Servidor}} (std\+::string \mbox{\hyperlink{classServidor_a1141e0835dfba56f4d01f922d2a8b34f}{nome}}, \mbox{\hyperlink{classUsuario}{Usuario}} $\ast$usuario\+Dono)
+\begin{DoxyCompactList}\small\item\em Construtor padrão da classe. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classServidor_af094e7503c4fd8e124679f03eae3f0cd}\label{classServidor_af094e7503c4fd8e124679f03eae3f0cd}} 
+std\+::string {\bfseries get\+Nome} ()
+\begin{DoxyCompactList}\small\item\em Retorna o nome do servidor. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classServidor_a7862d3dc42a161feb7500d8caf7fe25d}\label{classServidor_a7862d3dc42a161feb7500d8caf7fe25d}} 
+std\+::string {\bfseries get\+Descricao} ()
+\begin{DoxyCompactList}\small\item\em Retorna a descrição do servidor. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classServidor_a246c9e826a657e9448cac0ed85206f30}\label{classServidor_a246c9e826a657e9448cac0ed85206f30}} 
+std\+::string {\bfseries get\+Codigo\+Convite} ()
+\begin{DoxyCompactList}\small\item\em Retorna o código de convite do servidor. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classServidor_a2268bc0e7fb46ff2c7cdd33f35f666c8}\label{classServidor_a2268bc0e7fb46ff2c7cdd33f35f666c8}} 
+const std\+::vector$<$ int $>$ \& {\bfseries get\+Participantes\+Ids} ()
+\begin{DoxyCompactList}\small\item\em Reorna o vetor de ids dos participantes do servidor. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classServidor_a4a232f83c626f7afcd98f1aeed5986f5}{set\+Descricao}} (std\+::string \mbox{\hyperlink{classServidor_a61fecd2b3435d7048d793741c5f3bfdf}{descricao}})
+\begin{DoxyCompactList}\small\item\em Altera a descrição do servidor. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classServidor_a54f4816fb3fc642d398705fc771bef3a}{set\+Codigo\+Convite}} (std\+::string \mbox{\hyperlink{classServidor_a7448f419ead42bf7f0bd42d5bdc53ec6}{codigo\+Convite}})
+\begin{DoxyCompactList}\small\item\em Altera o código de convite do servidor. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classServidor_aa92e5fb54887be66e9f9f4998a857356}{is\+Dono}} (\mbox{\hyperlink{classUsuario}{Usuario}} $\ast$usuario)
+\begin{DoxyCompactList}\small\item\em Verifica se o usuário passado é dono do servidor. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classServidor_aa3fd3b1a663dd33238f10fdc48415bad}{is\+Participante}} (\mbox{\hyperlink{classUsuario}{Usuario}} $\ast$usuario)
+\begin{DoxyCompactList}\small\item\em Verifica se o usuário passado é participante do servidor. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classServidor_a6f8ab7cda948090256d3aa099f67eff5}{adicionar\+Participante}} (\mbox{\hyperlink{classUsuario}{Usuario}} $\ast$usuario)
+\begin{DoxyCompactList}\small\item\em Adiciona um usuário como participante do servidor. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Atributos Privados}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classServidor_a52c21983ad654fb7994dead4ae433e2c}\label{classServidor_a52c21983ad654fb7994dead4ae433e2c}} 
+int {\bfseries usuario\+Dono\+Id}
+\begin{DoxyCompactList}\small\item\em Id do usuário dono do servidor. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classServidor_a1141e0835dfba56f4d01f922d2a8b34f}\label{classServidor_a1141e0835dfba56f4d01f922d2a8b34f}} 
+std\+::string {\bfseries nome}
+\begin{DoxyCompactList}\small\item\em Nome do servidor. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classServidor_a61fecd2b3435d7048d793741c5f3bfdf}\label{classServidor_a61fecd2b3435d7048d793741c5f3bfdf}} 
+std\+::string {\bfseries descricao}
+\begin{DoxyCompactList}\small\item\em Descrição do servidor. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classServidor_a7448f419ead42bf7f0bd42d5bdc53ec6}\label{classServidor_a7448f419ead42bf7f0bd42d5bdc53ec6}} 
+std\+::string {\bfseries codigo\+Convite}
+\begin{DoxyCompactList}\small\item\em Código de convite do servidor. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classServidor_a8a6344bfd8fc30dda70fca49a9b7234f}\label{classServidor_a8a6344bfd8fc30dda70fca49a9b7234f}} 
+std\+::vector$<$ \mbox{\hyperlink{classCanal}{Canal}} $\ast$ $>$ {\bfseries canais}
+\begin{DoxyCompactList}\small\item\em Vetor com os canais do servidor. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classServidor_a315d4e9afb393f1d8a17fa7432cc715a}\label{classServidor_a315d4e9afb393f1d8a17fa7432cc715a}} 
+std\+::vector$<$ int $>$ {\bfseries participantes\+Ids}
+\begin{DoxyCompactList}\small\item\em Vetor com os ids dos participantes do servidor. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Descrição detalhada}
+Classe que representa um servidor do sistema. 
+
+\doxysubsection{Construtores e Destrutores}
+\mbox{\Hypertarget{classServidor_a115c42c8bbb9b27a24949900a7ab19c7}\label{classServidor_a115c42c8bbb9b27a24949900a7ab19c7}} 
+\index{Servidor@{Servidor}!Servidor@{Servidor}}
+\index{Servidor@{Servidor}!Servidor@{Servidor}}
+\doxysubsubsection{\texorpdfstring{Servidor()}{Servidor()}}
+{\footnotesize\ttfamily Servidor\+::\+Servidor (\begin{DoxyParamCaption}\item[{std\+::string}]{nome,  }\item[{\mbox{\hyperlink{classUsuario}{Usuario}} $\ast$}]{usuario\+Dono }\end{DoxyParamCaption})}
+
+
+
+Construtor padrão da classe. 
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em nome} & Nome do servidor. \\
+\hline
+{\em usuario\+Dono} & Usuário dono do servidor. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Documentação das funções}
+\mbox{\Hypertarget{classServidor_a6f8ab7cda948090256d3aa099f67eff5}\label{classServidor_a6f8ab7cda948090256d3aa099f67eff5}} 
+\index{Servidor@{Servidor}!adicionarParticipante@{adicionarParticipante}}
+\index{adicionarParticipante@{adicionarParticipante}!Servidor@{Servidor}}
+\doxysubsubsection{\texorpdfstring{adicionarParticipante()}{adicionarParticipante()}}
+{\footnotesize\ttfamily void Servidor\+::adicionar\+Participante (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classUsuario}{Usuario}} $\ast$}]{usuario }\end{DoxyParamCaption})}
+
+
+
+Adiciona um usuário como participante do servidor. 
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em usuario} & Usuário a ser adicionado. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classServidor_aa92e5fb54887be66e9f9f4998a857356}\label{classServidor_aa92e5fb54887be66e9f9f4998a857356}} 
+\index{Servidor@{Servidor}!isDono@{isDono}}
+\index{isDono@{isDono}!Servidor@{Servidor}}
+\doxysubsubsection{\texorpdfstring{isDono()}{isDono()}}
+{\footnotesize\ttfamily bool Servidor\+::is\+Dono (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classUsuario}{Usuario}} $\ast$}]{usuario }\end{DoxyParamCaption})}
+
+
+
+Verifica se o usuário passado é dono do servidor. 
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em usuario} & Usuário a ser verificado. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classServidor_aa3fd3b1a663dd33238f10fdc48415bad}\label{classServidor_aa3fd3b1a663dd33238f10fdc48415bad}} 
+\index{Servidor@{Servidor}!isParticipante@{isParticipante}}
+\index{isParticipante@{isParticipante}!Servidor@{Servidor}}
+\doxysubsubsection{\texorpdfstring{isParticipante()}{isParticipante()}}
+{\footnotesize\ttfamily bool Servidor\+::is\+Participante (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classUsuario}{Usuario}} $\ast$}]{usuario }\end{DoxyParamCaption})}
+
+
+
+Verifica se o usuário passado é participante do servidor. 
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em usuario} & Usuário a ser verificado. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classServidor_a54f4816fb3fc642d398705fc771bef3a}\label{classServidor_a54f4816fb3fc642d398705fc771bef3a}} 
+\index{Servidor@{Servidor}!setCodigoConvite@{setCodigoConvite}}
+\index{setCodigoConvite@{setCodigoConvite}!Servidor@{Servidor}}
+\doxysubsubsection{\texorpdfstring{setCodigoConvite()}{setCodigoConvite()}}
+{\footnotesize\ttfamily void Servidor\+::set\+Codigo\+Convite (\begin{DoxyParamCaption}\item[{std\+::string}]{codigo\+Convite }\end{DoxyParamCaption})}
+
+
+
+Altera o código de convite do servidor. 
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em codigo\+Convite} & Novo código de convite do servidor. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classServidor_a4a232f83c626f7afcd98f1aeed5986f5}\label{classServidor_a4a232f83c626f7afcd98f1aeed5986f5}} 
+\index{Servidor@{Servidor}!setDescricao@{setDescricao}}
+\index{setDescricao@{setDescricao}!Servidor@{Servidor}}
+\doxysubsubsection{\texorpdfstring{setDescricao()}{setDescricao()}}
+{\footnotesize\ttfamily void Servidor\+::set\+Descricao (\begin{DoxyParamCaption}\item[{std\+::string}]{descricao }\end{DoxyParamCaption})}
+
+
+
+Altera a descrição do servidor. 
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em descricao} & Nova descrição do servidor. \\
+\hline
+\end{DoxyParams}
+
+
+A documentação para essa classe foi gerada a partir dos seguintes arquivos\+:\begin{DoxyCompactItemize}
+\item 
+include/Servidor.\+h\item 
+src/Servidor.\+cpp\end{DoxyCompactItemize}

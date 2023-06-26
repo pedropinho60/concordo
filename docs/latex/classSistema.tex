@@ -1,0 +1,313 @@
+\hypertarget{classSistema}{}\doxysection{Referência da Classe Sistema}
+\label{classSistema}\index{Sistema@{Sistema}}
+
+
+Classe do sistema do Concordo. Guarda todos os usuários e servidores.  
+
+
+
+
+{\ttfamily \#include $<$Sistema.\+h$>$}
+
+\doxysubsection*{Membros Públicos}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classSistema_a815b07845ef6b03247b239333fe75e28}\label{classSistema_a815b07845ef6b03247b239333fe75e28}} 
+{\bfseries Sistema} ()
+\begin{DoxyCompactList}\small\item\em Construtor padrão. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classUsuario}{Usuario}} $\ast$ \mbox{\hyperlink{classSistema_a1e7428c187270df2951ac247678afb3f}{get\+Usuario}} (std\+::string email)
+\begin{DoxyCompactList}\small\item\em Busca pelo usuário com o email especificado. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classUsuario}{Usuario}} $\ast$ \mbox{\hyperlink{classSistema_a9a1cfa08438b47173eb18b5dd91c7022}{get\+Usuario}} (int id)
+\begin{DoxyCompactList}\small\item\em Busca pelo usuário com o id especificado. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classServidor}{Servidor}} $\ast$ \mbox{\hyperlink{classSistema_abe5c28c50e496f70fa1ae2312baa5f47}{get\+Servidor}} (std\+::string nome)
+\begin{DoxyCompactList}\small\item\em Busca pelo servidor com o nome especificado. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classSistema_a5afc2279acc800dc7386e74e75477a33}\label{classSistema_a5afc2279acc800dc7386e74e75477a33}} 
+void {\bfseries iniciar} ()
+\begin{DoxyCompactList}\small\item\em Inicia o sistema, que é encerrado apenas com o comando {\ttfamily quit}. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classSistema_abf27cbfaa2d2ae35a750955cdc8dd175}{ler\+Comando}} ()
+\begin{DoxyCompactList}\small\item\em Processa o comando inserido e seus argumentos, chamando a função correspondente. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classSistema_a0277e9f6395f90f25827d3a8d55089df}{create\+User}} (std\+::string args)
+\begin{DoxyCompactList}\small\item\em Cria usuário com o email, senha e nome especificados. Executado com {\ttfamily create-\/user \texorpdfstring{$<$}{<}email\texorpdfstring{$>$}{>} \texorpdfstring{$<$}{<}senha\texorpdfstring{$>$}{>} \texorpdfstring{$<$}{<}nome\texorpdfstring{$>$}{>}} \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classSistema_a10a2cae24f39154b696c0f3491ee6196}{login}} (std\+::string args)
+\begin{DoxyCompactList}\small\item\em Faz login como um usuário. Executado com {\ttfamily login \texorpdfstring{$<$}{<}email\texorpdfstring{$>$}{>} \texorpdfstring{$<$}{<}senha\texorpdfstring{$>$}{>}}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classSistema_a8a4109e22701b10eeddc0b53ce1a801d}{disconnect}} ()
+\begin{DoxyCompactList}\small\item\em Desconecta do usuário atual. Executado com {\ttfamily disconnect}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classSistema_aa882f32bdbd0a9bad1d18d5343a3c20c}{create\+Server}} (std\+::string args)
+\begin{DoxyCompactList}\small\item\em Cria um servidor com o nome especificado. Executado com {\ttfamily create-\/server \texorpdfstring{$<$}{<}nome\texorpdfstring{$>$}{>}}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classSistema_a9ee65dbd3c18fc0b1f489cadd9884dd3}{set\+Server\+Desc}} (std\+::string args)
+\begin{DoxyCompactList}\small\item\em Altera a descrição do servidor. Executado com {\ttfamily set-\/server-\/desc \texorpdfstring{$<$}{<}nome\texorpdfstring{$>$}{>} \char`\"{}$<$descrição$>$\char`\"{}}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classSistema_a6789cdac9e0bfa3927a21599afbc427c}{set\+Server\+Invite\+Code}} (std\+::string args)
+\begin{DoxyCompactList}\small\item\em Altera o código de convite de um servidor. Executado com {\ttfamily set-\/server-\/invite-\/code \texorpdfstring{$<$}{<}nome\texorpdfstring{$>$}{>} \mbox{[}codigo\mbox{]}}. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classSistema_a871f17a5e6f360ed280b3cb2c97a7a49}\label{classSistema_a871f17a5e6f360ed280b3cb2c97a7a49}} 
+void {\bfseries list\+Servers} ()
+\begin{DoxyCompactList}\small\item\em Lista os servidores criados. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classSistema_a13df10cdd549f93b79aca4b3a30046e7}{remove\+Server}} (std\+::string nome)
+\begin{DoxyCompactList}\small\item\em Remove o servidor especificado. Executado com {\ttfamily remove-\/server \texorpdfstring{$<$}{<}nome\texorpdfstring{$>$}{>}} \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classSistema_abdaf76b6b392965f647d73c1254e46a9}{enter\+Server}} (std\+::string args)
+\begin{DoxyCompactList}\small\item\em Entra no servidor especificado. Executado com \`{}enter-\/server $<$nome$>$ \mbox{[}codigo\mbox{]}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classSistema_a7adfe2bf239371ad84e61a90daf6b249}{leave\+Server}} ()
+\begin{DoxyCompactList}\small\item\em Sai do servidor atual. Executado com {\ttfamily leave-\/server}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classSistema_a3621b304dfde121fc15d07c22ac57e7f}{list\+Participants}} ()
+\begin{DoxyCompactList}\small\item\em Lista os participantes do servidor atual. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Atributos Privados}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classSistema_a3cb541c9680f62350de9df45c0d3b608}\label{classSistema_a3cb541c9680f62350de9df45c0d3b608}} 
+std\+::vector$<$ \mbox{\hyperlink{classUsuario}{Usuario}} $>$ {\bfseries usuarios}
+\begin{DoxyCompactList}\small\item\em Vetor com os usuários cadastrados. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classSistema_ac043095da6d7366d07d53fd44e23ef7d}\label{classSistema_ac043095da6d7366d07d53fd44e23ef7d}} 
+std\+::vector$<$ \mbox{\hyperlink{classServidor}{Servidor}} $>$ {\bfseries servidores}
+\begin{DoxyCompactList}\small\item\em Vetor com os servidores criados. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classSistema_a0f15d6135e68b65b06c709fd1fecb12f}\label{classSistema_a0f15d6135e68b65b06c709fd1fecb12f}} 
+\mbox{\hyperlink{classUsuario}{Usuario}} $\ast$ {\bfseries usuario\+Logado}
+\begin{DoxyCompactList}\small\item\em Usuário logado atualmente. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classSistema_a3c1f5712be557d41ef56e9b931fbe866}\label{classSistema_a3c1f5712be557d41ef56e9b931fbe866}} 
+\mbox{\hyperlink{classServidor}{Servidor}} $\ast$ {\bfseries servidor\+Atual}
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classServidor}{Servidor}} atual. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classSistema_a6581c562a7e2206e8e0cd8c5ee36b873}\label{classSistema_a6581c562a7e2206e8e0cd8c5ee36b873}} 
+\mbox{\hyperlink{classCanal}{Canal}} $\ast$ {\bfseries canal\+Atual}
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classCanal}{Canal}} atual. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classSistema_aa78efe4c06b5660a45bafca5cd4c99c1}\label{classSistema_aa78efe4c06b5660a45bafca5cd4c99c1}} 
+int {\bfseries ultimo\+Id\+Usuario}
+\begin{DoxyCompactList}\small\item\em Id do último usuário criado. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Descrição detalhada}
+Classe do sistema do Concordo. Guarda todos os usuários e servidores. 
+
+\doxysubsection{Documentação das funções}
+\mbox{\Hypertarget{classSistema_aa882f32bdbd0a9bad1d18d5343a3c20c}\label{classSistema_aa882f32bdbd0a9bad1d18d5343a3c20c}} 
+\index{Sistema@{Sistema}!createServer@{createServer}}
+\index{createServer@{createServer}!Sistema@{Sistema}}
+\doxysubsubsection{\texorpdfstring{createServer()}{createServer()}}
+{\footnotesize\ttfamily void Sistema\+::create\+Server (\begin{DoxyParamCaption}\item[{std\+::string}]{args }\end{DoxyParamCaption})}
+
+
+
+Cria um servidor com o nome especificado. Executado com {\ttfamily create-\/server \texorpdfstring{$<$}{<}nome\texorpdfstring{$>$}{>}}. 
+
+\begin{DoxyNote}{Observação}
+Pode ser executado apenas se um usuário estiver logado. 
+\end{DoxyNote}
+
+\begin{DoxyParams}{Parâmetros}
+{\em args} & Argumentos do comando, que é o nome do servidor. O nome não pode ter espaços. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classSistema_a0277e9f6395f90f25827d3a8d55089df}\label{classSistema_a0277e9f6395f90f25827d3a8d55089df}} 
+\index{Sistema@{Sistema}!createUser@{createUser}}
+\index{createUser@{createUser}!Sistema@{Sistema}}
+\doxysubsubsection{\texorpdfstring{createUser()}{createUser()}}
+{\footnotesize\ttfamily void Sistema\+::create\+User (\begin{DoxyParamCaption}\item[{std\+::string}]{args }\end{DoxyParamCaption})}
+
+
+
+Cria usuário com o email, senha e nome especificados. Executado com {\ttfamily create-\/user \texorpdfstring{$<$}{<}email\texorpdfstring{$>$}{>} \texorpdfstring{$<$}{<}senha\texorpdfstring{$>$}{>} \texorpdfstring{$<$}{<}nome\texorpdfstring{$>$}{>}} 
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em args} & Argumentos do comando, que são email, senha e nome. O email e senha não podem ter espaço. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classSistema_a8a4109e22701b10eeddc0b53ce1a801d}\label{classSistema_a8a4109e22701b10eeddc0b53ce1a801d}} 
+\index{Sistema@{Sistema}!disconnect@{disconnect}}
+\index{disconnect@{disconnect}!Sistema@{Sistema}}
+\doxysubsubsection{\texorpdfstring{disconnect()}{disconnect()}}
+{\footnotesize\ttfamily void Sistema\+::disconnect (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Desconecta do usuário atual. Executado com {\ttfamily disconnect}. 
+
+\begin{DoxyNote}{Observação}
+Pode ser executado apenas se um usuário estiver logado. 
+\end{DoxyNote}
+\mbox{\Hypertarget{classSistema_abdaf76b6b392965f647d73c1254e46a9}\label{classSistema_abdaf76b6b392965f647d73c1254e46a9}} 
+\index{Sistema@{Sistema}!enterServer@{enterServer}}
+\index{enterServer@{enterServer}!Sistema@{Sistema}}
+\doxysubsubsection{\texorpdfstring{enterServer()}{enterServer()}}
+{\footnotesize\ttfamily void Sistema\+::enter\+Server (\begin{DoxyParamCaption}\item[{std\+::string}]{args }\end{DoxyParamCaption})}
+
+
+
+Entra no servidor especificado. Executado com \`{}enter-\/server $<$nome$>$ \mbox{[}codigo\mbox{]}. 
+
+\begin{DoxyNote}{Observação}
+Caso seja o dono do servidor, não é necessário código de convite. 
+\end{DoxyNote}
+
+\begin{DoxyParams}{Parâmetros}
+{\em args} & Argumentos do comando, que são o nome do servidor e o código de convite, se houver um. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classSistema_abe5c28c50e496f70fa1ae2312baa5f47}\label{classSistema_abe5c28c50e496f70fa1ae2312baa5f47}} 
+\index{Sistema@{Sistema}!getServidor@{getServidor}}
+\index{getServidor@{getServidor}!Sistema@{Sistema}}
+\doxysubsubsection{\texorpdfstring{getServidor()}{getServidor()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classServidor}{Servidor}} $\ast$ Sistema\+::get\+Servidor (\begin{DoxyParamCaption}\item[{std\+::string}]{nome }\end{DoxyParamCaption})}
+
+
+
+Busca pelo servidor com o nome especificado. 
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em nome} & Nome do servidor. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Retorna}
+Ponteiro para o servidor, ou nullptr caso não exista. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classSistema_a9a1cfa08438b47173eb18b5dd91c7022}\label{classSistema_a9a1cfa08438b47173eb18b5dd91c7022}} 
+\index{Sistema@{Sistema}!getUsuario@{getUsuario}}
+\index{getUsuario@{getUsuario}!Sistema@{Sistema}}
+\doxysubsubsection{\texorpdfstring{getUsuario()}{getUsuario()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classUsuario}{Usuario}} $\ast$ Sistema\+::get\+Usuario (\begin{DoxyParamCaption}\item[{int}]{id }\end{DoxyParamCaption})}
+
+
+
+Busca pelo usuário com o id especificado. 
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em id} & Id do usuário. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Retorna}
+Ponteiro para o usuário, ou nullptr caso não exista. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classSistema_a1e7428c187270df2951ac247678afb3f}\label{classSistema_a1e7428c187270df2951ac247678afb3f}} 
+\index{Sistema@{Sistema}!getUsuario@{getUsuario}}
+\index{getUsuario@{getUsuario}!Sistema@{Sistema}}
+\doxysubsubsection{\texorpdfstring{getUsuario()}{getUsuario()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classUsuario}{Usuario}} $\ast$ Sistema\+::get\+Usuario (\begin{DoxyParamCaption}\item[{std\+::string}]{email }\end{DoxyParamCaption})}
+
+
+
+Busca pelo usuário com o email especificado. 
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em email} & Email do usuário. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Retorna}
+Ponteiro para o usuário, ou nullptr caso não exista. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classSistema_a7adfe2bf239371ad84e61a90daf6b249}\label{classSistema_a7adfe2bf239371ad84e61a90daf6b249}} 
+\index{Sistema@{Sistema}!leaveServer@{leaveServer}}
+\index{leaveServer@{leaveServer}!Sistema@{Sistema}}
+\doxysubsubsection{\texorpdfstring{leaveServer()}{leaveServer()}}
+{\footnotesize\ttfamily void Sistema\+::leave\+Server (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Sai do servidor atual. Executado com {\ttfamily leave-\/server}. 
+
+\begin{DoxyNote}{Observação}
+Só pode ser executado caso esteja em um servidor. 
+\end{DoxyNote}
+\mbox{\Hypertarget{classSistema_abf27cbfaa2d2ae35a750955cdc8dd175}\label{classSistema_abf27cbfaa2d2ae35a750955cdc8dd175}} 
+\index{Sistema@{Sistema}!lerComando@{lerComando}}
+\index{lerComando@{lerComando}!Sistema@{Sistema}}
+\doxysubsubsection{\texorpdfstring{lerComando()}{lerComando()}}
+{\footnotesize\ttfamily bool Sistema\+::ler\+Comando (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Processa o comando inserido e seus argumentos, chamando a função correspondente. 
+
+\begin{DoxyReturn}{Retorna}
+False caso {\ttfamily quit} seja executado, e true caso contrário. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classSistema_a3621b304dfde121fc15d07c22ac57e7f}\label{classSistema_a3621b304dfde121fc15d07c22ac57e7f}} 
+\index{Sistema@{Sistema}!listParticipants@{listParticipants}}
+\index{listParticipants@{listParticipants}!Sistema@{Sistema}}
+\doxysubsubsection{\texorpdfstring{listParticipants()}{listParticipants()}}
+{\footnotesize\ttfamily void Sistema\+::list\+Participants (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Lista os participantes do servidor atual. 
+
+\begin{DoxyNote}{Observação}
+Só pode ser executado caso esteja em um servidor. 
+\end{DoxyNote}
+\mbox{\Hypertarget{classSistema_a10a2cae24f39154b696c0f3491ee6196}\label{classSistema_a10a2cae24f39154b696c0f3491ee6196}} 
+\index{Sistema@{Sistema}!login@{login}}
+\index{login@{login}!Sistema@{Sistema}}
+\doxysubsubsection{\texorpdfstring{login()}{login()}}
+{\footnotesize\ttfamily void Sistema\+::login (\begin{DoxyParamCaption}\item[{std\+::string}]{args }\end{DoxyParamCaption})}
+
+
+
+Faz login como um usuário. Executado com {\ttfamily login \texorpdfstring{$<$}{<}email\texorpdfstring{$>$}{>} \texorpdfstring{$<$}{<}senha\texorpdfstring{$>$}{>}}. 
+
+\begin{DoxyNote}{Observação}
+Não pode ser executado caso já esteja logado. 
+\end{DoxyNote}
+
+\begin{DoxyParams}{Parâmetros}
+{\em args} & Argumentos do comando, que são email e senha. Os argumentos não pode ter espaço. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classSistema_a13df10cdd549f93b79aca4b3a30046e7}\label{classSistema_a13df10cdd549f93b79aca4b3a30046e7}} 
+\index{Sistema@{Sistema}!removeServer@{removeServer}}
+\index{removeServer@{removeServer}!Sistema@{Sistema}}
+\doxysubsubsection{\texorpdfstring{removeServer()}{removeServer()}}
+{\footnotesize\ttfamily void Sistema\+::remove\+Server (\begin{DoxyParamCaption}\item[{std\+::string}]{nome }\end{DoxyParamCaption})}
+
+
+
+Remove o servidor especificado. Executado com {\ttfamily remove-\/server \texorpdfstring{$<$}{<}nome\texorpdfstring{$>$}{>}} 
+
+\begin{DoxyNote}{Observação}
+Só pode ser executado caso seja o dono do servidor. 
+\end{DoxyNote}
+
+\begin{DoxyParams}{Parâmetros}
+{\em nome} & Nome do servidor. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classSistema_a9ee65dbd3c18fc0b1f489cadd9884dd3}\label{classSistema_a9ee65dbd3c18fc0b1f489cadd9884dd3}} 
+\index{Sistema@{Sistema}!setServerDesc@{setServerDesc}}
+\index{setServerDesc@{setServerDesc}!Sistema@{Sistema}}
+\doxysubsubsection{\texorpdfstring{setServerDesc()}{setServerDesc()}}
+{\footnotesize\ttfamily void Sistema\+::set\+Server\+Desc (\begin{DoxyParamCaption}\item[{std\+::string}]{args }\end{DoxyParamCaption})}
+
+
+
+Altera a descrição do servidor. Executado com {\ttfamily set-\/server-\/desc \texorpdfstring{$<$}{<}nome\texorpdfstring{$>$}{>} \char`\"{}$<$descrição$>$\char`\"{}}. 
+
+\begin{DoxyNote}{Observação}
+Só pode ser executado caso seja o dono do servidor. 
+\end{DoxyNote}
+
+\begin{DoxyParams}{Parâmetros}
+{\em args} & Argumentos do comando, que são nome do servidor e descrição. A descrição deve estar entre aspas duplas. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classSistema_a6789cdac9e0bfa3927a21599afbc427c}\label{classSistema_a6789cdac9e0bfa3927a21599afbc427c}} 
+\index{Sistema@{Sistema}!setServerInviteCode@{setServerInviteCode}}
+\index{setServerInviteCode@{setServerInviteCode}!Sistema@{Sistema}}
+\doxysubsubsection{\texorpdfstring{setServerInviteCode()}{setServerInviteCode()}}
+{\footnotesize\ttfamily void Sistema\+::set\+Server\+Invite\+Code (\begin{DoxyParamCaption}\item[{std\+::string}]{args }\end{DoxyParamCaption})}
+
+
+
+Altera o código de convite de um servidor. Executado com {\ttfamily set-\/server-\/invite-\/code \texorpdfstring{$<$}{<}nome\texorpdfstring{$>$}{>} \mbox{[}codigo\mbox{]}}. 
+
+\begin{DoxyNote}{Observação}
+Só pode ser executado caso seja o dono do servidor. 
+\end{DoxyNote}
+
+\begin{DoxyParams}{Parâmetros}
+{\em args} & Argumentos do comando, que são o nome do servidor e o código de convite. Caso executado sem especificar o código, ele será removido. \\
+\hline
+\end{DoxyParams}
+
+
+A documentação para essa classe foi gerada a partir dos seguintes arquivos\+:\begin{DoxyCompactItemize}
+\item 
+include/Sistema.\+h\item 
+src/Sistema.\+cpp\end{DoxyCompactItemize}
