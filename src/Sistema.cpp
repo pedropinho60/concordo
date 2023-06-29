@@ -1,4 +1,6 @@
 #include "Sistema.h"
+#include "CanalVoz.h"
+#include "CanalTexto.h"
 
 #include <iostream>
 #include <sstream>
@@ -120,6 +122,12 @@ bool Sistema::lerComando() {
     }
     else if(command == "list-participants") {
         listParticipants();
+    }
+    else if(command == "list-channels") {
+        listChannels();
+    }
+    else if(command == "create-channel") {
+        createChannel(args);
     }
     else{
         std::cout << "Comando inválido!" << std::endl;
@@ -463,5 +471,99 @@ void Sistema::listParticipants() {
     for(auto usuarioId : servidorAtual->getParticipantesIds()) {
         Usuario *usuario = getUsuario(usuarioId);
         std::cout << usuario->getNome() << std::endl;
+    }
+}
+
+void Sistema::listChannels() {
+    if(usuarioLogado == nullptr) {
+        std::cout << "Não está conectado" << std::endl;
+        return;
+    }
+
+    if(servidorAtual == nullptr) {
+        std::cout << "Você não está visualizando nenhum servidor" << std::endl;
+        return;
+    }
+
+    std::cout << "#canais de texto\n";
+    for(Canal *canal : servidorAtual->getCanais()) {
+        if(canal->getTipo() == "texto"){
+            std::cout << canal->getNome() << std::endl;
+        }
+    }
+
+    std::cout << "#canais de voz\n";
+    for(Canal *canal : servidorAtual->getCanais()) {
+        if(canal->getTipo() == "voz"){
+            std::cout << canal->getNome() << std::endl;
+        }
+    }
+}
+
+void Sistema::createChannel(std::string args) {
+    if(usuarioLogado == nullptr) {
+        std::cout << "Não está conectado" << std::endl;
+        return;
+    }
+
+    if(servidorAtual == nullptr) {
+        std::cout << "Você não está visualizando nenhum servidor" << std::endl;
+        return;
+    }
+
+    if(!servidorAtual->isDono(usuarioLogado)) {
+        std::cout << "Você não é o dono do servidor" << std::endl;
+        return;
+    }
+
+    std::string nome;
+    std::string tipo;
+
+    std::istringstream iss(args);
+    std::getline(iss, nome, ' ');
+    std::getline(iss, tipo, ' ');
+
+    if(servidorAtual->buscarCanal(nome, tipo) != nullptr) {
+        std::cout << "Canal de " << tipo << " '" << nome << "' já existe"
+                  << std::endl;
+        return;
+    }
+
+    Canal *novo_canal;
+
+    if(tipo == "texto") {
+        novo_canal = new CanalTexto(nome);
+    }
+    else if(tipo == "voz") {
+        novo_canal = new CanalVoz(nome);
+    }
+    else {
+        std::cout << "Tipo de canal '" << tipo << "' desconhecido" << std::endl;
+        return;
+    }
+
+    servidorAtual->adicionarCanal(novo_canal);
+}
+
+void Sistema::enterChannel(std::string args) {
+    if(usuarioLogado == nullptr) {
+        std::cout << "Não está conectado" << std::endl;
+        return;
+    }
+
+    if(servidorAtual == nullptr) {
+        std::cout << "Você não está visualizando nenhum servidor" << std::endl;
+        return;
+    }
+
+    std::string nome;
+
+    std::istringstream iss(args);
+    std::getline(iss, nome, ' ');
+
+    canalAtual = servidorAtual->buscarCanal(nome);
+
+    if(canalAtual == nullptr) {
+        std::cout << "Canal '" << nome << "' não existe" << std::endl;
     }
 }

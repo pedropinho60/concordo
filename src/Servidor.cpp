@@ -38,6 +38,10 @@ const std::vector<int> &Servidor::getParticipantesIds() {
     return participantesIds;
 }
 
+const std::vector<Canal *> &Servidor::getCanais() {
+    return canais;
+}
+
 // ======================== SETTERS ==============================
 
 /**
@@ -92,3 +96,26 @@ void Servidor::adicionarParticipante(Usuario *usuario) {
     participantesIds.push_back(usuario->getId());
 }
 
+void Servidor::adicionarCanal(Canal *canal) {
+    canais.push_back(canal);
+}
+
+Canal* Servidor::buscarCanal(std::string nome) {
+    for(auto canal : canais) {
+        if(canal->getNome() == nome) {
+            return canal;
+        }
+    }
+
+    return nullptr;
+}
+
+Canal* Servidor::buscarCanal(std::string nome, std::string tipo) {
+    for(auto canal : canais) {
+        if(canal->getNome() == nome && canal->getTipo() == tipo) {
+            return canal;
+        }
+    }
+
+    return nullptr;
+}

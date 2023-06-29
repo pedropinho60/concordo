@@ -26,6 +26,7 @@ public:
     std::string getDescricao();
     std::string getCodigoConvite();
     const std::vector<int>& getParticipantesIds();
+    const std::vector<Canal *>& getCanais();
 
     // Setters
     void setDescricao(std::string descricao);
@@ -35,6 +36,9 @@ public:
     bool isDono(Usuario *usuario);
     bool isParticipante(Usuario *usuario);
     void adicionarParticipante(Usuario *usuario);
+    void adicionarCanal(Canal *canal);
+    Canal* buscarCanal(std::string nome);
+    Canal* buscarCanal(std::string nome, std::string tipo);
 };
 
 #endif

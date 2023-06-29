@@ -44,6 +44,9 @@ public:
     void enterServer(std::string args);
     void leaveServer();
     void listParticipants();
+    void listChannels();
+    void createChannel(std::string args);
+    void enterChannel(std::string args);
 };
 
 #endif // SISTEMA_H

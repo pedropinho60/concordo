@@ -8,6 +8,10 @@ class Canal {
 private:
     std::string nome;
 
+public:
+    Canal(std::string nome);
+    std::string getNome();
+    virtual std::string getTipo() = 0;
 };
 
 #endif // CANAL_H
