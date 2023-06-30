@@ -1,9 +1,13 @@
 #include "Sistema.h"
+#include "Canal.h"
 #include "CanalVoz.h"
 #include "CanalTexto.h"
+#include "Mensagem.h"
 
+#include <ctime>
 #include <iostream>
 #include <sstream>
+#include <vector>
 
 // ================= CONSTRUTORES E DESTRUTORES ==================
 
@@ -128,6 +132,12 @@ bool Sistema::lerComando() {
     }
     else if(command == "create-channel") {
         createChannel(args);
+    }
+    else if(command == "enter-channel") {
+        enterChannel(args);
+    }
+    else if(command == "leave-channel") {
+        leaveChannel();
     }
     else{
         std::cout << "Comando inválido!" << std::endl;
@@ -450,6 +460,7 @@ void Sistema::leaveServer() {
     std::cout << "Saindo do servidor '" << servidorAtual->getNome()
               << "'" << std::endl;
     servidorAtual = nullptr;
+    canalAtual = nullptr;
 }
 
 /**
@@ -565,5 +576,93 @@ void Sistema::enterChannel(std::string args) {
 
     if(canalAtual == nullptr) {
         std::cout << "Canal '" << nome << "' não existe" << std::endl;
+    }
+    else {
+        std::cout << "Entrou no canal de " << canalAtual->getTipo()
+                  << " '" << canalAtual->getNome() << "'" << std::endl;
+    }
+}
+
+void Sistema::leaveChannel() {
+    if(usuarioLogado == nullptr) {
+        std::cout << "Não está conectado" << std::endl;
+        return;
+    }
+
+    if(servidorAtual == nullptr) {
+        std::cout << "Você não está visualizando nenhum servidor" << std::endl;
+        return;
+    }
+
+    if(canalAtual == nullptr) {
+        std::cout << "Você não está em nenhum canal" << std::endl;
+        return;
+    }
+
+    canalAtual = nullptr;
+
+    std::cout << "Saiu do canal de " << canalAtual->getTipo()
+              << " '" << canalAtual->getNome() << "'" << std::endl;
+}
+
+void Sistema::sendMessage(std::string conteudo) {
+    if(usuarioLogado == nullptr) {
+        std::cout << "Não está conectado" << std::endl;
+        return;
+    }
+
+    if(servidorAtual == nullptr) {
+        std::cout << "Você não está visualizando nenhum servidor" << std::endl;
+        return;
+    }
+
+    if(canalAtual == nullptr) {
+        std::cout << "Você não está em nenhum canal" << std::endl;
+        return;
+    }
+
+    if(conteudo == "") {
+        std::cout << "Você não pode enviar uma mensagem vazia" << std::endl;
+        return;
+    }
+
+    std::time_t tempo = time(NULL);
+    struct tm *parts = std::localtime(&tempo);
+
+    std::ostringstream dataHora;
+    dataHora << parts->tm_mday << '/' << parts->tm_mon << '/' << parts->tm_year
+             << " - " << parts->tm_hour << ':' << parts->tm_sec;
+                         
+
+    Mensagem mensagem(dataHora.str(), usuarioLogado->getId(), conteudo);
+    canalAtual->adicionarMensagem(mensagem);
+}
+
+void Sistema::listMessages() {
+    if(usuarioLogado == nullptr) {
+        std::cout << "Não está conectado" << std::endl;
+        return;
+    }
+
+    if(servidorAtual == nullptr) {
+        std::cout << "Você não está visualizando nenhum servidor" << std::endl;
+        return;
+    }
+
+    if(canalAtual == nullptr) {
+        std::cout << "Você não está em nenhum canal" << std::endl;
+        return;
+    }
+
+    std::vector<Mensagem> mensagens = canalAtual->getMensagens();
+
+    if(mensagens.size() == 0) {
+        std::cout << "Sem mensagens para exibir" << std::endl;
+        return;
+    }
+
+    for(Mensagem& msg : mensagens) {
+        std::cout << getUsuario(msg.getEnviadaPor())->getNome()
+                  << "<" << msg.getDataHora() << ">: " << msg.getConteudo();
     }
 }

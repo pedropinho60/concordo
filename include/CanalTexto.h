@@ -12,9 +12,11 @@ private:
     std::vector<Mensagem> mensagens;
 
 public:
-    CanalTexto(std::string nome) : Canal(nome) {};
+    CanalTexto(std::string nome);
     std::string getTipo() override;
 
+    void adicionarMensagem(const Mensagem& mensagem) override;
+    std::vector<Mensagem> getMensagens() override;
 };
 
 #endif

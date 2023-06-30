@@ -47,6 +47,9 @@ public:
     void listChannels();
     void createChannel(std::string args);
     void enterChannel(std::string args);
+    void leaveChannel();
+    void sendMessage(std::string args);
+    void listMessages();
 };
 
 #endif // SISTEMA_H

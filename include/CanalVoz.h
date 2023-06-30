@@ -10,8 +10,10 @@ private:
     Mensagem ultimaMensagem;
 
 public:
-    CanalVoz(std::string nome) : Canal(nome) {}
+    CanalVoz(std::string nome);
     std::string getTipo() override;
+    void adicionarMensagem(const Mensagem& mensagem) override;
+    std::vector<Mensagem> getMensagens() override;
 
 };
 

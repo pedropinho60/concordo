@@ -3,3 +3,5 @@
 std::string Canal::getNome() {
     return nome;
 }
+
+
