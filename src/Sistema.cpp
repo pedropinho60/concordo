@@ -140,6 +140,10 @@ bool Sistema::lerComando() {
         leaveChannel();
     }
     else{
+    } else if (command == "send-message") {
+        sendMessage(args);
+    } else if (command == "list-messages") {
+        listMessages();
         std::cout << "Comando inválido!" << std::endl;
     }
 
