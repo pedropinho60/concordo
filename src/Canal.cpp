@@ -1,7 +1,5 @@
 #include "Canal.h"
 
-std::string Canal::getNome() {
-    return nome;
-}
 
+std::string Canal::getNome() { return nome; }
 

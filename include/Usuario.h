@@ -5,14 +5,13 @@
 
 /// @brief Classe que representa um usuário do sistema.
 class Usuario {
+   private:
+    int id;             //!< Identificador único do usuário.
+    std::string nome;   //!< Nome do usuário.
+    std::string email;  //!< Email do usuário.
+    std::string senha;  //!< Senha do usuário.
 
-private:
-    int id; //!< Identificador único do usuário.
-    std::string nome; //!< Nome do usuário.
-    std::string email; //!< Email do usuário.
-    std::string senha; //!< Senha do usuário.
-
-public:
+   public:
     // Construtores e destrutores
     Usuario(std::string email, std::string senha, std::string nome, int id);
     ~Usuario() = default;
@@ -26,4 +25,4 @@ public:
     bool checarSenha(std::string senha);
 };
 
-#endif // USUARIO_H
+#endif  // USUARIO_H

@@ -4,13 +4,12 @@
 #include <string>
 
 class Mensagem {
-
-private:
+   private:
     std::string dataHora;
     int enviadaPor;
     std::string conteudo;
 
-public:
+   public:
     Mensagem() = default;
     Mensagem(std::string dataHora, int enviadaPor, std::string conteudo);
 
@@ -19,4 +18,4 @@ public:
     std::string getConteudo();
 };
 
-#endif // MENSAGEM_H
+#endif  // MENSAGEM_H

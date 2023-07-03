@@ -1,6 +1,7 @@
+#include "Servidor.h"
+
 #include <string>
 
-#include "Servidor.h"
 #include "Usuario.h"
 
 // ================= CONSTRUTORES E DESTRUTORES ===================
@@ -19,28 +20,20 @@ Servidor::Servidor(std::string nome, Usuario *usuarioDono) {
 // ======================== GETTERS ==============================
 
 /// @brief Retorna o nome do servidor.
-std::string Servidor::getNome() {
-    return nome;
-}
+std::string Servidor::getNome() { return nome; }
 
 /// @brief Retorna a descrição do servidor.
-std::string Servidor::getDescricao() {
-    return descricao;
-}
+std::string Servidor::getDescricao() { return descricao; }
 
 /// @brief Retorna o código de convite do servidor.
-std::string Servidor::getCodigoConvite() {
-    return codigoConvite;
-}
+std::string Servidor::getCodigoConvite() { return codigoConvite; }
 
 /// @brief Reorna o vetor de ids dos participantes do servidor.
 const std::vector<int> &Servidor::getParticipantesIds() {
     return participantesIds;
 }
 
-const std::vector<Canal *> &Servidor::getCanais() {
-    return canais;
-}
+const std::vector<Canal *> &Servidor::getCanais() { return canais; }
 
 // ======================== SETTERS ==============================
 
@@ -79,8 +72,8 @@ bool Servidor::isDono(Usuario *usuario) {
  * @param usuario Usuário a ser verificado.
  */
 bool Servidor::isParticipante(Usuario *usuario) {
-    for(auto& participanteId : participantesIds) {
-        if(participanteId == usuario->getId()) {
+    for (auto &participanteId : participantesIds) {
+        if (participanteId == usuario->getId()) {
             return true;
         }
     }
@@ -96,13 +89,11 @@ void Servidor::adicionarParticipante(Usuario *usuario) {
     participantesIds.push_back(usuario->getId());
 }
 
-void Servidor::adicionarCanal(Canal *canal) {
-    canais.push_back(canal);
-}
+void Servidor::adicionarCanal(Canal *canal) { canais.push_back(canal); }
 
-Canal* Servidor::buscarCanal(std::string nome) {
-    for(auto canal : canais) {
-        if(canal->getNome() == nome) {
+Canal *Servidor::buscarCanal(std::string nome) {
+    for (auto canal : canais) {
+        if (canal->getNome() == nome) {
             return canal;
         }
     }
@@ -110,9 +101,9 @@ Canal* Servidor::buscarCanal(std::string nome) {
     return nullptr;
 }
 
-Canal* Servidor::buscarCanal(std::string nome, std::string tipo) {
-    for(auto canal : canais) {
-        if(canal->getNome() == nome && canal->getTipo() == tipo) {
+Canal *Servidor::buscarCanal(std::string nome, std::string tipo) {
+    for (auto canal : canais) {
+        if (canal->getNome() == nome && canal->getTipo() == tipo) {
             return canal;
         }
     }

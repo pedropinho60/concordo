@@ -3,15 +3,14 @@
 
 #include <vector>
 
-#include "Mensagem.h"
 #include "Canal.h"
+#include "Mensagem.h"
 
 class CanalTexto : public Canal {
-
-private:
+   private:
     std::vector<Mensagem> mensagens;
 
-public:
+   public:
     CanalTexto(std::string nome);
     std::string getTipo() override;
 

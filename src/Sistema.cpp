@@ -1,13 +1,14 @@
 #include "Sistema.h"
-#include "Canal.h"
-#include "CanalVoz.h"
-#include "CanalTexto.h"
-#include "Mensagem.h"
 
 #include <ctime>
 #include <iostream>
 #include <sstream>
 #include <vector>
+
+#include "Canal.h"
+#include "CanalTexto.h"
+#include "CanalVoz.h"
+#include "Mensagem.h"
 
 // ================= CONSTRUTORES E DESTRUTORES ==================
 
@@ -28,8 +29,8 @@ Sistema::Sistema() {
  * @return Ponteiro para o usuário, ou nullptr caso não exista.
  */
 Usuario* Sistema::getUsuario(std::string email) {
-    for(auto& usuario : usuarios) {
-        if(usuario.getEmail() == email) {
+    for (auto& usuario : usuarios) {
+        if (usuario.getEmail() == email) {
             return &usuario;
         }
     }
@@ -43,8 +44,8 @@ Usuario* Sistema::getUsuario(std::string email) {
  * @return Ponteiro para o usuário, ou nullptr caso não exista.
  */
 Usuario* Sistema::getUsuario(int id) {
-    for(auto& usuario : usuarios) {
-        if(usuario.getId() == id) {
+    for (auto& usuario : usuarios) {
+        if (usuario.getId() == id) {
             return &usuario;
         }
     }
@@ -58,19 +59,20 @@ Usuario* Sistema::getUsuario(int id) {
  * @return Ponteiro para o servidor, ou nullptr caso não exista.
  */
 Servidor* Sistema::getServidor(std::string nome) {
-    for(auto& servidor : servidores) {
-        if(servidor.getNome() == nome) {
+    for (auto& servidor : servidores) {
+        if (servidor.getNome() == nome) {
             return &servidor;
         }
     }
     return nullptr;
-} 
+}
 
 // ======================== MÉTODOS ========================
 
 /// @brief Inicia o sistema, que é encerrado apenas com o comando `quit`.
 void Sistema::iniciar() {
-    while(lerComando()) {};
+    while (lerComando()) {
+    };
 }
 
 /**
@@ -90,60 +92,44 @@ bool Sistema::lerComando() {
     std::getline(iss, command, ' ');
     std::getline(iss, args);
 
-    if(command == "quit") {
+    if (command == "quit") {
         std::cout << "Saindo do Concordo" << std::endl;
         return false;
-    }
-    else if(command == "create-user") {
+    } else if (command == "create-user") {
         createUser(args);
-    }
-    else if(command == "login") {
+    } else if (command == "login") {
         login(args);
-    }
-    else if(command == "disconnect") {
+    } else if (command == "disconnect") {
         disconnect();
-    }
-    else if(command == "create-server") {
-       createServer(args); 
-    }
-    else if(command == "set-server-desc") {
+    } else if (command == "create-server") {
+        createServer(args);
+    } else if (command == "set-server-desc") {
         setServerDesc(args);
-    }
-    else if(command == "set-server-invite-code") {
+    } else if (command == "set-server-invite-code") {
         setServerInviteCode(args);
-    }
-    else if(command == "list-servers") {
+    } else if (command == "list-servers") {
         listServers();
-    }
-    else if(command == "remove-server") {
+    } else if (command == "remove-server") {
         removeServer(args);
-    }
-    else if(command == "enter-server") {
+    } else if (command == "enter-server") {
         enterServer(args);
-    }
-    else if(command == "leave-server") {
+    } else if (command == "leave-server") {
         leaveServer();
-    }
-    else if(command == "list-participants") {
+    } else if (command == "list-participants") {
         listParticipants();
-    }
-    else if(command == "list-channels") {
+    } else if (command == "list-channels") {
         listChannels();
-    }
-    else if(command == "create-channel") {
+    } else if (command == "create-channel") {
         createChannel(args);
-    }
-    else if(command == "enter-channel") {
+    } else if (command == "enter-channel") {
         enterChannel(args);
-    }
-    else if(command == "leave-channel") {
+    } else if (command == "leave-channel") {
         leaveChannel();
-    }
-    else{
     } else if (command == "send-message") {
         sendMessage(args);
     } else if (command == "list-messages") {
         listMessages();
+    } else {
         std::cout << "Comando inválido!" << std::endl;
     }
 
@@ -169,7 +155,7 @@ void Sistema::createUser(std::string args) {
     std::getline(iss, senha, ' ');
     std::getline(iss, nome);
 
-    if(getUsuario(email) != nullptr) {
+    if (getUsuario(email) != nullptr) {
         std::cout << "Usuário já existe!" << std::endl;
         return;
     }
@@ -187,7 +173,7 @@ void Sistema::createUser(std::string args) {
  * pode ter espaço.
  */
 void Sistema::login(std::string args) {
-    if(usuarioLogado != nullptr) {
+    if (usuarioLogado != nullptr) {
         std::cout << "Usuário já está logado!" << std::endl;
         return;
     }
@@ -201,12 +187,12 @@ void Sistema::login(std::string args) {
 
     usuarioLogado = getUsuario(email);
 
-    if(usuarioLogado == nullptr) {
+    if (usuarioLogado == nullptr) {
         std::cout << "Usuário ou senha inválidos!" << std::endl;
         return;
     }
 
-    if(!usuarioLogado->checarSenha(senha)) {
+    if (!usuarioLogado->checarSenha(senha)) {
         std::cout << "Usuário ou senha inválidos!" << std::endl;
         usuarioLogado = nullptr;
         return;
@@ -221,11 +207,12 @@ void Sistema::login(std::string args) {
  * @note Pode ser executado apenas se um usuário estiver logado.
  */
 void Sistema::disconnect() {
-    if(usuarioLogado == nullptr) {
+    if (usuarioLogado == nullptr) {
         std::cout << "Não está conectado" << std::endl;
         return;
     }
-    std::cout << "Desconectando usuário " << usuarioLogado->getEmail() << std::endl;
+    std::cout << "Desconectando usuário " << usuarioLogado->getEmail()
+              << std::endl;
     usuarioLogado = nullptr;
     servidorAtual = nullptr;
     canalAtual = nullptr;
@@ -240,7 +227,7 @@ void Sistema::disconnect() {
  * pode ter espaços.
  */
 void Sistema::createServer(std::string args) {
-    if(usuarioLogado == nullptr) {
+    if (usuarioLogado == nullptr) {
         std::cout << "Não está conectado" << std::endl;
         return;
     }
@@ -250,14 +237,15 @@ void Sistema::createServer(std::string args) {
     std::istringstream iss(args);
     std::getline(iss, nome, ' ');
 
-    if(getServidor(nome) != nullptr) {
+    if (getServidor(nome) != nullptr) {
         std::cout << "Servidor com esse nome já existe!" << std::endl;
         return;
     }
 
     Servidor servidor(nome, usuarioLogado);
+
     servidores.push_back(servidor);
-    std::cout << "Servidor criado" << std::endl;    
+    std::cout << "Servidor criado" << std::endl;
 }
 
 /**
@@ -269,7 +257,7 @@ void Sistema::createServer(std::string args) {
  * A descrição deve estar entre aspas duplas.
  */
 void Sistema::setServerDesc(std::string args) {
-    if(usuarioLogado == nullptr) {
+    if (usuarioLogado == nullptr) {
         std::cout << "Não está conectado" << std::endl;
         return;
     }
@@ -284,23 +272,25 @@ void Sistema::setServerDesc(std::string args) {
 
     Servidor* servidor = getServidor(nome);
 
-    if(servidor == nullptr) {
+    if (servidor == nullptr) {
         std::cout << "Servidor '" << nome << "'não existe!" << std::endl;
         return;
     }
 
-    if(!servidor->isDono(usuarioLogado)) {
-        std::cout << "Você não pode alterar a descrição de um servidor que não" 
-                  << "foi criado por você" << std::endl;
+    if (!servidor->isDono(usuarioLogado)) {
+        std::cout << "Você não pode alterar a descrição de um servidor que não "
+                     "foi criado por você"
+                  << std::endl;
         return;
     }
 
     servidor->setDescricao(descricao);
-    std::cout << "Descrição do servidor '" << servidor->getNome() << "' modificada!" << std::endl;
+    std::cout << "Descrição do servidor '" << servidor->getNome()
+              << "' modificada!" << std::endl;
 }
 
 /**
- * @brief Altera o código de convite de um servidor. Executado com 
+ * @brief Altera o código de convite de um servidor. Executado com
  * `set-server-invite-code <nome> [codigo]`.
  *
  * @note Só pode ser executado caso seja o dono do servidor.
@@ -308,7 +298,7 @@ void Sistema::setServerDesc(std::string args) {
  * de convite. Caso executado sem especificar o código, ele será removido.
  */
 void Sistema::setServerInviteCode(std::string args) {
-    if(usuarioLogado == nullptr) {
+    if (usuarioLogado == nullptr) {
         std::cout << "Não está conectado" << std::endl;
         return;
     }
@@ -322,41 +312,41 @@ void Sistema::setServerInviteCode(std::string args) {
 
     Servidor* servidor = getServidor(nome);
 
-    if(servidor == nullptr) {
+    if (servidor == nullptr) {
         std::cout << "Servidor '" << nome << "'não existe!" << std::endl;
         return;
     }
 
-    if(!servidor->isDono(usuarioLogado)) {
-        std::cout << "Você não pode alterar o código de convite de um servidor" 
-                  << "que não foi criado por você" << std::endl;
+    if (!servidor->isDono(usuarioLogado)) {
+        std::cout << "Você não pode alterar o código de convite de um servidor "
+                     "que não foi criado por você"
+                  << std::endl;
         return;
     }
 
     servidor->setCodigoConvite(codigo);
-    if(codigo == "") {
-        std::cout << "Código de convite do servidor '" << servidor->getNome() 
+    if (codigo == "") {
+        std::cout << "Código de convite do servidor '" << servidor->getNome()
                   << "' removido!" << std::endl;
     } else {
-        std::cout << "Código de convite do servidor '" << servidor->getNome() 
+        std::cout << "Código de convite do servidor '" << servidor->getNome()
                   << "' modificado!" << std::endl;
     }
-
 }
 
 /// @brief Lista os servidores criados.
 void Sistema::listServers() {
-    if(usuarioLogado == nullptr) {
+    if (usuarioLogado == nullptr) {
         std::cout << "Não está conectado" << std::endl;
         return;
     }
 
-    if(servidores.size() == 0) {
+    if (servidores.size() == 0) {
         std::cout << "Não há servidores cadastrados" << std::endl;
         return;
     }
 
-    for(auto servidor : servidores) {
+    for (auto servidor : servidores) {
         std::cout << servidor.getNome() << std::endl;
     }
 }
@@ -368,31 +358,32 @@ void Sistema::listServers() {
  * @param nome Nome do servidor.
  */
 void Sistema::removeServer(std::string nome) {
-    if(usuarioLogado == nullptr) {
+    if (usuarioLogado == nullptr) {
         std::cout << "Não está conectado" << std::endl;
         return;
     }
 
     Servidor* servidor = getServidor(nome);
 
-    if(servidor == nullptr) {
+    if (servidor == nullptr) {
         std::cout << "Servidor '" << nome << "'não existe!" << std::endl;
         return;
     }
 
-    if(!servidor->isDono(usuarioLogado)) {
-        std::cout << "Você não é o dono do servidor '" << nome << "'" << std::endl;
+    if (!servidor->isDono(usuarioLogado)) {
+        std::cout << "Você não é o dono do servidor '" << nome << "'"
+                  << std::endl;
         return;
     }
 
-    if(servidorAtual == servidor) {
+    if (servidorAtual == servidor) {
         servidorAtual = nullptr;
         canalAtual = nullptr;
     }
 
     size_t index = servidor - &servidores[0];
     servidores.erase(servidores.begin() + index);
-    std::cout << "Servidor '" << nome << "' removido!" << std::endl;   
+    std::cout << "Servidor '" << nome << "' removido!" << std::endl;
 }
 
 /**
@@ -404,7 +395,7 @@ void Sistema::removeServer(std::string nome) {
  * convite, se houver um.
  */
 void Sistema::enterServer(std::string args) {
-    if(usuarioLogado == nullptr) {
+    if (usuarioLogado == nullptr) {
         std::cout << "Não está conectado" << std::endl;
         return;
     }
@@ -418,27 +409,27 @@ void Sistema::enterServer(std::string args) {
 
     Servidor* servidor = getServidor(nome);
 
-    if(servidor == nullptr) {
+    if (servidor == nullptr) {
         std::cout << "Servidor '" << nome << "'não existe!" << std::endl;
         return;
     }
 
-    if(!(servidor->isDono(usuarioLogado) || servidor->getCodigoConvite() == "")) {
-        if(codigo == "") {
+    if (!(servidor->isDono(usuarioLogado) ||
+          servidor->getCodigoConvite() == "")) {
+        if (codigo == "") {
             std::cout << "Servidor requer código de convite" << std::endl;
             return;
         }
-        if(codigo != servidor->getCodigoConvite()) {
+        if (codigo != servidor->getCodigoConvite()) {
             std::cout << "Código de convite inválido!" << std::endl;
             return;
         }
     }
 
-
     servidorAtual = servidor;
     canalAtual = nullptr;
 
-    if(!servidor->isParticipante(usuarioLogado)) {
+    if (!servidor->isParticipante(usuarioLogado)) {
         servidor->adicionarParticipante(usuarioLogado);
     }
 
@@ -451,18 +442,18 @@ void Sistema::enterServer(std::string args) {
  * @note Só pode ser executado caso esteja em um servidor.
  */
 void Sistema::leaveServer() {
-    if(usuarioLogado == nullptr) {
+    if (usuarioLogado == nullptr) {
         std::cout << "Não está conectado" << std::endl;
         return;
     }
 
-    if(servidorAtual == nullptr) {
+    if (servidorAtual == nullptr) {
         std::cout << "Você não está visualizando nenhum servidor" << std::endl;
         return;
     }
 
-    std::cout << "Saindo do servidor '" << servidorAtual->getNome()
-              << "'" << std::endl;
+    std::cout << "Saindo do servidor '" << servidorAtual->getNome() << "'"
+              << std::endl;
     servidorAtual = nullptr;
     canalAtual = nullptr;
 }
@@ -473,60 +464,60 @@ void Sistema::leaveServer() {
  * @note Só pode ser executado caso esteja em um servidor.
  */
 void Sistema::listParticipants() {
-    if(usuarioLogado == nullptr) {
+    if (usuarioLogado == nullptr) {
         std::cout << "Não está conectado" << std::endl;
         return;
     }
 
-    if(servidorAtual == nullptr) {
+    if (servidorAtual == nullptr) {
         std::cout << "Você não está visualizando nenhum servidor" << std::endl;
         return;
     }
 
-    for(auto usuarioId : servidorAtual->getParticipantesIds()) {
-        Usuario *usuario = getUsuario(usuarioId);
+    for (auto usuarioId : servidorAtual->getParticipantesIds()) {
+        Usuario* usuario = getUsuario(usuarioId);
         std::cout << usuario->getNome() << std::endl;
     }
 }
 
 void Sistema::listChannels() {
-    if(usuarioLogado == nullptr) {
+    if (usuarioLogado == nullptr) {
         std::cout << "Não está conectado" << std::endl;
         return;
     }
 
-    if(servidorAtual == nullptr) {
+    if (servidorAtual == nullptr) {
         std::cout << "Você não está visualizando nenhum servidor" << std::endl;
         return;
     }
 
     std::cout << "#canais de texto\n";
-    for(Canal *canal : servidorAtual->getCanais()) {
-        if(canal->getTipo() == "texto"){
+    for (Canal* canal : servidorAtual->getCanais()) {
+        if (canal->getTipo() == "texto") {
             std::cout << canal->getNome() << std::endl;
         }
     }
 
     std::cout << "#canais de voz\n";
-    for(Canal *canal : servidorAtual->getCanais()) {
-        if(canal->getTipo() == "voz"){
+    for (Canal* canal : servidorAtual->getCanais()) {
+        if (canal->getTipo() == "voz") {
             std::cout << canal->getNome() << std::endl;
         }
     }
 }
 
 void Sistema::createChannel(std::string args) {
-    if(usuarioLogado == nullptr) {
+    if (usuarioLogado == nullptr) {
         std::cout << "Não está conectado" << std::endl;
         return;
     }
 
-    if(servidorAtual == nullptr) {
+    if (servidorAtual == nullptr) {
         std::cout << "Você não está visualizando nenhum servidor" << std::endl;
         return;
     }
 
-    if(!servidorAtual->isDono(usuarioLogado)) {
+    if (!servidorAtual->isDono(usuarioLogado)) {
         std::cout << "Você não é o dono do servidor" << std::endl;
         return;
     }
@@ -538,35 +529,36 @@ void Sistema::createChannel(std::string args) {
     std::getline(iss, nome, ' ');
     std::getline(iss, tipo, ' ');
 
-    if(servidorAtual->buscarCanal(nome, tipo) != nullptr) {
+    if (servidorAtual->buscarCanal(nome, tipo) != nullptr) {
         std::cout << "Canal de " << tipo << " '" << nome << "' já existe"
                   << std::endl;
         return;
     }
 
-    Canal *novo_canal;
+    Canal* novo_canal;
 
-    if(tipo == "texto") {
+    if (tipo == "texto") {
         novo_canal = new CanalTexto(nome);
-    }
-    else if(tipo == "voz") {
+    } else if (tipo == "voz") {
         novo_canal = new CanalVoz(nome);
-    }
-    else {
+    } else {
         std::cout << "Tipo de canal '" << tipo << "' desconhecido" << std::endl;
         return;
     }
+
+    std::cout << "Canal de " << tipo << " '" << nome << "' criado com sucesso"
+              << std::endl;
 
     servidorAtual->adicionarCanal(novo_canal);
 }
 
 void Sistema::enterChannel(std::string args) {
-    if(usuarioLogado == nullptr) {
+    if (usuarioLogado == nullptr) {
         std::cout << "Não está conectado" << std::endl;
         return;
     }
 
-    if(servidorAtual == nullptr) {
+    if (servidorAtual == nullptr) {
         std::cout << "Você não está visualizando nenhum servidor" << std::endl;
         return;
     }
@@ -578,95 +570,92 @@ void Sistema::enterChannel(std::string args) {
 
     canalAtual = servidorAtual->buscarCanal(nome);
 
-    if(canalAtual == nullptr) {
+    if (canalAtual == nullptr) {
         std::cout << "Canal '" << nome << "' não existe" << std::endl;
-    }
-    else {
-        std::cout << "Entrou no canal de " << canalAtual->getTipo()
-                  << " '" << canalAtual->getNome() << "'" << std::endl;
+    } else {
+        std::cout << "Entrou no canal de " << canalAtual->getTipo() << " '"
+                  << canalAtual->getNome() << "'" << std::endl;
     }
 }
 
 void Sistema::leaveChannel() {
-    if(usuarioLogado == nullptr) {
+    if (usuarioLogado == nullptr) {
         std::cout << "Não está conectado" << std::endl;
         return;
     }
 
-    if(servidorAtual == nullptr) {
+    if (servidorAtual == nullptr) {
         std::cout << "Você não está visualizando nenhum servidor" << std::endl;
         return;
     }
 
-    if(canalAtual == nullptr) {
+    if (canalAtual == nullptr) {
         std::cout << "Você não está em nenhum canal" << std::endl;
         return;
     }
 
     canalAtual = nullptr;
 
-    std::cout << "Saiu do canal de " << canalAtual->getTipo()
-              << " '" << canalAtual->getNome() << "'" << std::endl;
+    std::cout << "Saiu do canal de " << canalAtual->getTipo() << " '"
+              << canalAtual->getNome() << "'" << std::endl;
 }
 
 void Sistema::sendMessage(std::string conteudo) {
-    if(usuarioLogado == nullptr) {
+    if (usuarioLogado == nullptr) {
         std::cout << "Não está conectado" << std::endl;
         return;
     }
 
-    if(servidorAtual == nullptr) {
+    if (servidorAtual == nullptr) {
         std::cout << "Você não está visualizando nenhum servidor" << std::endl;
         return;
     }
 
-    if(canalAtual == nullptr) {
+    if (canalAtual == nullptr) {
         std::cout << "Você não está em nenhum canal" << std::endl;
         return;
     }
 
-    if(conteudo == "") {
+    if (conteudo == "") {
         std::cout << "Você não pode enviar uma mensagem vazia" << std::endl;
         return;
     }
 
     std::time_t tempo = time(NULL);
-    struct tm *parts = std::localtime(&tempo);
+    struct tm* parts = std::localtime(&tempo);
 
     std::ostringstream dataHora;
     dataHora << parts->tm_mday << '/' << parts->tm_mon << '/' << parts->tm_year
              << " - " << parts->tm_hour << ':' << parts->tm_sec;
-                         
 
     Mensagem mensagem(dataHora.str(), usuarioLogado->getId(), conteudo);
     canalAtual->adicionarMensagem(mensagem);
 }
 
 void Sistema::listMessages() {
-    if(usuarioLogado == nullptr) {
+    if (usuarioLogado == nullptr) {
         std::cout << "Não está conectado" << std::endl;
         return;
     }
 
-    if(servidorAtual == nullptr) {
+    if (servidorAtual == nullptr) {
         std::cout << "Você não está visualizando nenhum servidor" << std::endl;
         return;
     }
 
-    if(canalAtual == nullptr) {
+    if (canalAtual == nullptr) {
         std::cout << "Você não está em nenhum canal" << std::endl;
         return;
     }
 
     std::vector<Mensagem> mensagens = canalAtual->getMensagens();
 
-    if(mensagens.size() == 0) {
+    if (mensagens.size() == 0) {
         std::cout << "Sem mensagens para exibir" << std::endl;
-        return;
     }
 
-    for(Mensagem& msg : mensagens) {
-        std::cout << getUsuario(msg.getEnviadaPor())->getNome()
-                  << "<" << msg.getDataHora() << ">: " << msg.getConteudo();
+    for (Mensagem& msg : mensagens) {
+        std::cout << getUsuario(msg.getEnviadaPor())->getNome() << "<"
+                  << msg.getDataHora() << ">: ";
     }
 }

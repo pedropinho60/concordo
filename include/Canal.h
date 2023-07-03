@@ -7,11 +7,10 @@
 #include "Mensagem.h"
 
 class Canal {
-    
-private:
+   private:
     std::string nome;
 
-public:
+   public:
     Canal(std::string nome);
     std::string getNome();
     virtual std::string getTipo() = 0;
@@ -19,4 +18,4 @@ public:
     virtual std::vector<Mensagem> getMensagens() = 0;
 };
 
-#endif // CANAL_H
+#endif  // CANAL_H
