@@ -15,6 +15,7 @@
 Servidor::Servidor(std::string nome, Usuario *usuarioDono) {
     this->nome = nome;
     this->usuarioDonoId = usuarioDono->getId();
+    this->adicionarParticipante(usuarioDono);
 }
 
 // ======================== GETTERS ==============================
