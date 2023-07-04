@@ -55,7 +55,7 @@ Esses comandos só podem ser executados dentro de um servidor.
 
 ### Canais
 
-Esses comandos só podem ser executados dentro de um canal.
+Esses comandos são relacionados a funcionalidades dos canais.
 
 - `create-channel <nome> <tipo>` cria um canal de tipo voz ou texto. É
 necessário ser dono do servidor para criar um canal.
@@ -64,7 +64,7 @@ necessário ser dono do servidor para criar um canal.
 - `send-message <conteúdo>` envia uma mensagem. É necessário estar em um canal
 para enviar mensagens.
 - `list-messages` lista as mensagens do canal atual`. É necessário estar em um
-canal para enviar mensagens.
+canal para listar mensagens.
 
 ## Compilação e execução
 
