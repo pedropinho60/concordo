@@ -5,10 +5,11 @@ Projeto de "Linguagem de Programação I"
 ## Descrição
 
 Esse projeto é uma "imitação" do [**Discord**](https://www.discord.com), feita
-em C++.
+em C++. Esse repositório contém as versões 1 e 2 do projeto.
 
-Essa é a versão 1 do projeto. Nela, é possível cadastrar usuários, fazer login,
-criar, configurar e entrar em servidores.
+Na versão 1, é possível fazer login, criar, configurar e entrar em servidores.
+A versão 2 adiciona as funcionalidades de canais, permitindo criar canais de 
+texto e voz dentro de um servidor, e enviar mensagens neles.
 
 ## Autoria
 
@@ -52,6 +53,19 @@ Esses comandos só podem ser executados dentro de um servidor.
 - `leave-server` sai do servidor.
 - `list-participants` lista os participantes do servidor.
 
+### Canais
+
+Esses comandos só podem ser executados dentro de um canal.
+
+- `create-channel <nome> <tipo>` cria um canal de tipo voz ou texto. É
+necessário ser dono do servidor para criar um canal.
+- `list-channels` lista todos os canais do servidor.
+- `enter-channel <nome>` entra em um canal.
+- `send-message <conteúdo>` envia uma mensagem. É necessário estar em um canal
+para enviar mensagens.
+- `list-messages` lista as mensagens do canal atual`. É necessário estar em um
+canal para enviar mensagens.
+
 ## Compilação e execução
 
 Para compilar o programa, é utilizado o [**CMake**](https://cmake.org).
@@ -82,12 +96,31 @@ create-server server1                         # cria o servidor 1
 set-server-desc server1 "server1 description" # altera a descrição do servidor
 set-server-invite-code server1 invitecode     # adiciona o código de convite
 enter-server server1                          # entra no servidor 1
+create-channel canal1 texto                   # cria o canal de texto 1
+create-channel canal2 voz                     # cria o canal de voz 2
+create-channel canal3 texto                   # cria o canal de texto 3 
+enter-channel canal1                          # entra no canal de texto 1
+send-message mensagem1                        # envia mensagem
+send-message mensagem2                        # envia mensagem
+leave-channel                                 # sai do canal
+leave-server                                  # sai do servidor
 disconnect                                    # desconecta do sistema
 login email2 password2                        # faz login no usuário 2
 list-servers                                  # lista os servidores (servidor 1)
 create-server server2                         # cria o servidor 2
 enter-server server1 invitecode               # entra no servidor 1 com o código
 list-participants                             # lista os participantes (usuários 1 e 2)
+list-channels                                 # lista os canais
+enter-channel canal1                          # entra no canal de texto 1
+list-messages                                 # lista as mensagens
+send-message mensagem3                        # envia mensagem
+leave-channel                                 # sai do canal
+enter-channel canal2                          # entra no canal de voz 2
+send-message mensagem4                        # envia mensagem 4
+list-messages                                 # lista mensagem 4
+send-message mensagem5                        # envia mensagem 5
+list-messages                                 # lista apenas mensagem 5
+leave-channel                                 # sai do canal
 disconnect                                    # desconecta do sistema
 login email3 password3                        # faz login no usuário 3
 list-servers                                  # lista os servidores (servidores 1 e 2)

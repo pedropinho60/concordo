@@ -18,6 +18,13 @@ Servidor::Servidor(std::string nome, Usuario *usuarioDono) {
     this->adicionarParticipante(usuarioDono);
 }
 
+/**
+ * @brief Destrutor padrão da classe.
+ *
+ * @note Os canais do servidor são deletados pelo destrutor da classe Sistema.
+ */
+Servidor::~Servidor() = default;
+
 // ======================== GETTERS ==============================
 
 /// @brief Retorna o nome do servidor.
@@ -34,6 +41,7 @@ const std::vector<int> &Servidor::getParticipantesIds() {
     return participantesIds;
 }
 
+/// @brief Retorna o vetor de canais do servidor.
 const std::vector<Canal *> &Servidor::getCanais() { return canais; }
 
 // ======================== SETTERS ==============================
@@ -90,8 +98,19 @@ void Servidor::adicionarParticipante(Usuario *usuario) {
     participantesIds.push_back(usuario->getId());
 }
 
+/**
+ * @brief Adiciona um canal ao servidor.
+ *
+ * @param canal Canal a ser adicionado.
+ */
 void Servidor::adicionarCanal(Canal *canal) { canais.push_back(canal); }
 
+/**
+ * @brief Busca um canal no servidor pelo nome.
+ *
+ * @param nome Nome do canal a ser buscado.
+ * @return Ponteiro para o canal buscado.
+ */
 Canal *Servidor::buscarCanal(std::string nome) {
     for (auto canal : canais) {
         if (canal->getNome() == nome) {
@@ -102,6 +121,13 @@ Canal *Servidor::buscarCanal(std::string nome) {
     return nullptr;
 }
 
+/**
+ * @brief Busca um canal no servidor pelo nome e tipo.
+ *
+ * @param nome Nome do canal a ser buscado.
+ * @param tipo Tipo do canal a ser buscado.
+ * @return Ponteiro para o canal buscado.
+ */
 Canal *Servidor::buscarCanal(std::string nome, std::string tipo) {
     for (auto canal : canais) {
         if (canal->getNome() == nome && canal->getTipo() == tipo) {

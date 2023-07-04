@@ -6,12 +6,31 @@ create-server server1
 set-server-desc server1 "server1 description"
 set-server-invite-code server1 invitecode
 enter-server server1
+create-channel canal1 texto
+create-channel canal2 voz
+create-channel canal3 texto
+enter-channel canal1
+send-message mensagem1
+send-message mensagem2
+leave-channel
+leave-server
 disconnect
 login email2 password2
 list-servers
 create-server server2
 enter-server server1 invitecode
 list-participants
+list-channels
+enter-channel canal1
+list-messages
+send-message mensagem3
+leave-channel
+enter-channel canal2
+send-message mensagem4
+list-messages
+send-message mensagem5
+list-messages
+leave-channel
 disconnect
 login email3 password3
 list-servers

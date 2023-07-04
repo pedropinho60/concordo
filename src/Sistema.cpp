@@ -1,6 +1,7 @@
 #include "Sistema.h"
 
 #include <ctime>
+#include <iomanip>
 #include <iostream>
 #include <sstream>
 #include <vector>
@@ -18,6 +19,14 @@ Sistema::Sistema() {
     servidorAtual = nullptr;
     canalAtual = nullptr;
     ultimoIdUsuario = 0;
+}
+
+Sistema::~Sistema() {
+    for (auto& servidor : servidores) {
+        for (auto& canal : servidor.getCanais()) {
+            delete canal;
+        }
+    }
 }
 
 // ======================== GETTERS ========================
@@ -346,6 +355,7 @@ void Sistema::listServers() {
         return;
     }
 
+    std::cout << "Servidores:" << std::endl;
     for (auto servidor : servidores) {
         std::cout << servidor.getNome() << std::endl;
     }
@@ -382,13 +392,18 @@ void Sistema::removeServer(std::string nome) {
     }
 
     size_t index = servidor - &servidores[0];
+
+    for (auto canal : servidor->getCanais()) {
+        delete canal;
+    }
+
     servidores.erase(servidores.begin() + index);
     std::cout << "Servidor '" << nome << "' removido!" << std::endl;
 }
 
 /**
  * @brief Entra no servidor especificado. Executado com `enter-server <nome>
- * [codigo].
+ * [codigo]`.
  *
  * @note Caso seja o dono do servidor, não é necessário código de convite.
  * @param args Argumentos do comando, que são o nome do servidor e o código de
@@ -459,7 +474,8 @@ void Sistema::leaveServer() {
 }
 
 /**
- * @brief Lista os participantes do servidor atual.
+ * @brief Lista os participantes do servidor atual. Executado com
+ * `list-participants`.
  *
  * @note Só pode ser executado caso esteja em um servidor.
  */
@@ -480,6 +496,11 @@ void Sistema::listParticipants() {
     }
 }
 
+/**
+ * @brief Lista os canais do servidor atual. Executado com `list-channels`.
+ *
+ * @note Só pode ser executado caso esteja em um servidor.
+ */
 void Sistema::listChannels() {
     if (usuarioLogado == nullptr) {
         std::cout << "Não está conectado" << std::endl;
@@ -506,6 +527,12 @@ void Sistema::listChannels() {
     }
 }
 
+/**
+ * @brief Cria um canal no servidor atual. Executado com `create-channel <nome>
+ * <tipo>`.
+ * @param args Argumentos do comando, que são o nome e o tipo do canal.
+ * @note Só pode ser executado caso seja o dono do servidor.
+ */
 void Sistema::createChannel(std::string args) {
     if (usuarioLogado == nullptr) {
         std::cout << "Não está conectado" << std::endl;
@@ -552,6 +579,12 @@ void Sistema::createChannel(std::string args) {
     servidorAtual->adicionarCanal(novo_canal);
 }
 
+/**
+ * @brief Entra em um canal do servidor atual. Executado com `enter-channel
+ * <nome>`.
+ * @param args Argumentos do comando, que é o nome do canal.
+ * @note Só pode ser executado caso esteja em um servidor.
+ */
 void Sistema::enterChannel(std::string args) {
     if (usuarioLogado == nullptr) {
         std::cout << "Não está conectado" << std::endl;
@@ -578,6 +611,11 @@ void Sistema::enterChannel(std::string args) {
     }
 }
 
+/**
+ * @brief Sai do canal atual. Executado com `leave-channel`.
+ *
+ * @note Só pode ser executado caso esteja em um canal.
+ */
 void Sistema::leaveChannel() {
     if (usuarioLogado == nullptr) {
         std::cout << "Não está conectado" << std::endl;
@@ -594,12 +632,18 @@ void Sistema::leaveChannel() {
         return;
     }
 
-    canalAtual = nullptr;
-
     std::cout << "Saiu do canal de " << canalAtual->getTipo() << " '"
               << canalAtual->getNome() << "'" << std::endl;
+
+    canalAtual = nullptr;
 }
 
+/**
+ * @brief Envia uma mensagem no canal atual. Executado com `send-message
+ * <mensagem>`.
+ * @param conteudo Conteúdo da mensagem.
+ * @note Só pode ser executado caso esteja em um canal.
+ */
 void Sistema::sendMessage(std::string conteudo) {
     if (usuarioLogado == nullptr) {
         std::cout << "Não está conectado" << std::endl;
@@ -625,13 +669,21 @@ void Sistema::sendMessage(std::string conteudo) {
     struct tm* parts = std::localtime(&tempo);
 
     std::ostringstream dataHora;
-    dataHora << parts->tm_mday << '/' << parts->tm_mon << '/' << parts->tm_year
-             << " - " << parts->tm_hour << ':' << parts->tm_sec;
+    dataHora << std::setfill('0') << std::setw(2) << parts->tm_mday << '/'
+             << std::setfill('0') << std::setw(2) << parts->tm_mon + 1 << '/'
+             << parts->tm_year + 1900 << " - " << std::setfill('0')
+             << std::setw(2) << parts->tm_hour << ':' << std::setfill('0')
+             << std::setw(2) << parts->tm_min;
 
     Mensagem mensagem(dataHora.str(), usuarioLogado->getId(), conteudo);
     canalAtual->adicionarMensagem(mensagem);
 }
 
+/**
+ * @brief Lista as mensagens do canal atual. Executado com `list-messages`.
+ *
+ * @note Só pode ser executado caso esteja em um canal.
+ */
 void Sistema::listMessages() {
     if (usuarioLogado == nullptr) {
         std::cout << "Não está conectado" << std::endl;
@@ -654,8 +706,11 @@ void Sistema::listMessages() {
         std::cout << "Sem mensagens para exibir" << std::endl;
     }
 
+    std::cout << "Mensagens do canal '"
+              << canalAtual->getNome() << "':" << std::endl;
     for (Mensagem& msg : mensagens) {
         std::cout << getUsuario(msg.getEnviadaPor())->getNome() << "<"
-                  << msg.getDataHora() << ">: ";
+                  << msg.getDataHora() << ">: " << msg.getConteudo()
+                  << std::endl;
     }
 }

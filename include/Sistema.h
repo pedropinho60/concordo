@@ -20,6 +20,7 @@ class Sistema {
    public:
     // Construtores e destrutores
     Sistema();
+    ~Sistema();
 
     // Getters
     Usuario* getUsuario(std::string email);

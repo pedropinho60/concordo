@@ -3,11 +3,14 @@
 
 #include <string>
 
+/**
+ * @brief Classe que representa uma mensagem enviada por um usuário.
+ */
 class Mensagem {
    private:
-    std::string dataHora;
-    int enviadaPor;
-    std::string conteudo;
+    std::string dataHora;  //!< Data e hora da mensagem
+    int enviadaPor;        //!< ID do usuário que enviou a mensagem
+    std::string conteudo;  //!< Conteúdo da mensagem
 
    public:
     Mensagem() = default;

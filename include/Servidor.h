@@ -20,6 +20,7 @@ class Servidor {
 
    public:
     Servidor(std::string nome, Usuario *usuarioDono);
+    ~Servidor();
 
     // Getters
     std::string getNome();
