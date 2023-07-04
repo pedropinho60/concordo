@@ -1,7 +1,7 @@
 Projeto de \char`\"{}\+Linguagem de Programação I\char`\"{}\hypertarget{md_README_autotoc_md1}{}\doxysection{Descrição}\label{md_README_autotoc_md1}
-Esse projeto é uma \char`\"{}imitação\char`\"{} do \href{https://www.discord.com}{\texttt{ {\bfseries{Discord}}}}, feita em C++.
+Esse projeto é uma \char`\"{}imitação\char`\"{} do \href{https://www.discord.com}{\texttt{ {\bfseries{Discord}}}}, feita em C++. Esse repositório contém as versões 1 e 2 do projeto.
 
-Essa é a versão 1 do projeto. Nela, é possível cadastrar usuários, fazer login, criar, configurar e entrar em servidores.\hypertarget{md_README_autotoc_md2}{}\doxysection{Autoria}\label{md_README_autotoc_md2}
+Na versão 1, é possível fazer login, criar, configurar e entrar em servidores. A versão 2 adiciona as funcionalidades de canais, permitindo criar canais de texto e voz dentro de um servidor, e enviar mensagens neles.\hypertarget{md_README_autotoc_md2}{}\doxysection{Autoria}\label{md_README_autotoc_md2}
 O projeto foi feito por Pedro Vinícius Oliveira Maciel Pinho.\hypertarget{md_README_autotoc_md3}{}\doxysection{Comandos}\label{md_README_autotoc_md3}
 \hypertarget{md_README_autotoc_md4}{}\doxysubsection{Deslogados}\label{md_README_autotoc_md4}
 Esses comandos podem ser executados caso o usuário não esteja logado.
@@ -35,7 +35,17 @@ Esses comandos só podem ser executados dentro de um servidor.
 \begin{DoxyItemize}
 \item {\ttfamily leave-\/server} sai do servidor.
 \item {\ttfamily list-\/participants} lista os participantes do servidor.
-\end{DoxyItemize}\hypertarget{md_README_autotoc_md8}{}\doxysection{Compilação e execução}\label{md_README_autotoc_md8}
+\end{DoxyItemize}\hypertarget{md_README_autotoc_md8}{}\doxysubsection{Canais}\label{md_README_autotoc_md8}
+Esses comandos só podem ser executados dentro de um canal.
+
+
+\begin{DoxyItemize}
+\item {\ttfamily create-\/channel \texorpdfstring{$<$}{<}nome\texorpdfstring{$>$}{>} \texorpdfstring{$<$}{<}tipo\texorpdfstring{$>$}{>}} cria um canal de tipo voz ou texto. É necessário ser dono do servidor para criar um canal.
+\item {\ttfamily list-\/channels} lista todos os canais do servidor.
+\item {\ttfamily enter-\/channel \texorpdfstring{$<$}{<}nome\texorpdfstring{$>$}{>}} entra em um canal.
+\item {\ttfamily send-\/message \texorpdfstring{$<$}{<}conteúdo\texorpdfstring{$>$}{>}} envia uma mensagem. É necessário estar em um canal para enviar mensagens.
+\item {\ttfamily list-\/messages} lista as mensagens do canal atual\`{}. É necessário estar em um canal para enviar mensagens.
+\end{DoxyItemize}\hypertarget{md_README_autotoc_md9}{}\doxysection{Compilação e execução}\label{md_README_autotoc_md9}
 Para compilar o programa, é utilizado o \href{https://cmake.org}{\texttt{ {\bfseries{CMake}}}}.
 
 Na pasta principal do projeto, execute os comandos a seguir\+:
@@ -48,7 +58,7 @@ Na pasta principal do projeto, execute os comandos a seguir\+:
 
 Após a compilação, o programa pode ser executado com {\ttfamily ./build/program}.
 
-Para utilizar o script de exemplo, explicado abaixo, utilize o comando {\ttfamily ./build/program \texorpdfstring{$<$}{<} script.\+txt}\hypertarget{md_README_autotoc_md9}{}\doxysection{Script de exemplo}\label{md_README_autotoc_md9}
+Para utilizar o script de exemplo, explicado abaixo, utilize o comando {\ttfamily ./build/program \texorpdfstring{$<$}{<} script.\+txt}\hypertarget{md_README_autotoc_md10}{}\doxysection{Script de exemplo}\label{md_README_autotoc_md10}
 O repositório contém um \href{script.txt}{\texttt{ {\bfseries{script}}}} de exemplo, que contém comandos para demonstrar as funcionalidades do programa.
 
 A seguir, está a explicação de cada linha do script\+:
@@ -63,12 +73,31 @@ A seguir, está a explicação de cada linha do script\+:
 \DoxyCodeLine{set-\/server-\/desc\ server1\ "{}server1\ description"{}\ \#\ altera\ a\ descrição\ do\ servidor}
 \DoxyCodeLine{set-\/server-\/invite-\/code\ server1\ invitecode\ \ \ \ \ \#\ adiciona\ o\ código\ de\ convite}
 \DoxyCodeLine{enter-\/server\ server1\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \#\ entra\ no\ servidor\ 1}
+\DoxyCodeLine{create-\/channel\ canal1\ texto\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \#\ cria\ o\ canal\ de\ texto\ 1}
+\DoxyCodeLine{create-\/channel\ canal2\ voz\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \#\ cria\ o\ canal\ de\ voz\ 2}
+\DoxyCodeLine{create-\/channel\ canal3\ texto\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \#\ cria\ o\ canal\ de\ texto\ 3\ }
+\DoxyCodeLine{enter-\/channel\ canal1\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \#\ entra\ no\ canal\ de\ texto\ 1}
+\DoxyCodeLine{send-\/message\ mensagem1\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \#\ envia\ mensagem}
+\DoxyCodeLine{send-\/message\ mensagem2\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \#\ envia\ mensagem}
+\DoxyCodeLine{leave-\/channel\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \#\ sai\ do\ canal}
+\DoxyCodeLine{leave-\/server\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \#\ sai\ do\ servidor}
 \DoxyCodeLine{disconnect\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \#\ desconecta\ do\ sistema}
 \DoxyCodeLine{login\ email2\ password2\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \#\ faz\ login\ no\ usuário\ 2}
 \DoxyCodeLine{list-\/servers\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \#\ lista\ os\ servidores\ (servidor\ 1)}
 \DoxyCodeLine{create-\/server\ server2\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \#\ cria\ o\ servidor\ 2}
 \DoxyCodeLine{enter-\/server\ server1\ invitecode\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \#\ entra\ no\ servidor\ 1\ com\ o\ código}
 \DoxyCodeLine{list-\/participants\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \#\ lista\ os\ participantes\ (usuários\ 1\ e\ 2)}
+\DoxyCodeLine{list-\/channels\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \#\ lista\ os\ canais}
+\DoxyCodeLine{enter-\/channel\ canal1\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \#\ entra\ no\ canal\ de\ texto\ 1}
+\DoxyCodeLine{list-\/messages\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \#\ lista\ as\ mensagens}
+\DoxyCodeLine{send-\/message\ mensagem3\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \#\ envia\ mensagem}
+\DoxyCodeLine{leave-\/channel\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \#\ sai\ do\ canal}
+\DoxyCodeLine{enter-\/channel\ canal2\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \#\ entra\ no\ canal\ de\ voz\ 2}
+\DoxyCodeLine{send-\/message\ mensagem4\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \#\ envia\ mensagem\ 4}
+\DoxyCodeLine{list-\/messages\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \#\ lista\ mensagem\ 4}
+\DoxyCodeLine{send-\/message\ mensagem5\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \#\ envia\ mensagem\ 5}
+\DoxyCodeLine{list-\/messages\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \#\ lista\ apenas\ mensagem\ 5}
+\DoxyCodeLine{leave-\/channel\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \#\ sai\ do\ canal}
 \DoxyCodeLine{disconnect\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \#\ desconecta\ do\ sistema}
 \DoxyCodeLine{login\ email3\ password3\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \#\ faz\ login\ no\ usuário\ 3}
 \DoxyCodeLine{list-\/servers\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \#\ lista\ os\ servidores\ (servidores\ 1\ e\ 2)}
@@ -83,6 +112,6 @@ A seguir, está a explicação de cada linha do script\+:
 \DoxyCodeLine{quit\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \#\ encerra\ o\ programa}
 
 \end{DoxyCode}
-\hypertarget{md_README_autotoc_md10}{}\doxysection{Limitações}\label{md_README_autotoc_md10}
-O programa não verifica se o número de argumentos está correto para cada comando. Por exemplo, se um usuário digitar {\ttfamily create-\/user \texorpdfstring{$<$}{<}email\texorpdfstring{$>$}{>} \texorpdfstring{$<$}{<}senha\texorpdfstring{$>$}{>}}, e não especificar o nome do usuário, o programa criará um usuário com email e senha, mas com o nome vazio, ao invés de causar um erro.\hypertarget{md_README_autotoc_md11}{}\doxysection{Documentação}\label{md_README_autotoc_md11}
+\hypertarget{md_README_autotoc_md11}{}\doxysection{Limitações}\label{md_README_autotoc_md11}
+O programa não verifica se o número de argumentos está correto para cada comando. Por exemplo, se um usuário digitar {\ttfamily create-\/user \texorpdfstring{$<$}{<}email\texorpdfstring{$>$}{>} \texorpdfstring{$<$}{<}senha\texorpdfstring{$>$}{>}}, e não especificar o nome do usuário, o programa criará um usuário com email e senha, mas com o nome vazio, ao invés de causar um erro.\hypertarget{md_README_autotoc_md12}{}\doxysection{Documentação}\label{md_README_autotoc_md12}
 A documentação feita com \href{https://doxygen.nl}{\texttt{ {\bfseries{Doxygen}}}} está disponível na pasta \mbox{[}{\bfseries{docs}}\mbox{]}(docs). Para acessá-\/la, abra o arquivo \href{docs/html/index.html}{\texttt{ {\bfseries{index.\+html}}}} utilizando um navegador. 
