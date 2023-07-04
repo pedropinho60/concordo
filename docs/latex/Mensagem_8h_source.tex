@@ -7,15 +7,21 @@
 \DoxyCodeLine{00003\ }
 \DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <string>}}
 \DoxyCodeLine{00005\ }
-\DoxyCodeLine{00006\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classMensagem}{Mensagem}}\ \{}
-\DoxyCodeLine{00007\ }
-\DoxyCodeLine{00008\ \textcolor{keyword}{private}:}
-\DoxyCodeLine{00009\ \ \ \ \ std::string\ dataHora;}
-\DoxyCodeLine{00010\ \ \ \ \ \textcolor{keywordtype}{int}\ enviadaPor;}
-\DoxyCodeLine{00011\ \ \ \ \ std::string\ conteudo;}
-\DoxyCodeLine{00012\ }
-\DoxyCodeLine{00013\ \};}
+\DoxyCodeLine{00009\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classMensagem}{Mensagem}}\ \{}
+\DoxyCodeLine{00010\ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00011\ \ \ \ \ std::string\ \mbox{\hyperlink{classMensagem_a4528293f2e30645057002b8ad6c2c8cf}{dataHora}};\ \ }
+\DoxyCodeLine{00012\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classMensagem_a0a45f35c79602ab6d735da42fe2ca3d9}{enviadaPor}};\ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00013\ \ \ \ \ std::string\ \mbox{\hyperlink{classMensagem_a97184a35f33bca1c7a1bf6832f1caaec}{conteudo}};\ \ }
 \DoxyCodeLine{00014\ }
-\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ MENSAGEM\_H}}
+\DoxyCodeLine{00015\ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00016\ \ \ \ \ \mbox{\hyperlink{classMensagem}{Mensagem}}()\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00017\ \ \ \ \ \mbox{\hyperlink{classMensagem}{Mensagem}}(std::string\ \mbox{\hyperlink{classMensagem_a4528293f2e30645057002b8ad6c2c8cf}{dataHora}},\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classMensagem_a0a45f35c79602ab6d735da42fe2ca3d9}{enviadaPor}},\ std::string\ \mbox{\hyperlink{classMensagem_a97184a35f33bca1c7a1bf6832f1caaec}{conteudo}});}
+\DoxyCodeLine{00018\ }
+\DoxyCodeLine{00019\ \ \ \ \ std::string\ \mbox{\hyperlink{classMensagem_aaf2acb25086547e7ee8b5340d367323a}{getDataHora}}();}
+\DoxyCodeLine{00020\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classMensagem_aad3ea72d49deed5c0e30a54afe02d6e5}{getEnviadaPor}}();}
+\DoxyCodeLine{00021\ \ \ \ \ std::string\ \mbox{\hyperlink{classMensagem_ac0d190a683028eb0c065c420b1f304bd}{getConteudo}}();}
+\DoxyCodeLine{00022\ \};}
+\DoxyCodeLine{00023\ }
+\DoxyCodeLine{00024\ \textcolor{preprocessor}{\#endif\ \ }\textcolor{comment}{//\ MENSAGEM\_H}}
 
 \end{DoxyCode}

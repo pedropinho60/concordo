@@ -14,6 +14,8 @@ Classe que representa um servidor do sistema.
 \item 
 \mbox{\hyperlink{classServidor_a115c42c8bbb9b27a24949900a7ab19c7}{Servidor}} (std\+::string \mbox{\hyperlink{classServidor_a1141e0835dfba56f4d01f922d2a8b34f}{nome}}, \mbox{\hyperlink{classUsuario}{Usuario}} $\ast$usuario\+Dono)
 \begin{DoxyCompactList}\small\item\em Construtor padrão da classe. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classServidor_a5ac1d9360e9c3010be4023f315cd64c1}{$\sim$\+Servidor}} ()
+\begin{DoxyCompactList}\small\item\em Destrutor padrão da classe. \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{classServidor_af094e7503c4fd8e124679f03eae3f0cd}\label{classServidor_af094e7503c4fd8e124679f03eae3f0cd}} 
 std\+::string {\bfseries get\+Nome} ()
 \begin{DoxyCompactList}\small\item\em Retorna o nome do servidor. \end{DoxyCompactList}\item 
@@ -26,6 +28,9 @@ std\+::string {\bfseries get\+Codigo\+Convite} ()
 \mbox{\Hypertarget{classServidor_a2268bc0e7fb46ff2c7cdd33f35f666c8}\label{classServidor_a2268bc0e7fb46ff2c7cdd33f35f666c8}} 
 const std\+::vector$<$ int $>$ \& {\bfseries get\+Participantes\+Ids} ()
 \begin{DoxyCompactList}\small\item\em Reorna o vetor de ids dos participantes do servidor. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classServidor_adec01296e8019177b20fd03ae6b23a73}\label{classServidor_adec01296e8019177b20fd03ae6b23a73}} 
+const std\+::vector$<$ \mbox{\hyperlink{classCanal}{Canal}} $\ast$ $>$ \& {\bfseries get\+Canais} ()
+\begin{DoxyCompactList}\small\item\em Retorna o vetor de canais do servidor. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{classServidor_a4a232f83c626f7afcd98f1aeed5986f5}{set\+Descricao}} (std\+::string \mbox{\hyperlink{classServidor_a61fecd2b3435d7048d793741c5f3bfdf}{descricao}})
 \begin{DoxyCompactList}\small\item\em Altera a descrição do servidor. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{classServidor_a54f4816fb3fc642d398705fc771bef3a}{set\+Codigo\+Convite}} (std\+::string \mbox{\hyperlink{classServidor_a7448f419ead42bf7f0bd42d5bdc53ec6}{codigo\+Convite}})
@@ -35,7 +40,13 @@ bool \mbox{\hyperlink{classServidor_aa92e5fb54887be66e9f9f4998a857356}{is\+Dono}
 bool \mbox{\hyperlink{classServidor_aa3fd3b1a663dd33238f10fdc48415bad}{is\+Participante}} (\mbox{\hyperlink{classUsuario}{Usuario}} $\ast$usuario)
 \begin{DoxyCompactList}\small\item\em Verifica se o usuário passado é participante do servidor. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{classServidor_a6f8ab7cda948090256d3aa099f67eff5}{adicionar\+Participante}} (\mbox{\hyperlink{classUsuario}{Usuario}} $\ast$usuario)
-\begin{DoxyCompactList}\small\item\em Adiciona um usuário como participante do servidor. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Adiciona um usuário como participante do servidor. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classServidor_a879bce89d59d1e0b68c7ea3bb88060f7}{adicionar\+Canal}} (\mbox{\hyperlink{classCanal}{Canal}} $\ast$canal)
+\begin{DoxyCompactList}\small\item\em Adiciona um canal ao servidor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classCanal}{Canal}} $\ast$ \mbox{\hyperlink{classServidor_af4fc1aab5d0fda7a88f21d5dea1bf6fe}{buscar\+Canal}} (std\+::string \mbox{\hyperlink{classServidor_a1141e0835dfba56f4d01f922d2a8b34f}{nome}})
+\begin{DoxyCompactList}\small\item\em Busca um canal no servidor pelo nome. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classCanal}{Canal}} $\ast$ \mbox{\hyperlink{classServidor_a14ed5b53ba24a070b12fe982448abc3e}{buscar\+Canal}} (std\+::string \mbox{\hyperlink{classServidor_a1141e0835dfba56f4d01f922d2a8b34f}{nome}}, std\+::string tipo)
+\begin{DoxyCompactList}\small\item\em Busca um canal no servidor pelo nome e tipo. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Atributos Privados}
 \begin{DoxyCompactItemize}
 \item 
@@ -80,9 +91,37 @@ Construtor padrão da classe.
 {\em usuario\+Dono} & Usuário dono do servidor. \\
 \hline
 \end{DoxyParams}
+\mbox{\Hypertarget{classServidor_a5ac1d9360e9c3010be4023f315cd64c1}\label{classServidor_a5ac1d9360e9c3010be4023f315cd64c1}} 
+\index{Servidor@{Servidor}!````~Servidor@{$\sim$Servidor}}
+\index{````~Servidor@{$\sim$Servidor}!Servidor@{Servidor}}
+\doxysubsubsection{\texorpdfstring{$\sim$Servidor()}{~Servidor()}}
+{\footnotesize\ttfamily Servidor\+::$\sim$\+Servidor (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}}
+
+
+
+Destrutor padrão da classe. 
+
+\begin{DoxyNote}{Observação}
+Os canais do servidor são deletados pelo destrutor da classe \mbox{\hyperlink{classSistema}{Sistema}}. 
+\end{DoxyNote}
 
 
 \doxysubsection{Documentação das funções}
+\mbox{\Hypertarget{classServidor_a879bce89d59d1e0b68c7ea3bb88060f7}\label{classServidor_a879bce89d59d1e0b68c7ea3bb88060f7}} 
+\index{Servidor@{Servidor}!adicionarCanal@{adicionarCanal}}
+\index{adicionarCanal@{adicionarCanal}!Servidor@{Servidor}}
+\doxysubsubsection{\texorpdfstring{adicionarCanal()}{adicionarCanal()}}
+{\footnotesize\ttfamily void Servidor\+::adicionar\+Canal (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classCanal}{Canal}} $\ast$}]{canal }\end{DoxyParamCaption})}
+
+
+
+Adiciona um canal ao servidor. 
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em canal} & \mbox{\hyperlink{classCanal}{Canal}} a ser adicionado. \\
+\hline
+\end{DoxyParams}
 \mbox{\Hypertarget{classServidor_a6f8ab7cda948090256d3aa099f67eff5}\label{classServidor_a6f8ab7cda948090256d3aa099f67eff5}} 
 \index{Servidor@{Servidor}!adicionarParticipante@{adicionarParticipante}}
 \index{adicionarParticipante@{adicionarParticipante}!Servidor@{Servidor}}
@@ -98,6 +137,44 @@ Adiciona um usuário como participante do servidor.
 {\em usuario} & Usuário a ser adicionado. \\
 \hline
 \end{DoxyParams}
+\mbox{\Hypertarget{classServidor_af4fc1aab5d0fda7a88f21d5dea1bf6fe}\label{classServidor_af4fc1aab5d0fda7a88f21d5dea1bf6fe}} 
+\index{Servidor@{Servidor}!buscarCanal@{buscarCanal}}
+\index{buscarCanal@{buscarCanal}!Servidor@{Servidor}}
+\doxysubsubsection{\texorpdfstring{buscarCanal()}{buscarCanal()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classCanal}{Canal}} $\ast$ Servidor\+::buscar\+Canal (\begin{DoxyParamCaption}\item[{std\+::string}]{nome }\end{DoxyParamCaption})}
+
+
+
+Busca um canal no servidor pelo nome. 
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em nome} & Nome do canal a ser buscado. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Retorna}
+Ponteiro para o canal buscado. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classServidor_a14ed5b53ba24a070b12fe982448abc3e}\label{classServidor_a14ed5b53ba24a070b12fe982448abc3e}} 
+\index{Servidor@{Servidor}!buscarCanal@{buscarCanal}}
+\index{buscarCanal@{buscarCanal}!Servidor@{Servidor}}
+\doxysubsubsection{\texorpdfstring{buscarCanal()}{buscarCanal()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classCanal}{Canal}} $\ast$ Servidor\+::buscar\+Canal (\begin{DoxyParamCaption}\item[{std\+::string}]{nome,  }\item[{std\+::string}]{tipo }\end{DoxyParamCaption})}
+
+
+
+Busca um canal no servidor pelo nome e tipo. 
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em nome} & Nome do canal a ser buscado. \\
+\hline
+{\em tipo} & Tipo do canal a ser buscado. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Retorna}
+Ponteiro para o canal buscado. 
+\end{DoxyReturn}
 \mbox{\Hypertarget{classServidor_aa92e5fb54887be66e9f9f4998a857356}\label{classServidor_aa92e5fb54887be66e9f9f4998a857356}} 
 \index{Servidor@{Servidor}!isDono@{isDono}}
 \index{isDono@{isDono}!Servidor@{Servidor}}

@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['usuario_0',['Usuario',['../classUsuario.html#a6bd9986d5e804cee1ebf3aa195f2478c',1,'Usuario']]]
+  ['removeserver_0',['removeServer',['../classSistema.html#a13df10cdd549f93b79aca4b3a30046e7',1,'Sistema']]]
 ];

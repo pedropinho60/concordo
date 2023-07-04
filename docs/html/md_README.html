@@ -75,10 +75,14 @@ $(function() {
 <div class="textblock"><p>Projeto de "Linguagem de Programação I"</p>
 <h1><a class="anchor" id="autotoc_md1"></a>
 Descrição</h1>
-<p>Esse projeto é uma "imitação" do <a href="https://www.discord.com"><b>Discord</b></a>, feita em C++. Essa é a versão 1 do projeto. Nela, é possível cadastrar usuários, fazer login, criar, configurar e entrar em servidores.</p>
+<p>Esse projeto é uma "imitação" do <a href="https://www.discord.com"><b>Discord</b></a>, feita em C++.</p>
+<p>Essa é a versão 1 do projeto. Nela, é possível cadastrar usuários, fazer login, criar, configurar e entrar em servidores.</p>
 <h1><a class="anchor" id="autotoc_md2"></a>
+Autoria</h1>
+<p>O projeto foi feito por Pedro Vinícius Oliveira Maciel Pinho.</p>
+<h1><a class="anchor" id="autotoc_md3"></a>
 Comandos</h1>
-<h2><a class="anchor" id="autotoc_md3"></a>
+<h2><a class="anchor" id="autotoc_md4"></a>
 Deslogados</h2>
 <p>Esses comandos podem ser executados caso o usuário não esteja logado.</p>
 <ul>
@@ -86,7 +90,7 @@ Deslogados</h2>
 <li><code>create-user &lt;email&gt; &lt;senha&gt; &lt;nome&gt;</code> cria um usuário. Apenas o nome pode ter espaços. Dois usuários não podem ter o mesmo email.</li>
 <li><code>login &lt;email&gt; &lt;senha&gt;</code> faz login em um usuário já criado.</li>
 </ul>
-<h2><a class="anchor" id="autotoc_md4"></a>
+<h2><a class="anchor" id="autotoc_md5"></a>
 Logados</h2>
 <p>Esses comandos só podem ser executados caso o usuário esteja logado.</p>
 <ul>
@@ -95,7 +99,7 @@ Logados</h2>
 <li><code>list-servers</code> lista todos os servidores criados.</li>
 <li><code>enter-server &lt;nome&gt; [codigo]</code> entra no servidor especificado. O código só é necessário caso o servidor tenha um. O dono do servidor pode entrar sem utilizar o código.</li>
 </ul>
-<h2><a class="anchor" id="autotoc_md5"></a>
+<h2><a class="anchor" id="autotoc_md6"></a>
 Dono do servidor</h2>
 <p>Esses comandos só podem ser executados caso você seja o dono do servidor.</p>
 <ul>
@@ -103,14 +107,14 @@ Dono do servidor</h2>
 <li><code>set-server-invite-code &lt;nome&gt; [codigo]</code> altera o código de convite do servidor.</li>
 <li><code>remove-server &lt;nome&gt;</code> remove o servidor.</li>
 </ul>
-<h2><a class="anchor" id="autotoc_md6"></a>
+<h2><a class="anchor" id="autotoc_md7"></a>
 Dentro de um servidor</h2>
 <p>Esses comandos só podem ser executados dentro de um servidor.</p>
 <ul>
 <li><code>leave-server</code> sai do servidor.</li>
 <li><code>list-participants</code> lista os participantes do servidor.</li>
 </ul>
-<h1><a class="anchor" id="autotoc_md7"></a>
+<h1><a class="anchor" id="autotoc_md8"></a>
 Compilação e execução</h1>
 <p>Para compilar o programa, é utilizado o <a href="https://cmake.org"><b>CMake</b></a>.</p>
 <p>Na pasta principal do projeto, execute os comandos a seguir:</p>
@@ -120,7 +124,7 @@ Compilação e execução</h1>
 </ul>
 <p>Após a compilação, o programa pode ser executado com <code>./build/program</code>.</p>
 <p>Para utilizar o script de exemplo, explicado abaixo, utilize o comando <code>./build/program &lt; script.txt</code></p>
-<h1><a class="anchor" id="autotoc_md8"></a>
+<h1><a class="anchor" id="autotoc_md9"></a>
 Script de exemplo</h1>
 <p>O repositório contém um <a href="script.txt"><b>script</b></a> de exemplo, que contém comandos para demonstrar as funcionalidades do programa.</p>
 <p>A seguir, está a explicação de cada linha do script:</p>
@@ -150,9 +154,12 @@ Script de exemplo</h1>
 <div class="line">list-servers                                  # lista os servidores (servidor 2)</div>
 <div class="line">disconnect                                    # desconecta do sistema</div>
 <div class="line">quit                                          # encerra o programa</div>
-</div><!-- fragment --><h1><a class="anchor" id="autotoc_md9"></a>
+</div><!-- fragment --><h1><a class="anchor" id="autotoc_md10"></a>
 Limitações</h1>
-<p>O programa não verifica se o número de argumentos está correto para cada comando. Por exemplo, se um usuário digitar <code>create-user &lt;email&gt; &lt;senha&gt;</code>, e não especificar o nome do usuário, o programa criará um usuário com email e senha, mas com o nome vazio, ao invés de causar um erro. </p>
+<p>O programa não verifica se o número de argumentos está correto para cada comando. Por exemplo, se um usuário digitar <code>create-user &lt;email&gt; &lt;senha&gt;</code>, e não especificar o nome do usuário, o programa criará um usuário com email e senha, mas com o nome vazio, ao invés de causar um erro.</p>
+<h1><a class="anchor" id="autotoc_md11"></a>
+Documentação</h1>
+<p>A documentação feita com <a href="https://doxygen.nl"><b>Doxygen</b></a> está disponível na pasta [<b>docs</b>](docs). Para acessá-la, abra o arquivo <a href="docs/html/index.html"><b>index.html</b></a> utilizando um navegador. </p>
 </div></div><!-- contents -->
 </div><!-- PageDoc -->
 <!-- start footer part -->

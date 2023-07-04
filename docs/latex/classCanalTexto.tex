@@ -1,19 +1,104 @@
 \hypertarget{classCanalTexto}{}\doxysection{Referência da Classe Canal\+Texto}
 \label{classCanalTexto}\index{CanalTexto@{CanalTexto}}
+
+
+Classe que representa um canal de texto, que guarda todas as mensagens enviadas.  
+
+
+
+
+{\ttfamily \#include $<$Canal\+Texto.\+h$>$}
+
 Diagrama de hierarquia para Canal\+Texto\+:\begin{figure}[H]
 \begin{center}
 \leavevmode
 \includegraphics[height=2.000000cm]{classCanalTexto}
 \end{center}
 \end{figure}
+\doxysubsection*{Membros Públicos}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classCanalTexto_ad97a161f2ed2257a6aee4a7edacbd4ad}\label{classCanalTexto_ad97a161f2ed2257a6aee4a7edacbd4ad}} 
+{\bfseries Canal\+Texto} (std\+::string \mbox{\hyperlink{classCanal_ac5e6d80712597bacacd46c0d153c2644}{nome}})
+\begin{DoxyCompactList}\small\item\em Construtor da classe \mbox{\hyperlink{classCanalTexto}{Canal\+Texto}}. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{classCanalTexto_aa404fa97de290cbccd14e5a4be241eaf}{get\+Tipo}} () override
+\begin{DoxyCompactList}\small\item\em Retorna o tipo do canal. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classCanalTexto_a91f213a424024aa48e5c1cf53eb412be}{adicionar\+Mensagem}} (const \mbox{\hyperlink{classMensagem}{Mensagem}} \&mensagem) override
+\begin{DoxyCompactList}\small\item\em Adiciona uma mensagem ao canal. \end{DoxyCompactList}\item 
+std\+::vector$<$ \mbox{\hyperlink{classMensagem}{Mensagem}} $>$ \mbox{\hyperlink{classCanalTexto_a3bdb37ae77517105f3ddb6482e7149d8}{get\+Mensagens}} () override
+\begin{DoxyCompactList}\small\item\em Retorna o vetor das mensagens do canal. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Membros Públicos herdados de \mbox{\hyperlink{classCanal}{Canal}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classCanal_a4e4aee7d89bbe9560c725fe4d799676f}\label{classCanal_a4e4aee7d89bbe9560c725fe4d799676f}} 
+{\bfseries Canal} (std\+::string \mbox{\hyperlink{classCanal_ac5e6d80712597bacacd46c0d153c2644}{nome}})
+\begin{DoxyCompactList}\small\item\em Construtor da classe \mbox{\hyperlink{classCanal}{Canal}}. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classCanal_ac1b8ce05d8102f8b5f6a9b468336b9b7}\label{classCanal_ac1b8ce05d8102f8b5f6a9b468336b9b7}} 
+std\+::string {\bfseries get\+Nome} ()
+\begin{DoxyCompactList}\small\item\em Retorna o nome do canal. \end{DoxyCompactList}\item 
+virtual std\+::string \mbox{\hyperlink{classCanal_aaa8dc7da4e67a3577f13bb66fd993e8c}{get\+Tipo}} ()=0
+\begin{DoxyCompactList}\small\item\em Retorna o tipo do canal. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classCanal_a6684adc2fad42a3f89e3f7c069fa986d}{adicionar\+Mensagem}} (const \mbox{\hyperlink{classMensagem}{Mensagem}} \&mensagem)=0
+\begin{DoxyCompactList}\small\item\em Adiciona uma mensagem ao canal. \end{DoxyCompactList}\item 
+virtual std\+::vector$<$ \mbox{\hyperlink{classMensagem}{Mensagem}} $>$ \mbox{\hyperlink{classCanal_a069dc5d17ba67e6254509350ba7c4712}{get\+Mensagens}} ()=0
+\begin{DoxyCompactList}\small\item\em Retorna um vetor com as mensagens do canal. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Atributos Privados}
 \begin{DoxyCompactItemize}
 \item 
 \mbox{\Hypertarget{classCanalTexto_affb8d63a2557ecdb20f8bde47a0f26b9}\label{classCanalTexto_affb8d63a2557ecdb20f8bde47a0f26b9}} 
 std\+::vector$<$ \mbox{\hyperlink{classMensagem}{Mensagem}} $>$ {\bfseries mensagens}
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Mensagens do canal de texto. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
-A documentação para essa classe foi gerada a partir do seguinte arquivo\+:\begin{DoxyCompactItemize}
+\doxysubsection{Descrição detalhada}
+Classe que representa um canal de texto, que guarda todas as mensagens enviadas. 
+
+\doxysubsection{Documentação das funções}
+\mbox{\Hypertarget{classCanalTexto_a91f213a424024aa48e5c1cf53eb412be}\label{classCanalTexto_a91f213a424024aa48e5c1cf53eb412be}} 
+\index{CanalTexto@{CanalTexto}!adicionarMensagem@{adicionarMensagem}}
+\index{adicionarMensagem@{adicionarMensagem}!CanalTexto@{CanalTexto}}
+\doxysubsubsection{\texorpdfstring{adicionarMensagem()}{adicionarMensagem()}}
+{\footnotesize\ttfamily void Canal\+Texto\+::adicionar\+Mensagem (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classMensagem}{Mensagem}} \&}]{mensagem }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Adiciona uma mensagem ao canal. 
+
+
+
+Implementa \mbox{\hyperlink{classCanal_a6684adc2fad42a3f89e3f7c069fa986d}{Canal}}.
+
+\mbox{\Hypertarget{classCanalTexto_a3bdb37ae77517105f3ddb6482e7149d8}\label{classCanalTexto_a3bdb37ae77517105f3ddb6482e7149d8}} 
+\index{CanalTexto@{CanalTexto}!getMensagens@{getMensagens}}
+\index{getMensagens@{getMensagens}!CanalTexto@{CanalTexto}}
+\doxysubsubsection{\texorpdfstring{getMensagens()}{getMensagens()}}
+{\footnotesize\ttfamily std\+::vector$<$ \mbox{\hyperlink{classMensagem}{Mensagem}} $>$ Canal\+Texto\+::get\+Mensagens (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Retorna o vetor das mensagens do canal. 
+
+
+
+Implementa \mbox{\hyperlink{classCanal_a069dc5d17ba67e6254509350ba7c4712}{Canal}}.
+
+\mbox{\Hypertarget{classCanalTexto_aa404fa97de290cbccd14e5a4be241eaf}\label{classCanalTexto_aa404fa97de290cbccd14e5a4be241eaf}} 
+\index{CanalTexto@{CanalTexto}!getTipo@{getTipo}}
+\index{getTipo@{getTipo}!CanalTexto@{CanalTexto}}
+\doxysubsubsection{\texorpdfstring{getTipo()}{getTipo()}}
+{\footnotesize\ttfamily std\+::string Canal\+Texto\+::get\+Tipo (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Retorna o tipo do canal. 
+
+
+
+Implementa \mbox{\hyperlink{classCanal_aaa8dc7da4e67a3577f13bb66fd993e8c}{Canal}}.
+
+
+
+A documentação para essa classe foi gerada a partir dos seguintes arquivos\+:\begin{DoxyCompactItemize}
 \item 
-include/Canal\+Texto.\+h\end{DoxyCompactItemize}
+include/Canal\+Texto.\+h\item 
+src/Canal\+Texto.\+cpp\end{DoxyCompactItemize}

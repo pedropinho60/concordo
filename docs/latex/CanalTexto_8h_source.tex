@@ -7,16 +7,22 @@
 \DoxyCodeLine{00003\ }
 \DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <vector>}}
 \DoxyCodeLine{00005\ }
-\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ "{}Mensagem.h"{}}}
-\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ "{}Canal.h"{}}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ "{}Canal.h"{}}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ "{}Mensagem.h"{}}}
 \DoxyCodeLine{00008\ }
-\DoxyCodeLine{00009\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classCanalTexto}{CanalTexto}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classCanal}{Canal}}\ \{}
-\DoxyCodeLine{00010\ }
-\DoxyCodeLine{00011\ \textcolor{keyword}{private}:}
-\DoxyCodeLine{00012\ \ \ \ \ std::vector<Mensagem>\ mensagens;}
-\DoxyCodeLine{00013\ }
-\DoxyCodeLine{00014\ \};}
-\DoxyCodeLine{00015\ }
-\DoxyCodeLine{00016\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00013\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classCanalTexto}{CanalTexto}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classCanal}{Canal}}\ \{}
+\DoxyCodeLine{00014\ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00015\ \ \ \ \ std::vector<Mensagem>\ \mbox{\hyperlink{classCanalTexto_affb8d63a2557ecdb20f8bde47a0f26b9}{mensagens}};\ }
+\DoxyCodeLine{00016\ }
+\DoxyCodeLine{00017\ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00018\ \ \ \ \ \mbox{\hyperlink{classCanalTexto}{CanalTexto}}(std::string\ \mbox{\hyperlink{classCanal_ac5e6d80712597bacacd46c0d153c2644}{nome}});}
+\DoxyCodeLine{00019\ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{classCanalTexto}{\string~CanalTexto}}()\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00020\ \ \ \ \ std::string\ \mbox{\hyperlink{classCanalTexto_aa404fa97de290cbccd14e5a4be241eaf}{getTipo}}()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00021\ }
+\DoxyCodeLine{00022\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classCanalTexto_a91f213a424024aa48e5c1cf53eb412be}{adicionarMensagem}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classMensagem}{Mensagem}}\&\ mensagem)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00023\ \ \ \ \ std::vector<Mensagem>\ \mbox{\hyperlink{classCanalTexto_a3bdb37ae77517105f3ddb6482e7149d8}{getMensagens}}()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00024\ \};}
+\DoxyCodeLine{00025\ }
+\DoxyCodeLine{00026\ \textcolor{preprocessor}{\#endif}}
 
 \end{DoxyCode}

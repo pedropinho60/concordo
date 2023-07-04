@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['nome_0',['nome',['../classServidor.html#a1141e0835dfba56f4d01f922d2a8b34f',1,'Servidor::nome()'],['../classUsuario.html#a6fb4c3a94f863e6d7e12821cb2362e28',1,'Usuario::nome()']]]
+  ['mensagem_0',['Mensagem',['../classMensagem.html',1,'Mensagem'],['../classMensagem.html#a00ba120f6d755e2ad8d958bf39ad15e9',1,'Mensagem::Mensagem()']]],
+  ['mensagens_1',['mensagens',['../classCanalTexto.html#affb8d63a2557ecdb20f8bde47a0f26b9',1,'CanalTexto']]]
 ];

@@ -79,20 +79,30 @@ $(function() {
 <div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#ifndef CANAL_VOZ_H</span></div>
 <div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="preprocessor">#define CANAL_VOZ_H</span></div>
 <div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span> </div>
-<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#include &quot;Mensagem.h&quot;</span></div>
-<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#include &quot;Canal.h&quot;</span></div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#include &quot;Canal.h&quot;</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#include &quot;Mensagem.h&quot;</span></div>
 <div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span> </div>
-<div class="line"><a id="l00007" name="l00007"></a><span class="lineno"><a class="line" href="classCanalVoz.html">    7</a></span><span class="keyword">class </span><a class="code hl_class" href="classCanalVoz.html">CanalVoz</a> : <span class="keyword">public</span> <a class="code hl_class" href="classCanal.html">Canal</a> {</div>
-<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span> </div>
-<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="keyword">private</span>:</div>
-<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span>    <a class="code hl_class" href="classMensagem.html">Mensagem</a> ultimaMensagem;</div>
-<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span> </div>
-<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span>};</div>
-<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span> </div>
-<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="preprocessor">#endif </span><span class="comment">// CANAL_VOZ_H</span></div>
-<div class="ttc" id="aclassCanalVoz_html"><div class="ttname"><a href="classCanalVoz.html">CanalVoz</a></div><div class="ttdef"><b>Definition:</b> CanalVoz.h:7</div></div>
-<div class="ttc" id="aclassCanal_html"><div class="ttname"><a href="classCanal.html">Canal</a></div><div class="ttdef"><b>Definition:</b> Canal.h:6</div></div>
-<div class="ttc" id="aclassMensagem_html"><div class="ttname"><a href="classMensagem.html">Mensagem</a></div><div class="ttdef"><b>Definition:</b> Mensagem.h:6</div></div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno"><a class="line" href="classCanalVoz.html">   11</a></span><span class="keyword">class </span><a class="code hl_class" href="classCanalVoz.html">CanalVoz</a> : <span class="keyword">public</span> <a class="code hl_class" href="classCanal.html">Canal</a> {</div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span>   <span class="keyword">private</span>:</div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno"><a class="line" href="classCanalVoz.html#a5980806ae2e2360d98c2ef9539a0a8f1">   13</a></span>    <a class="code hl_class" href="classMensagem.html">Mensagem</a> <a class="code hl_variable" href="classCanalVoz.html#a5980806ae2e2360d98c2ef9539a0a8f1">ultimaMensagem</a>;  </div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span> </div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>   <span class="keyword">public</span>:</div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>    <a class="code hl_class" href="classCanalVoz.html">CanalVoz</a>(std::string <a class="code hl_variable" href="classCanal.html#ac5e6d80712597bacacd46c0d153c2644">nome</a>);</div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>    <span class="keyword">virtual</span> <a class="code hl_class" href="classCanalVoz.html">~CanalVoz</a>() = <span class="keywordflow">default</span>;</div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>    std::string <a class="code hl_function" href="classCanalVoz.html#abebae791a2bd07d6a258035b0bac3c15">getTipo</a>() <span class="keyword">override</span>;</div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="classCanalVoz.html#aa6d04891e9b7c464e81a4ab8308652c4">adicionarMensagem</a>(<span class="keyword">const</span> <a class="code hl_class" href="classMensagem.html">Mensagem</a>&amp; mensagem) <span class="keyword">override</span>;</div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>    std::vector&lt;Mensagem&gt; <a class="code hl_function" href="classCanalVoz.html#af70f8630c7f89b75fc8d48f5fa69da97">getMensagens</a>() <span class="keyword">override</span>;</div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>};</div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span> </div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span><span class="preprocessor">#endif  </span><span class="comment">// CANAL_VOZ_H</span></div>
+<div class="ttc" id="aclassCanalVoz_html"><div class="ttname"><a href="classCanalVoz.html">CanalVoz</a></div><div class="ttdoc">Classe que representa um canal de voz, que guarda a última mensagem enviada.</div><div class="ttdef"><b>Definition:</b> CanalVoz.h:11</div></div>
+<div class="ttc" id="aclassCanalVoz_html_a5980806ae2e2360d98c2ef9539a0a8f1"><div class="ttname"><a href="classCanalVoz.html#a5980806ae2e2360d98c2ef9539a0a8f1">CanalVoz::ultimaMensagem</a></div><div class="ttdeci">Mensagem ultimaMensagem</div><div class="ttdoc">Última mensagem enviada no canal de voz.</div><div class="ttdef"><b>Definition:</b> CanalVoz.h:13</div></div>
+<div class="ttc" id="aclassCanalVoz_html_aa6d04891e9b7c464e81a4ab8308652c4"><div class="ttname"><a href="classCanalVoz.html#aa6d04891e9b7c464e81a4ab8308652c4">CanalVoz::adicionarMensagem</a></div><div class="ttdeci">void adicionarMensagem(const Mensagem &amp;mensagem) override</div><div class="ttdoc">Substitui a última mensagem enviada no canal.</div><div class="ttdef"><b>Definition:</b> CanalVoz.cpp:15</div></div>
+<div class="ttc" id="aclassCanalVoz_html_abebae791a2bd07d6a258035b0bac3c15"><div class="ttname"><a href="classCanalVoz.html#abebae791a2bd07d6a258035b0bac3c15">CanalVoz::getTipo</a></div><div class="ttdeci">std::string getTipo() override</div><div class="ttdoc">Retorna o tipo do canal.</div><div class="ttdef"><b>Definition:</b> CanalVoz.cpp:12</div></div>
+<div class="ttc" id="aclassCanalVoz_html_af70f8630c7f89b75fc8d48f5fa69da97"><div class="ttname"><a href="classCanalVoz.html#af70f8630c7f89b75fc8d48f5fa69da97">CanalVoz::getMensagens</a></div><div class="ttdeci">std::vector&lt; Mensagem &gt; getMensagens() override</div><div class="ttdoc">Retorna um vetor com a última mensagem enviada no canal.</div><div class="ttdef"><b>Definition:</b> CanalVoz.cpp:20</div></div>
+<div class="ttc" id="aclassCanal_html"><div class="ttname"><a href="classCanal.html">Canal</a></div><div class="ttdoc">Classe que representa um canal de voz ou de texto.</div><div class="ttdef"><b>Definition:</b> Canal.h:10</div></div>
+<div class="ttc" id="aclassCanal_html_ac5e6d80712597bacacd46c0d153c2644"><div class="ttname"><a href="classCanal.html#ac5e6d80712597bacacd46c0d153c2644">Canal::nome</a></div><div class="ttdeci">std::string nome</div><div class="ttdoc">Nome do canal.</div><div class="ttdef"><b>Definition:</b> Canal.h:12</div></div>
+<div class="ttc" id="aclassMensagem_html"><div class="ttname"><a href="classMensagem.html">Mensagem</a></div><div class="ttdoc">Classe que representa uma mensagem enviada por um usuário.</div><div class="ttdef"><b>Definition:</b> Mensagem.h:9</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

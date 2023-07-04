@@ -70,30 +70,149 @@ $(function() {
 </div><!-- top -->
 <div class="header">
   <div class="summary">
+<a href="#pub-methods">Membros Públicos</a> &#124;
 <a href="#pri-attribs">Atributos Privados</a> &#124;
 <a href="classCanal-members.html">Lista de todos os Membros</a>  </div>
-  <div class="headertitle"><div class="title">Referência da Classe Canal</div></div>
+  <div class="headertitle"><div class="title">Referência da Classe Canal<span class="mlabels"><span class="mlabel">abstract</span></span></div></div>
 </div><!--header-->
 <div class="contents">
+
+<p>Classe que representa um canal de voz ou de texto.  
+ <a href="classCanal.html#details">Mais...</a></p>
+
+<p><code>#include &lt;<a class="el" href="Canal_8h_source.html">Canal.h</a>&gt;</code></p>
 <div class="dynheader">
 Diagrama de hierarquia para Canal:</div>
 <div class="dyncontent">
  <div class="center">
   <img src="classCanal.png" usemap="#Canal_map" alt=""/>
   <map id="Canal_map" name="Canal_map">
-<area href="classCanalTexto.html" alt="CanalTexto" shape="rect" coords="0,56,75,80"/>
-<area href="classCanalVoz.html" alt="CanalVoz" shape="rect" coords="85,56,160,80"/>
+<area href="classCanalTexto.html" title="Classe que representa um canal de texto, que guarda todas as mensagens enviadas." alt="CanalTexto" shape="rect" coords="0,56,75,80"/>
+<area href="classCanalVoz.html" title="Classe que representa um canal de voz, que guarda a última mensagem enviada." alt="CanalVoz" shape="rect" coords="85,56,160,80"/>
   </map>
 </div></div>
 <table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
+Membros Públicos</h2></td></tr>
+<tr class="memitem:a4e4aee7d89bbe9560c725fe4d799676f"><td class="memItemLeft" align="right" valign="top"><a id="a4e4aee7d89bbe9560c725fe4d799676f" name="a4e4aee7d89bbe9560c725fe4d799676f"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>Canal</b> (std::string <a class="el" href="classCanal.html#ac5e6d80712597bacacd46c0d153c2644">nome</a>)</td></tr>
+<tr class="memdesc:a4e4aee7d89bbe9560c725fe4d799676f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construtor da classe <a class="el" href="classCanal.html" title="Classe que representa um canal de voz ou de texto.">Canal</a>. <br /></td></tr>
+<tr class="separator:a4e4aee7d89bbe9560c725fe4d799676f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac1b8ce05d8102f8b5f6a9b468336b9b7"><td class="memItemLeft" align="right" valign="top"><a id="ac1b8ce05d8102f8b5f6a9b468336b9b7" name="ac1b8ce05d8102f8b5f6a9b468336b9b7"></a>
+std::string&#160;</td><td class="memItemRight" valign="bottom"><b>getNome</b> ()</td></tr>
+<tr class="memdesc:ac1b8ce05d8102f8b5f6a9b468336b9b7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retorna o nome do canal. <br /></td></tr>
+<tr class="separator:ac1b8ce05d8102f8b5f6a9b468336b9b7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aaa8dc7da4e67a3577f13bb66fd993e8c"><td class="memItemLeft" align="right" valign="top">virtual std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCanal.html#aaa8dc7da4e67a3577f13bb66fd993e8c">getTipo</a> ()=0</td></tr>
+<tr class="memdesc:aaa8dc7da4e67a3577f13bb66fd993e8c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retorna o tipo do canal.  <br /></td></tr>
+<tr class="separator:aaa8dc7da4e67a3577f13bb66fd993e8c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6684adc2fad42a3f89e3f7c069fa986d"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCanal.html#a6684adc2fad42a3f89e3f7c069fa986d">adicionarMensagem</a> (const <a class="el" href="classMensagem.html">Mensagem</a> &amp;mensagem)=0</td></tr>
+<tr class="memdesc:a6684adc2fad42a3f89e3f7c069fa986d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Adiciona uma mensagem ao canal.  <br /></td></tr>
+<tr class="separator:a6684adc2fad42a3f89e3f7c069fa986d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a069dc5d17ba67e6254509350ba7c4712"><td class="memItemLeft" align="right" valign="top">virtual std::vector&lt; <a class="el" href="classMensagem.html">Mensagem</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCanal.html#a069dc5d17ba67e6254509350ba7c4712">getMensagens</a> ()=0</td></tr>
+<tr class="memdesc:a069dc5d17ba67e6254509350ba7c4712"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retorna um vetor com as mensagens do canal.  <br /></td></tr>
+<tr class="separator:a069dc5d17ba67e6254509350ba7c4712"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
 Atributos Privados</h2></td></tr>
 <tr class="memitem:ac5e6d80712597bacacd46c0d153c2644"><td class="memItemLeft" align="right" valign="top"><a id="ac5e6d80712597bacacd46c0d153c2644" name="ac5e6d80712597bacacd46c0d153c2644"></a>
 std::string&#160;</td><td class="memItemRight" valign="bottom"><b>nome</b></td></tr>
+<tr class="memdesc:ac5e6d80712597bacacd46c0d153c2644"><td class="mdescLeft">&#160;</td><td class="mdescRight">Nome do canal. <br /></td></tr>
 <tr class="separator:ac5e6d80712597bacacd46c0d153c2644"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<hr/>A documentação para essa classe foi gerada a partir do seguinte arquivo:<ul>
+<a name="details" id="details"></a><h2 class="groupheader">Descrição detalhada</h2>
+<div class="textblock"><p>Classe que representa um canal de voz ou de texto. </p>
+</div><h2 class="groupheader">Documentação das funções</h2>
+<a id="a6684adc2fad42a3f89e3f7c069fa986d" name="a6684adc2fad42a3f89e3f7c069fa986d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6684adc2fad42a3f89e3f7c069fa986d">&#9670;&#160;</a></span>adicionarMensagem()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void Canal::adicionarMensagem </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classMensagem.html">Mensagem</a> &amp;&#160;</td>
+          <td class="paramname"><em>mensagem</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Adiciona uma mensagem ao canal. </p>
+
+<p>Implementado por <a class="el" href="classCanalTexto.html#a91f213a424024aa48e5c1cf53eb412be">CanalTexto</a> e <a class="el" href="classCanalVoz.html#aa6d04891e9b7c464e81a4ab8308652c4">CanalVoz</a>.</p>
+
+</div>
+</div>
+<a id="a069dc5d17ba67e6254509350ba7c4712" name="a069dc5d17ba67e6254509350ba7c4712"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a069dc5d17ba67e6254509350ba7c4712">&#9670;&#160;</a></span>getMensagens()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual std::vector&lt; <a class="el" href="classMensagem.html">Mensagem</a> &gt; Canal::getMensagens </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Retorna um vetor com as mensagens do canal. </p>
+
+<p>Implementado por <a class="el" href="classCanalTexto.html#a3bdb37ae77517105f3ddb6482e7149d8">CanalTexto</a> e <a class="el" href="classCanalVoz.html#af70f8630c7f89b75fc8d48f5fa69da97">CanalVoz</a>.</p>
+
+</div>
+</div>
+<a id="aaa8dc7da4e67a3577f13bb66fd993e8c" name="aaa8dc7da4e67a3577f13bb66fd993e8c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aaa8dc7da4e67a3577f13bb66fd993e8c">&#9670;&#160;</a></span>getTipo()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual std::string Canal::getTipo </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Retorna o tipo do canal. </p>
+
+<p>Implementado por <a class="el" href="classCanalTexto.html#aa404fa97de290cbccd14e5a4be241eaf">CanalTexto</a> e <a class="el" href="classCanalVoz.html#abebae791a2bd07d6a258035b0bac3c15">CanalVoz</a>.</p>
+
+</div>
+</div>
+<hr/>A documentação para essa classe foi gerada a partir dos seguintes arquivos:<ul>
 <li>include/<a class="el" href="Canal_8h_source.html">Canal.h</a></li>
+<li>src/Canal.cpp</li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->

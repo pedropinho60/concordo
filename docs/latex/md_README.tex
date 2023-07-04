@@ -1,6 +1,9 @@
 Projeto de \char`\"{}\+Linguagem de Programação I\char`\"{}\hypertarget{md_README_autotoc_md1}{}\doxysection{Descrição}\label{md_README_autotoc_md1}
-Esse projeto é uma \char`\"{}imitação\char`\"{} do \href{https://www.discord.com}{\texttt{ {\bfseries{Discord}}}}, feita em C++. Essa é a versão 1 do projeto. Nela, é possível cadastrar usuários, fazer login, criar, configurar e entrar em servidores.\hypertarget{md_README_autotoc_md2}{}\doxysection{Comandos}\label{md_README_autotoc_md2}
-\hypertarget{md_README_autotoc_md3}{}\doxysubsection{Deslogados}\label{md_README_autotoc_md3}
+Esse projeto é uma \char`\"{}imitação\char`\"{} do \href{https://www.discord.com}{\texttt{ {\bfseries{Discord}}}}, feita em C++.
+
+Essa é a versão 1 do projeto. Nela, é possível cadastrar usuários, fazer login, criar, configurar e entrar em servidores.\hypertarget{md_README_autotoc_md2}{}\doxysection{Autoria}\label{md_README_autotoc_md2}
+O projeto foi feito por Pedro Vinícius Oliveira Maciel Pinho.\hypertarget{md_README_autotoc_md3}{}\doxysection{Comandos}\label{md_README_autotoc_md3}
+\hypertarget{md_README_autotoc_md4}{}\doxysubsection{Deslogados}\label{md_README_autotoc_md4}
 Esses comandos podem ser executados caso o usuário não esteja logado.
 
 
@@ -8,7 +11,7 @@ Esses comandos podem ser executados caso o usuário não esteja logado.
 \item {\ttfamily quit} sai do sistema.
 \item {\ttfamily create-\/user \texorpdfstring{$<$}{<}email\texorpdfstring{$>$}{>} \texorpdfstring{$<$}{<}senha\texorpdfstring{$>$}{>} \texorpdfstring{$<$}{<}nome\texorpdfstring{$>$}{>}} cria um usuário. Apenas o nome pode ter espaços. Dois usuários não podem ter o mesmo email.
 \item {\ttfamily login \texorpdfstring{$<$}{<}email\texorpdfstring{$>$}{>} \texorpdfstring{$<$}{<}senha\texorpdfstring{$>$}{>}} faz login em um usuário já criado.
-\end{DoxyItemize}\hypertarget{md_README_autotoc_md4}{}\doxysubsection{Logados}\label{md_README_autotoc_md4}
+\end{DoxyItemize}\hypertarget{md_README_autotoc_md5}{}\doxysubsection{Logados}\label{md_README_autotoc_md5}
 Esses comandos só podem ser executados caso o usuário esteja logado.
 
 
@@ -17,7 +20,7 @@ Esses comandos só podem ser executados caso o usuário esteja logado.
 \item {\ttfamily create-\/server \texorpdfstring{$<$}{<}nome\texorpdfstring{$>$}{>}} cria um servidor.
 \item {\ttfamily list-\/servers} lista todos os servidores criados.
 \item {\ttfamily enter-\/server \texorpdfstring{$<$}{<}nome\texorpdfstring{$>$}{>} \mbox{[}codigo\mbox{]}} entra no servidor especificado. O código só é necessário caso o servidor tenha um. O dono do servidor pode entrar sem utilizar o código.
-\end{DoxyItemize}\hypertarget{md_README_autotoc_md5}{}\doxysubsection{Dono do servidor}\label{md_README_autotoc_md5}
+\end{DoxyItemize}\hypertarget{md_README_autotoc_md6}{}\doxysubsection{Dono do servidor}\label{md_README_autotoc_md6}
 Esses comandos só podem ser executados caso você seja o dono do servidor.
 
 
@@ -25,14 +28,14 @@ Esses comandos só podem ser executados caso você seja o dono do servidor.
 \item {\ttfamily set-\/server-\/desc \texorpdfstring{$<$}{<}nome\texorpdfstring{$>$}{>} \char`\"{}$<$descrição$>$\char`\"{}} altera a descrição do servidor.
 \item {\ttfamily set-\/server-\/invite-\/code \texorpdfstring{$<$}{<}nome\texorpdfstring{$>$}{>} \mbox{[}codigo\mbox{]}} altera o código de convite do servidor.
 \item {\ttfamily remove-\/server \texorpdfstring{$<$}{<}nome\texorpdfstring{$>$}{>}} remove o servidor.
-\end{DoxyItemize}\hypertarget{md_README_autotoc_md6}{}\doxysubsection{Dentro de um servidor}\label{md_README_autotoc_md6}
+\end{DoxyItemize}\hypertarget{md_README_autotoc_md7}{}\doxysubsection{Dentro de um servidor}\label{md_README_autotoc_md7}
 Esses comandos só podem ser executados dentro de um servidor.
 
 
 \begin{DoxyItemize}
 \item {\ttfamily leave-\/server} sai do servidor.
 \item {\ttfamily list-\/participants} lista os participantes do servidor.
-\end{DoxyItemize}\hypertarget{md_README_autotoc_md7}{}\doxysection{Compilação e execução}\label{md_README_autotoc_md7}
+\end{DoxyItemize}\hypertarget{md_README_autotoc_md8}{}\doxysection{Compilação e execução}\label{md_README_autotoc_md8}
 Para compilar o programa, é utilizado o \href{https://cmake.org}{\texttt{ {\bfseries{CMake}}}}.
 
 Na pasta principal do projeto, execute os comandos a seguir\+:
@@ -45,7 +48,7 @@ Na pasta principal do projeto, execute os comandos a seguir\+:
 
 Após a compilação, o programa pode ser executado com {\ttfamily ./build/program}.
 
-Para utilizar o script de exemplo, explicado abaixo, utilize o comando {\ttfamily ./build/program \texorpdfstring{$<$}{<} script.\+txt}\hypertarget{md_README_autotoc_md8}{}\doxysection{Script de exemplo}\label{md_README_autotoc_md8}
+Para utilizar o script de exemplo, explicado abaixo, utilize o comando {\ttfamily ./build/program \texorpdfstring{$<$}{<} script.\+txt}\hypertarget{md_README_autotoc_md9}{}\doxysection{Script de exemplo}\label{md_README_autotoc_md9}
 O repositório contém um \href{script.txt}{\texttt{ {\bfseries{script}}}} de exemplo, que contém comandos para demonstrar as funcionalidades do programa.
 
 A seguir, está a explicação de cada linha do script\+:
@@ -80,5 +83,6 @@ A seguir, está a explicação de cada linha do script\+:
 \DoxyCodeLine{quit\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \#\ encerra\ o\ programa}
 
 \end{DoxyCode}
-\hypertarget{md_README_autotoc_md9}{}\doxysection{Limitações}\label{md_README_autotoc_md9}
-O programa não verifica se o número de argumentos está correto para cada comando. Por exemplo, se um usuário digitar {\ttfamily create-\/user \texorpdfstring{$<$}{<}email\texorpdfstring{$>$}{>} \texorpdfstring{$<$}{<}senha\texorpdfstring{$>$}{>}}, e não especificar o nome do usuário, o programa criará um usuário com email e senha, mas com o nome vazio, ao invés de causar um erro. 
+\hypertarget{md_README_autotoc_md10}{}\doxysection{Limitações}\label{md_README_autotoc_md10}
+O programa não verifica se o número de argumentos está correto para cada comando. Por exemplo, se um usuário digitar {\ttfamily create-\/user \texorpdfstring{$<$}{<}email\texorpdfstring{$>$}{>} \texorpdfstring{$<$}{<}senha\texorpdfstring{$>$}{>}}, e não especificar o nome do usuário, o programa criará um usuário com email e senha, mas com o nome vazio, ao invés de causar um erro.\hypertarget{md_README_autotoc_md11}{}\doxysection{Documentação}\label{md_README_autotoc_md11}
+A documentação feita com \href{https://doxygen.nl}{\texttt{ {\bfseries{Doxygen}}}} está disponível na pasta \mbox{[}{\bfseries{docs}}\mbox{]}(docs). Para acessá-\/la, abra o arquivo \href{docs/html/index.html}{\texttt{ {\bfseries{index.\+html}}}} utilizando um navegador. 

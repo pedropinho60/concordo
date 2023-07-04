@@ -1,5 +1,6 @@
 var searchData=
 [
-  ['email_0',['email',['../classUsuario.html#aa068d5dd3ec8f4cb1f45147d6ee74f1b',1,'Usuario']]],
-  ['enterserver_1',['enterServer',['../classSistema.html#abdaf76b6b392965f647d73c1254e46a9',1,'Sistema']]]
+  ['datahora_0',['dataHora',['../classMensagem.html#a4528293f2e30645057002b8ad6c2c8cf',1,'Mensagem']]],
+  ['descricao_1',['descricao',['../classServidor.html#a61fecd2b3435d7048d793741c5f3bfdf',1,'Servidor']]],
+  ['disconnect_2',['disconnect',['../classSistema.html#a8a4109e22701b10eeddc0b53ce1a801d',1,'Sistema']]]
 ];

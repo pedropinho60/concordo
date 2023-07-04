@@ -1,19 +1,92 @@
 \hypertarget{classCanal}{}\doxysection{Referência da Classe Canal}
 \label{classCanal}\index{Canal@{Canal}}
+
+
+Classe que representa um canal de voz ou de texto.  
+
+
+
+
+{\ttfamily \#include $<$Canal.\+h$>$}
+
 Diagrama de hierarquia para Canal\+:\begin{figure}[H]
 \begin{center}
 \leavevmode
 \includegraphics[height=2.000000cm]{classCanal}
 \end{center}
 \end{figure}
+\doxysubsection*{Membros Públicos}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classCanal_a4e4aee7d89bbe9560c725fe4d799676f}\label{classCanal_a4e4aee7d89bbe9560c725fe4d799676f}} 
+{\bfseries Canal} (std\+::string \mbox{\hyperlink{classCanal_ac5e6d80712597bacacd46c0d153c2644}{nome}})
+\begin{DoxyCompactList}\small\item\em Construtor da classe \mbox{\hyperlink{classCanal}{Canal}}. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classCanal_ac1b8ce05d8102f8b5f6a9b468336b9b7}\label{classCanal_ac1b8ce05d8102f8b5f6a9b468336b9b7}} 
+std\+::string {\bfseries get\+Nome} ()
+\begin{DoxyCompactList}\small\item\em Retorna o nome do canal. \end{DoxyCompactList}\item 
+virtual std\+::string \mbox{\hyperlink{classCanal_aaa8dc7da4e67a3577f13bb66fd993e8c}{get\+Tipo}} ()=0
+\begin{DoxyCompactList}\small\item\em Retorna o tipo do canal. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classCanal_a6684adc2fad42a3f89e3f7c069fa986d}{adicionar\+Mensagem}} (const \mbox{\hyperlink{classMensagem}{Mensagem}} \&mensagem)=0
+\begin{DoxyCompactList}\small\item\em Adiciona uma mensagem ao canal. \end{DoxyCompactList}\item 
+virtual std\+::vector$<$ \mbox{\hyperlink{classMensagem}{Mensagem}} $>$ \mbox{\hyperlink{classCanal_a069dc5d17ba67e6254509350ba7c4712}{get\+Mensagens}} ()=0
+\begin{DoxyCompactList}\small\item\em Retorna um vetor com as mensagens do canal. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Atributos Privados}
 \begin{DoxyCompactItemize}
 \item 
 \mbox{\Hypertarget{classCanal_ac5e6d80712597bacacd46c0d153c2644}\label{classCanal_ac5e6d80712597bacacd46c0d153c2644}} 
 std\+::string {\bfseries nome}
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Nome do canal. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
-A documentação para essa classe foi gerada a partir do seguinte arquivo\+:\begin{DoxyCompactItemize}
+\doxysubsection{Descrição detalhada}
+Classe que representa um canal de voz ou de texto. 
+
+\doxysubsection{Documentação das funções}
+\mbox{\Hypertarget{classCanal_a6684adc2fad42a3f89e3f7c069fa986d}\label{classCanal_a6684adc2fad42a3f89e3f7c069fa986d}} 
+\index{Canal@{Canal}!adicionarMensagem@{adicionarMensagem}}
+\index{adicionarMensagem@{adicionarMensagem}!Canal@{Canal}}
+\doxysubsubsection{\texorpdfstring{adicionarMensagem()}{adicionarMensagem()}}
+{\footnotesize\ttfamily virtual void Canal\+::adicionar\+Mensagem (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classMensagem}{Mensagem}} \&}]{mensagem }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Adiciona uma mensagem ao canal. 
+
+
+
+Implementado por \mbox{\hyperlink{classCanalTexto_a91f213a424024aa48e5c1cf53eb412be}{Canal\+Texto}} e \mbox{\hyperlink{classCanalVoz_aa6d04891e9b7c464e81a4ab8308652c4}{Canal\+Voz}}.
+
+\mbox{\Hypertarget{classCanal_a069dc5d17ba67e6254509350ba7c4712}\label{classCanal_a069dc5d17ba67e6254509350ba7c4712}} 
+\index{Canal@{Canal}!getMensagens@{getMensagens}}
+\index{getMensagens@{getMensagens}!Canal@{Canal}}
+\doxysubsubsection{\texorpdfstring{getMensagens()}{getMensagens()}}
+{\footnotesize\ttfamily virtual std\+::vector$<$ \mbox{\hyperlink{classMensagem}{Mensagem}} $>$ Canal\+::get\+Mensagens (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Retorna um vetor com as mensagens do canal. 
+
+
+
+Implementado por \mbox{\hyperlink{classCanalTexto_a3bdb37ae77517105f3ddb6482e7149d8}{Canal\+Texto}} e \mbox{\hyperlink{classCanalVoz_af70f8630c7f89b75fc8d48f5fa69da97}{Canal\+Voz}}.
+
+\mbox{\Hypertarget{classCanal_aaa8dc7da4e67a3577f13bb66fd993e8c}\label{classCanal_aaa8dc7da4e67a3577f13bb66fd993e8c}} 
+\index{Canal@{Canal}!getTipo@{getTipo}}
+\index{getTipo@{getTipo}!Canal@{Canal}}
+\doxysubsubsection{\texorpdfstring{getTipo()}{getTipo()}}
+{\footnotesize\ttfamily virtual std\+::string Canal\+::get\+Tipo (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Retorna o tipo do canal. 
+
+
+
+Implementado por \mbox{\hyperlink{classCanalTexto_aa404fa97de290cbccd14e5a4be241eaf}{Canal\+Texto}} e \mbox{\hyperlink{classCanalVoz_abebae791a2bd07d6a258035b0bac3c15}{Canal\+Voz}}.
+
+
+
+A documentação para essa classe foi gerada a partir dos seguintes arquivos\+:\begin{DoxyCompactItemize}
 \item 
-include/Canal.\+h\end{DoxyCompactItemize}
+include/Canal.\+h\item 
+src/Canal.\+cpp\end{DoxyCompactItemize}

@@ -5,16 +5,21 @@
 \DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ CANAL\_VOZ\_H}}
 \DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ CANAL\_VOZ\_H}}
 \DoxyCodeLine{00003\ }
-\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ "{}Mensagem.h"{}}}
-\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ "{}Canal.h"{}}}
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ "{}Canal.h"{}}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ "{}Mensagem.h"{}}}
 \DoxyCodeLine{00006\ }
-\DoxyCodeLine{00007\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classCanalVoz}{CanalVoz}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classCanal}{Canal}}\ \{}
-\DoxyCodeLine{00008\ }
-\DoxyCodeLine{00009\ \textcolor{keyword}{private}:}
-\DoxyCodeLine{00010\ \ \ \ \ \mbox{\hyperlink{classMensagem}{Mensagem}}\ ultimaMensagem;}
-\DoxyCodeLine{00011\ }
-\DoxyCodeLine{00012\ \};}
-\DoxyCodeLine{00013\ }
-\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ CANAL\_VOZ\_H}}
+\DoxyCodeLine{00011\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classCanalVoz}{CanalVoz}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classCanal}{Canal}}\ \{}
+\DoxyCodeLine{00012\ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00013\ \ \ \ \ \mbox{\hyperlink{classMensagem}{Mensagem}}\ \mbox{\hyperlink{classCanalVoz_a5980806ae2e2360d98c2ef9539a0a8f1}{ultimaMensagem}};\ \ }
+\DoxyCodeLine{00014\ }
+\DoxyCodeLine{00015\ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00016\ \ \ \ \ \mbox{\hyperlink{classCanalVoz}{CanalVoz}}(std::string\ \mbox{\hyperlink{classCanal_ac5e6d80712597bacacd46c0d153c2644}{nome}});}
+\DoxyCodeLine{00017\ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{classCanalVoz}{\string~CanalVoz}}()\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00018\ \ \ \ \ std::string\ \mbox{\hyperlink{classCanalVoz_abebae791a2bd07d6a258035b0bac3c15}{getTipo}}()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00019\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classCanalVoz_aa6d04891e9b7c464e81a4ab8308652c4}{adicionarMensagem}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classMensagem}{Mensagem}}\&\ mensagem)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00020\ \ \ \ \ std::vector<Mensagem>\ \mbox{\hyperlink{classCanalVoz_af70f8630c7f89b75fc8d48f5fa69da97}{getMensagens}}()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00021\ \};}
+\DoxyCodeLine{00022\ }
+\DoxyCodeLine{00023\ \textcolor{preprocessor}{\#endif\ \ }\textcolor{comment}{//\ CANAL\_VOZ\_H}}
 
 \end{DoxyCode}

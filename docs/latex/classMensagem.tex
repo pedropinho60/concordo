@@ -1,19 +1,47 @@
 \hypertarget{classMensagem}{}\doxysection{Referência da Classe Mensagem}
 \label{classMensagem}\index{Mensagem@{Mensagem}}
+
+
+Classe que representa uma mensagem enviada por um usuário.  
+
+
+
+
+{\ttfamily \#include $<$Mensagem.\+h$>$}
+
+\doxysubsection*{Membros Públicos}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classMensagem_a00ba120f6d755e2ad8d958bf39ad15e9}\label{classMensagem_a00ba120f6d755e2ad8d958bf39ad15e9}} 
+{\bfseries Mensagem} (std\+::string \mbox{\hyperlink{classMensagem_a4528293f2e30645057002b8ad6c2c8cf}{data\+Hora}}, int \mbox{\hyperlink{classMensagem_a0a45f35c79602ab6d735da42fe2ca3d9}{enviada\+Por}}, std\+::string \mbox{\hyperlink{classMensagem_a97184a35f33bca1c7a1bf6832f1caaec}{conteudo}})
+\begin{DoxyCompactList}\small\item\em Construtor da classe \mbox{\hyperlink{classMensagem}{Mensagem}}. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classMensagem_aaf2acb25086547e7ee8b5340d367323a}\label{classMensagem_aaf2acb25086547e7ee8b5340d367323a}} 
+std\+::string {\bfseries get\+Data\+Hora} ()
+\begin{DoxyCompactList}\small\item\em Retorna a data e hora da mensagem. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classMensagem_aad3ea72d49deed5c0e30a54afe02d6e5}\label{classMensagem_aad3ea72d49deed5c0e30a54afe02d6e5}} 
+int {\bfseries get\+Enviada\+Por} ()
+\begin{DoxyCompactList}\small\item\em Retorna o ID do usuário que enviou a mensagem. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classMensagem_ac0d190a683028eb0c065c420b1f304bd}\label{classMensagem_ac0d190a683028eb0c065c420b1f304bd}} 
+std\+::string {\bfseries get\+Conteudo} ()
+\begin{DoxyCompactList}\small\item\em Retorna o conteúdo da mensagem. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Atributos Privados}
 \begin{DoxyCompactItemize}
 \item 
 \mbox{\Hypertarget{classMensagem_a4528293f2e30645057002b8ad6c2c8cf}\label{classMensagem_a4528293f2e30645057002b8ad6c2c8cf}} 
 std\+::string {\bfseries data\+Hora}
-\item 
+\begin{DoxyCompactList}\small\item\em Data e hora da mensagem. \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{classMensagem_a0a45f35c79602ab6d735da42fe2ca3d9}\label{classMensagem_a0a45f35c79602ab6d735da42fe2ca3d9}} 
 int {\bfseries enviada\+Por}
-\item 
+\begin{DoxyCompactList}\small\item\em ID do usuário que enviou a mensagem. \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{classMensagem_a97184a35f33bca1c7a1bf6832f1caaec}\label{classMensagem_a97184a35f33bca1c7a1bf6832f1caaec}} 
 std\+::string {\bfseries conteudo}
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Conteúdo da mensagem. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
-A documentação para essa classe foi gerada a partir do seguinte arquivo\+:\begin{DoxyCompactItemize}
+\doxysubsection{Descrição detalhada}
+Classe que representa uma mensagem enviada por um usuário. 
+
+A documentação para essa classe foi gerada a partir dos seguintes arquivos\+:\begin{DoxyCompactItemize}
 \item 
-include/Mensagem.\+h\end{DoxyCompactItemize}
+include/Mensagem.\+h\item 
+src/Mensagem.\+cpp\end{DoxyCompactItemize}

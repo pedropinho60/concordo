@@ -87,6 +87,9 @@ Membros Públicos</h2></td></tr>
 <tr class="memitem:a115c42c8bbb9b27a24949900a7ab19c7"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classServidor.html#a115c42c8bbb9b27a24949900a7ab19c7">Servidor</a> (std::string <a class="el" href="classServidor.html#a1141e0835dfba56f4d01f922d2a8b34f">nome</a>, <a class="el" href="classUsuario.html">Usuario</a> *usuarioDono)</td></tr>
 <tr class="memdesc:a115c42c8bbb9b27a24949900a7ab19c7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construtor padrão da classe.  <br /></td></tr>
 <tr class="separator:a115c42c8bbb9b27a24949900a7ab19c7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5ac1d9360e9c3010be4023f315cd64c1"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classServidor.html#a5ac1d9360e9c3010be4023f315cd64c1">~Servidor</a> ()</td></tr>
+<tr class="memdesc:a5ac1d9360e9c3010be4023f315cd64c1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destrutor padrão da classe.  <br /></td></tr>
+<tr class="separator:a5ac1d9360e9c3010be4023f315cd64c1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af094e7503c4fd8e124679f03eae3f0cd"><td class="memItemLeft" align="right" valign="top"><a id="af094e7503c4fd8e124679f03eae3f0cd" name="af094e7503c4fd8e124679f03eae3f0cd"></a>
 std::string&#160;</td><td class="memItemRight" valign="bottom"><b>getNome</b> ()</td></tr>
 <tr class="memdesc:af094e7503c4fd8e124679f03eae3f0cd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retorna o nome do servidor. <br /></td></tr>
@@ -103,6 +106,10 @@ std::string&#160;</td><td class="memItemRight" valign="bottom"><b>getCodigoConvi
 const std::vector&lt; int &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>getParticipantesIds</b> ()</td></tr>
 <tr class="memdesc:a2268bc0e7fb46ff2c7cdd33f35f666c8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reorna o vetor de ids dos participantes do servidor. <br /></td></tr>
 <tr class="separator:a2268bc0e7fb46ff2c7cdd33f35f666c8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adec01296e8019177b20fd03ae6b23a73"><td class="memItemLeft" align="right" valign="top"><a id="adec01296e8019177b20fd03ae6b23a73" name="adec01296e8019177b20fd03ae6b23a73"></a>
+const std::vector&lt; <a class="el" href="classCanal.html">Canal</a> * &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>getCanais</b> ()</td></tr>
+<tr class="memdesc:adec01296e8019177b20fd03ae6b23a73"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retorna o vetor de canais do servidor. <br /></td></tr>
+<tr class="separator:adec01296e8019177b20fd03ae6b23a73"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4a232f83c626f7afcd98f1aeed5986f5"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classServidor.html#a4a232f83c626f7afcd98f1aeed5986f5">setDescricao</a> (std::string <a class="el" href="classServidor.html#a61fecd2b3435d7048d793741c5f3bfdf">descricao</a>)</td></tr>
 <tr class="memdesc:a4a232f83c626f7afcd98f1aeed5986f5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Altera a descrição do servidor.  <br /></td></tr>
 <tr class="separator:a4a232f83c626f7afcd98f1aeed5986f5"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -118,6 +125,15 @@ const std::vector&lt; int &gt; &amp;&#160;</td><td class="memItemRight" valign="
 <tr class="memitem:a6f8ab7cda948090256d3aa099f67eff5"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classServidor.html#a6f8ab7cda948090256d3aa099f67eff5">adicionarParticipante</a> (<a class="el" href="classUsuario.html">Usuario</a> *usuario)</td></tr>
 <tr class="memdesc:a6f8ab7cda948090256d3aa099f67eff5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Adiciona um usuário como participante do servidor.  <br /></td></tr>
 <tr class="separator:a6f8ab7cda948090256d3aa099f67eff5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a879bce89d59d1e0b68c7ea3bb88060f7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classServidor.html#a879bce89d59d1e0b68c7ea3bb88060f7">adicionarCanal</a> (<a class="el" href="classCanal.html">Canal</a> *canal)</td></tr>
+<tr class="memdesc:a879bce89d59d1e0b68c7ea3bb88060f7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Adiciona um canal ao servidor.  <br /></td></tr>
+<tr class="separator:a879bce89d59d1e0b68c7ea3bb88060f7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af4fc1aab5d0fda7a88f21d5dea1bf6fe"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classCanal.html">Canal</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classServidor.html#af4fc1aab5d0fda7a88f21d5dea1bf6fe">buscarCanal</a> (std::string <a class="el" href="classServidor.html#a1141e0835dfba56f4d01f922d2a8b34f">nome</a>)</td></tr>
+<tr class="memdesc:af4fc1aab5d0fda7a88f21d5dea1bf6fe"><td class="mdescLeft">&#160;</td><td class="mdescRight">Busca um canal no servidor pelo nome.  <br /></td></tr>
+<tr class="separator:af4fc1aab5d0fda7a88f21d5dea1bf6fe"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a14ed5b53ba24a070b12fe982448abc3e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classCanal.html">Canal</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classServidor.html#a14ed5b53ba24a070b12fe982448abc3e">buscarCanal</a> (std::string <a class="el" href="classServidor.html#a1141e0835dfba56f4d01f922d2a8b34f">nome</a>, std::string tipo)</td></tr>
+<tr class="memdesc:a14ed5b53ba24a070b12fe982448abc3e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Busca um canal no servidor pelo nome e tipo.  <br /></td></tr>
+<tr class="separator:a14ed5b53ba24a070b12fe982448abc3e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
 Atributos Privados</h2></td></tr>
@@ -186,7 +202,61 @@ std::vector&lt; int &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>p
 
 </div>
 </div>
+<a id="a5ac1d9360e9c3010be4023f315cd64c1" name="a5ac1d9360e9c3010be4023f315cd64c1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5ac1d9360e9c3010be4023f315cd64c1">&#9670;&#160;</a></span>~Servidor()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">Servidor::~Servidor </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">default</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Destrutor padrão da classe. </p>
+<dl class="section note"><dt>Observação</dt><dd>Os canais do servidor são deletados pelo destrutor da classe <a class="el" href="classSistema.html" title="Classe do sistema do Concordo. Guarda todos os usuários e servidores.">Sistema</a>. </dd></dl>
+
+</div>
+</div>
 <h2 class="groupheader">Documentação das funções</h2>
+<a id="a879bce89d59d1e0b68c7ea3bb88060f7" name="a879bce89d59d1e0b68c7ea3bb88060f7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a879bce89d59d1e0b68c7ea3bb88060f7">&#9670;&#160;</a></span>adicionarCanal()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Servidor::adicionarCanal </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classCanal.html">Canal</a> *&#160;</td>
+          <td class="paramname"><em>canal</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Adiciona um canal ao servidor. </p>
+<dl class="params"><dt>Parâmetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">canal</td><td><a class="el" href="classCanal.html" title="Classe que representa um canal de voz ou de texto.">Canal</a> a ser adicionado. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 <a id="a6f8ab7cda948090256d3aa099f67eff5" name="a6f8ab7cda948090256d3aa099f67eff5"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a6f8ab7cda948090256d3aa099f67eff5">&#9670;&#160;</a></span>adicionarParticipante()</h2>
 
@@ -210,6 +280,71 @@ std::vector&lt; int &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>p
   </table>
   </dd>
 </dl>
+
+</div>
+</div>
+<a id="af4fc1aab5d0fda7a88f21d5dea1bf6fe" name="af4fc1aab5d0fda7a88f21d5dea1bf6fe"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af4fc1aab5d0fda7a88f21d5dea1bf6fe">&#9670;&#160;</a></span>buscarCanal() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classCanal.html">Canal</a> * Servidor::buscarCanal </td>
+          <td>(</td>
+          <td class="paramtype">std::string&#160;</td>
+          <td class="paramname"><em>nome</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Busca um canal no servidor pelo nome. </p>
+<dl class="params"><dt>Parâmetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">nome</td><td>Nome do canal a ser buscado. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Retorna</dt><dd>Ponteiro para o canal buscado. </dd></dl>
+
+</div>
+</div>
+<a id="a14ed5b53ba24a070b12fe982448abc3e" name="a14ed5b53ba24a070b12fe982448abc3e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a14ed5b53ba24a070b12fe982448abc3e">&#9670;&#160;</a></span>buscarCanal() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classCanal.html">Canal</a> * Servidor::buscarCanal </td>
+          <td>(</td>
+          <td class="paramtype">std::string&#160;</td>
+          <td class="paramname"><em>nome</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::string&#160;</td>
+          <td class="paramname"><em>tipo</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Busca um canal no servidor pelo nome e tipo. </p>
+<dl class="params"><dt>Parâmetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">nome</td><td>Nome do canal a ser buscado. </td></tr>
+    <tr><td class="paramname">tipo</td><td>Tipo do canal a ser buscado. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Retorna</dt><dd>Ponteiro para o canal buscado. </dd></dl>
 
 </div>
 </div>

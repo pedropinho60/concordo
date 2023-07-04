@@ -130,14 +130,32 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>listServers</b> ()</t
 <tr class="memdesc:a13df10cdd549f93b79aca4b3a30046e7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Remove o servidor especificado. Executado com <code>remove-server &lt;nome&gt;</code>  <br /></td></tr>
 <tr class="separator:a13df10cdd549f93b79aca4b3a30046e7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:abdaf76b6b392965f647d73c1254e46a9"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSistema.html#abdaf76b6b392965f647d73c1254e46a9">enterServer</a> (std::string args)</td></tr>
-<tr class="memdesc:abdaf76b6b392965f647d73c1254e46a9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Entra no servidor especificado. Executado com `enter-server &lt;nome&gt; [codigo].  <br /></td></tr>
+<tr class="memdesc:abdaf76b6b392965f647d73c1254e46a9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Entra no servidor especificado. Executado com <code>enter-server &lt;nome&gt; [codigo]</code>.  <br /></td></tr>
 <tr class="separator:abdaf76b6b392965f647d73c1254e46a9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7adfe2bf239371ad84e61a90daf6b249"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSistema.html#a7adfe2bf239371ad84e61a90daf6b249">leaveServer</a> ()</td></tr>
 <tr class="memdesc:a7adfe2bf239371ad84e61a90daf6b249"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sai do servidor atual. Executado com <code>leave-server</code>.  <br /></td></tr>
 <tr class="separator:a7adfe2bf239371ad84e61a90daf6b249"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3621b304dfde121fc15d07c22ac57e7f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSistema.html#a3621b304dfde121fc15d07c22ac57e7f">listParticipants</a> ()</td></tr>
-<tr class="memdesc:a3621b304dfde121fc15d07c22ac57e7f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Lista os participantes do servidor atual.  <br /></td></tr>
+<tr class="memdesc:a3621b304dfde121fc15d07c22ac57e7f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Lista os participantes do servidor atual. Executado com <code>list-participants</code>.  <br /></td></tr>
 <tr class="separator:a3621b304dfde121fc15d07c22ac57e7f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acb0dfef9e94f9a272b7bb793af76133e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSistema.html#acb0dfef9e94f9a272b7bb793af76133e">listChannels</a> ()</td></tr>
+<tr class="memdesc:acb0dfef9e94f9a272b7bb793af76133e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Lista os canais do servidor atual. Executado com <code>list-channels</code>.  <br /></td></tr>
+<tr class="separator:acb0dfef9e94f9a272b7bb793af76133e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a822164d7a54102aa37789e3c9d6fd17d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSistema.html#a822164d7a54102aa37789e3c9d6fd17d">createChannel</a> (std::string args)</td></tr>
+<tr class="memdesc:a822164d7a54102aa37789e3c9d6fd17d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Cria um canal no servidor atual. Executado com <code>create-channel &lt;nome&gt; &lt;tipo&gt;</code>.  <br /></td></tr>
+<tr class="separator:a822164d7a54102aa37789e3c9d6fd17d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abe944780158601e61ed0276820ddaeee"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSistema.html#abe944780158601e61ed0276820ddaeee">enterChannel</a> (std::string args)</td></tr>
+<tr class="memdesc:abe944780158601e61ed0276820ddaeee"><td class="mdescLeft">&#160;</td><td class="mdescRight">Entra em um canal do servidor atual. Executado com <code>enter-channel &lt;nome&gt;</code>.  <br /></td></tr>
+<tr class="separator:abe944780158601e61ed0276820ddaeee"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac70d6ec3709c158c28e801586a71aab0"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSistema.html#ac70d6ec3709c158c28e801586a71aab0">leaveChannel</a> ()</td></tr>
+<tr class="memdesc:ac70d6ec3709c158c28e801586a71aab0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sai do canal atual. Executado com <code>leave-channel</code>.  <br /></td></tr>
+<tr class="separator:ac70d6ec3709c158c28e801586a71aab0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3a2e6fee24f9793645a09a9ac8c25553"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSistema.html#a3a2e6fee24f9793645a09a9ac8c25553">sendMessage</a> (std::string args)</td></tr>
+<tr class="memdesc:a3a2e6fee24f9793645a09a9ac8c25553"><td class="mdescLeft">&#160;</td><td class="mdescRight">Envia uma mensagem no canal atual. Executado com <code>send-message &lt;mensagem&gt;</code>.  <br /></td></tr>
+<tr class="separator:a3a2e6fee24f9793645a09a9ac8c25553"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae4036743e108c5ac50476d2ef306ffe4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSistema.html#ae4036743e108c5ac50476d2ef306ffe4">listMessages</a> ()</td></tr>
+<tr class="memdesc:ae4036743e108c5ac50476d2ef306ffe4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Lista as mensagens do canal atual. Executado com <code>list-messages</code>.  <br /></td></tr>
+<tr class="separator:ae4036743e108c5ac50476d2ef306ffe4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
 Atributos Privados</h2></td></tr>
@@ -159,7 +177,7 @@ std::vector&lt; <a class="el" href="classServidor.html">Servidor</a> &gt;&#160;<
 <tr class="separator:a3c1f5712be557d41ef56e9b931fbe866"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6581c562a7e2206e8e0cd8c5ee36b873"><td class="memItemLeft" align="right" valign="top"><a id="a6581c562a7e2206e8e0cd8c5ee36b873" name="a6581c562a7e2206e8e0cd8c5ee36b873"></a>
 <a class="el" href="classCanal.html">Canal</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>canalAtual</b></td></tr>
-<tr class="memdesc:a6581c562a7e2206e8e0cd8c5ee36b873"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="classCanal.html">Canal</a> atual. <br /></td></tr>
+<tr class="memdesc:a6581c562a7e2206e8e0cd8c5ee36b873"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="classCanal.html" title="Classe que representa um canal de voz ou de texto.">Canal</a> atual. <br /></td></tr>
 <tr class="separator:a6581c562a7e2206e8e0cd8c5ee36b873"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa78efe4c06b5660a45bafca5cd4c99c1"><td class="memItemLeft" align="right" valign="top"><a id="aa78efe4c06b5660a45bafca5cd4c99c1" name="aa78efe4c06b5660a45bafca5cd4c99c1"></a>
 int&#160;</td><td class="memItemRight" valign="bottom"><b>ultimoIdUsuario</b></td></tr>
@@ -169,6 +187,33 @@ int&#160;</td><td class="memItemRight" valign="bottom"><b>ultimoIdUsuario</b></t
 <a name="details" id="details"></a><h2 class="groupheader">Descrição detalhada</h2>
 <div class="textblock"><p>Classe do sistema do Concordo. Guarda todos os usuários e servidores. </p>
 </div><h2 class="groupheader">Documentação das funções</h2>
+<a id="a822164d7a54102aa37789e3c9d6fd17d" name="a822164d7a54102aa37789e3c9d6fd17d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a822164d7a54102aa37789e3c9d6fd17d">&#9670;&#160;</a></span>createChannel()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Sistema::createChannel </td>
+          <td>(</td>
+          <td class="paramtype">std::string&#160;</td>
+          <td class="paramname"><em>args</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Cria um canal no servidor atual. Executado com <code>create-channel &lt;nome&gt; &lt;tipo&gt;</code>. </p>
+<dl class="params"><dt>Parâmetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">args</td><td>Argumentos do comando, que são o nome e o tipo do canal. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section note"><dt>Observação</dt><dd>Só pode ser executado caso seja o dono do servidor. </dd></dl>
+
+</div>
+</div>
 <a id="aa882f32bdbd0a9bad1d18d5343a3c20c" name="aa882f32bdbd0a9bad1d18d5343a3c20c"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#aa882f32bdbd0a9bad1d18d5343a3c20c">&#9670;&#160;</a></span>createServer()</h2>
 
@@ -242,6 +287,33 @@ int&#160;</td><td class="memItemRight" valign="bottom"><b>ultimoIdUsuario</b></t
 
 </div>
 </div>
+<a id="abe944780158601e61ed0276820ddaeee" name="abe944780158601e61ed0276820ddaeee"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abe944780158601e61ed0276820ddaeee">&#9670;&#160;</a></span>enterChannel()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Sistema::enterChannel </td>
+          <td>(</td>
+          <td class="paramtype">std::string&#160;</td>
+          <td class="paramname"><em>args</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Entra em um canal do servidor atual. Executado com <code>enter-channel &lt;nome&gt;</code>. </p>
+<dl class="params"><dt>Parâmetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">args</td><td>Argumentos do comando, que é o nome do canal. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section note"><dt>Observação</dt><dd>Só pode ser executado caso esteja em um servidor. </dd></dl>
+
+</div>
+</div>
 <a id="abdaf76b6b392965f647d73c1254e46a9" name="abdaf76b6b392965f647d73c1254e46a9"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#abdaf76b6b392965f647d73c1254e46a9">&#9670;&#160;</a></span>enterServer()</h2>
 
@@ -258,7 +330,7 @@ int&#160;</td><td class="memItemRight" valign="bottom"><b>ultimoIdUsuario</b></t
       </table>
 </div><div class="memdoc">
 
-<p>Entra no servidor especificado. Executado com `enter-server &lt;nome&gt; [codigo]. </p>
+<p>Entra no servidor especificado. Executado com <code>enter-server &lt;nome&gt; [codigo]</code>. </p>
 <dl class="section note"><dt>Observação</dt><dd>Caso seja o dono do servidor, não é necessário código de convite. </dd></dl>
 <dl class="params"><dt>Parâmetros</dt><dd>
   <table class="params">
@@ -350,6 +422,26 @@ int&#160;</td><td class="memItemRight" valign="bottom"><b>ultimoIdUsuario</b></t
 
 </div>
 </div>
+<a id="ac70d6ec3709c158c28e801586a71aab0" name="ac70d6ec3709c158c28e801586a71aab0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac70d6ec3709c158c28e801586a71aab0">&#9670;&#160;</a></span>leaveChannel()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Sistema::leaveChannel </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Sai do canal atual. Executado com <code>leave-channel</code>. </p>
+<dl class="section note"><dt>Observação</dt><dd>Só pode ser executado caso esteja em um canal. </dd></dl>
+
+</div>
+</div>
 <a id="a7adfe2bf239371ad84e61a90daf6b249" name="a7adfe2bf239371ad84e61a90daf6b249"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a7adfe2bf239371ad84e61a90daf6b249">&#9670;&#160;</a></span>leaveServer()</h2>
 
@@ -390,6 +482,46 @@ int&#160;</td><td class="memItemRight" valign="bottom"><b>ultimoIdUsuario</b></t
 
 </div>
 </div>
+<a id="acb0dfef9e94f9a272b7bb793af76133e" name="acb0dfef9e94f9a272b7bb793af76133e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acb0dfef9e94f9a272b7bb793af76133e">&#9670;&#160;</a></span>listChannels()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Sistema::listChannels </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Lista os canais do servidor atual. Executado com <code>list-channels</code>. </p>
+<dl class="section note"><dt>Observação</dt><dd>Só pode ser executado caso esteja em um servidor. </dd></dl>
+
+</div>
+</div>
+<a id="ae4036743e108c5ac50476d2ef306ffe4" name="ae4036743e108c5ac50476d2ef306ffe4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae4036743e108c5ac50476d2ef306ffe4">&#9670;&#160;</a></span>listMessages()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Sistema::listMessages </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Lista as mensagens do canal atual. Executado com <code>list-messages</code>. </p>
+<dl class="section note"><dt>Observação</dt><dd>Só pode ser executado caso esteja em um canal. </dd></dl>
+
+</div>
+</div>
 <a id="a3621b304dfde121fc15d07c22ac57e7f" name="a3621b304dfde121fc15d07c22ac57e7f"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a3621b304dfde121fc15d07c22ac57e7f">&#9670;&#160;</a></span>listParticipants()</h2>
 
@@ -405,7 +537,7 @@ int&#160;</td><td class="memItemRight" valign="bottom"><b>ultimoIdUsuario</b></t
       </table>
 </div><div class="memdoc">
 
-<p>Lista os participantes do servidor atual. </p>
+<p>Lista os participantes do servidor atual. Executado com <code>list-participants</code>. </p>
 <dl class="section note"><dt>Observação</dt><dd>Só pode ser executado caso esteja em um servidor. </dd></dl>
 
 </div>
@@ -461,6 +593,33 @@ int&#160;</td><td class="memItemRight" valign="bottom"><b>ultimoIdUsuario</b></t
   </table>
   </dd>
 </dl>
+
+</div>
+</div>
+<a id="a3a2e6fee24f9793645a09a9ac8c25553" name="a3a2e6fee24f9793645a09a9ac8c25553"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3a2e6fee24f9793645a09a9ac8c25553">&#9670;&#160;</a></span>sendMessage()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Sistema::sendMessage </td>
+          <td>(</td>
+          <td class="paramtype">std::string&#160;</td>
+          <td class="paramname"><em>conteudo</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Envia uma mensagem no canal atual. Executado com <code>send-message &lt;mensagem&gt;</code>. </p>
+<dl class="params"><dt>Parâmetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">conteudo</td><td>Conteúdo da mensagem. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section note"><dt>Observação</dt><dd>Só pode ser executado caso esteja em um canal. </dd></dl>
 
 </div>
 </div>
