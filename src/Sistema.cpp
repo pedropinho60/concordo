@@ -5,6 +5,7 @@
 #include <iomanip>
 #include <iostream>
 #include <sstream>
+#include <string>
 #include <vector>
 
 #include "Canal.h"
@@ -102,6 +103,8 @@ bool Sistema::lerComando() {
     std::getline(iss, command, ' ');
     std::getline(iss, args);
 
+    carregar();
+
     if (command == "quit") {
         std::cout << "Saindo do Concordo" << std::endl;
         return false;
@@ -157,6 +160,11 @@ bool Sistema::lerComando() {
 void Sistema::salvar() {
     salvarUsuarios();
     salvarServidores();
+}
+
+void Sistema::carregar() {
+    carregarUsuarios();
+    carregarServidores();
 }
 
 // ======================== COMANDOS ========================
@@ -776,5 +784,133 @@ void Sistema::salvarServidores() {
                 arquivo << mensagem.getConteudo() << std::endl;
             }
         }
+    }
+}
+
+void Sistema::carregarUsuarios() {
+    usuarios.clear();
+
+    std::ifstream arquivo("data/usuarios.txt");
+
+    if (!arquivo.is_open()) {
+        return;
+    }
+
+    std::string line;
+    std::getline(arquivo, line);
+
+    int n_usuarios = std::stoi(line);
+
+    for (int i = 0; i < n_usuarios; ++i) {
+        std::string id_str;
+        std::getline(arquivo, id_str);
+
+        int id = std::stoi(id_str);
+
+        std::string nome;
+        std::getline(arquivo, nome);
+
+        std::string email;
+        std::getline(arquivo, email);
+
+        std::string senha;
+        std::getline(arquivo, senha);
+
+        Usuario usuario(email, senha, nome, id);
+        usuarios.push_back(usuario);
+    }
+}
+
+void Sistema::carregarServidores() {
+    for (auto& servidor : servidores) {
+        for (auto& canal : servidor.getCanais()) {
+            delete canal;
+        }
+    }
+
+    servidores.clear();
+
+    std::ifstream arquivo("data/servidores.txt");
+
+    if (!arquivo.is_open()) {
+        return;
+    }
+
+    std::string line;
+    std::getline(arquivo, line);
+
+    int n_servidores = std::stoi(line);
+
+    for (int i = 0; i < n_servidores; ++i) {
+        std::getline(arquivo, line);
+        int idDono = std::stoi(line);
+
+        std::string nome;
+        std::getline(arquivo, nome);
+
+        Servidor servidor(nome, idDono);
+
+        std::string descricao;
+        std::getline(arquivo, descricao);
+        servidor.setDescricao(descricao);
+
+        std::string codigo;
+        std::getline(arquivo, codigo);
+        servidor.setCodigoConvite(codigo);
+
+        std::getline(arquivo, line);
+        int n_usuarios = std::stoi(line);
+
+        for (int j = 0; j < n_usuarios; ++j) {
+            std::getline(arquivo, line);
+            int id_usuario = std::stoi(line);
+            Usuario* usuario = getUsuario(id_usuario);
+
+            if (!servidor.isParticipante(usuario)) {
+                servidor.adicionarParticipante(usuario);
+            }
+
+            ultimoIdUsuario = usuario->getId();
+        }
+
+        std::getline(arquivo, line);
+        int n_canais = std::stoi(line);
+
+        for (int j = 0; j < n_canais; ++j) {
+            std::string nome;
+            std::getline(arquivo, nome);
+
+            std::string tipo;
+            std::getline(arquivo, tipo);
+
+            Canal* canal;
+
+            if (tipo == "texto") {
+                canal = new CanalTexto(nome);
+            } else if (tipo == "voz") {
+                canal = new CanalVoz(nome);
+            }
+
+            std::getline(arquivo, line);
+            int n_mensagens = std::stoi(line);
+
+            for (int k = 0; k < n_mensagens; ++k) {
+                std::getline(arquivo, line);
+                int enviadaPor = std::stoi(line);
+
+                std::string dataHora;
+                std::getline(arquivo, dataHora);
+
+                std::string conteudo;
+                std::getline(arquivo, conteudo);
+
+                Mensagem mensagem(dataHora, enviadaPor, conteudo);
+                canal->adicionarMensagem(mensagem);
+            }
+
+            servidor.adicionarCanal(canal);
+        }
+
+        servidores.push_back(servidor);
     }
 }

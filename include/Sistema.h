@@ -31,6 +31,7 @@ class Sistema {
     void iniciar();
     bool lerComando();
     void salvar();
+    void carregar();
 
     // Comandos
     void createUser(std::string args);
@@ -54,6 +55,8 @@ class Sistema {
    private:
     void salvarUsuarios();
     void salvarServidores();
+    void carregarUsuarios();
+    void carregarServidores();
 };
 
 #endif  // SISTEMA_H

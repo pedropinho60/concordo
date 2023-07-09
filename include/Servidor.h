@@ -20,6 +20,7 @@ class Servidor {
 
    public:
     Servidor(std::string nome, Usuario *usuarioDono);
+    Servidor(std::string nome, int idDono);
     ~Servidor();
 
     // Getters
@@ -38,6 +39,7 @@ class Servidor {
     bool isDono(Usuario *usuario);
     bool isParticipante(Usuario *usuario);
     void adicionarParticipante(Usuario *usuario);
+    void adicionarParticipante(int id);
     void adicionarCanal(Canal *canal);
     Canal *buscarCanal(std::string nome);
     Canal *buscarCanal(std::string nome, std::string tipo);

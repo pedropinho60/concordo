@@ -18,6 +18,12 @@ Servidor::Servidor(std::string nome, Usuario *usuarioDono) {
     this->adicionarParticipante(usuarioDono);
 }
 
+Servidor::Servidor(std::string nome, int idDono) {
+    this->nome = nome;
+    this->usuarioDonoId = idDono;
+    this->adicionarParticipante(idDono);
+}
+
 /**
  * @brief Destrutor padrão da classe.
  *
@@ -99,6 +105,10 @@ bool Servidor::isParticipante(Usuario *usuario) {
  */
 void Servidor::adicionarParticipante(Usuario *usuario) {
     participantesIds.push_back(usuario->getId());
+}
+
+void Servidor::adicionarParticipante(int id) {
+    participantesIds.push_back(id);
 }
 
 /**
