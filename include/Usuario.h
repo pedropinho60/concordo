@@ -20,6 +20,7 @@ class Usuario {
     int getId();
     std::string getNome();
     std::string getEmail();
+    std::string getSenha();
 
     // Métodos
     bool checarSenha(std::string senha);

@@ -31,6 +31,9 @@ std::string Usuario::getNome() { return nome; }
 /// @brief Retorna o email do usuário.
 std::string Usuario::getEmail() { return email; }
 
+/// @brief Retorna a senha do usuário.
+std::string Usuario::getSenha() { return senha; }
+
 // ======================== MÉTODOS ==============================
 
 /**

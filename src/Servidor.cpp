@@ -27,6 +27,9 @@ Servidor::~Servidor() = default;
 
 // ======================== GETTERS ==============================
 
+/// @brief Retorna o id do dono do servidor
+int Servidor::getDonoId() { return usuarioDonoId; }
+
 /// @brief Retorna o nome do servidor.
 std::string Servidor::getNome() { return nome; }
 

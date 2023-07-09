@@ -23,6 +23,7 @@ class Servidor {
     ~Servidor();
 
     // Getters
+    int getDonoId();
     std::string getNome();
     std::string getDescricao();
     std::string getCodigoConvite();

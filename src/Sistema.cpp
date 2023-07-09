@@ -1,6 +1,7 @@
 #include "Sistema.h"
 
 #include <ctime>
+#include <fstream>
 #include <iomanip>
 #include <iostream>
 #include <sstream>
@@ -106,22 +107,28 @@ bool Sistema::lerComando() {
         return false;
     } else if (command == "create-user") {
         createUser(args);
+        salvar();
     } else if (command == "login") {
         login(args);
     } else if (command == "disconnect") {
         disconnect();
     } else if (command == "create-server") {
         createServer(args);
+        salvar();
     } else if (command == "set-server-desc") {
         setServerDesc(args);
+        salvar();
     } else if (command == "set-server-invite-code") {
         setServerInviteCode(args);
+        salvar();
     } else if (command == "list-servers") {
         listServers();
     } else if (command == "remove-server") {
         removeServer(args);
+        salvar();
     } else if (command == "enter-server") {
         enterServer(args);
+        salvar();
     } else if (command == "leave-server") {
         leaveServer();
     } else if (command == "list-participants") {
@@ -130,12 +137,14 @@ bool Sistema::lerComando() {
         listChannels();
     } else if (command == "create-channel") {
         createChannel(args);
+        salvar();
     } else if (command == "enter-channel") {
         enterChannel(args);
     } else if (command == "leave-channel") {
         leaveChannel();
     } else if (command == "send-message") {
         sendMessage(args);
+        salvar();
     } else if (command == "list-messages") {
         listMessages();
     } else {
@@ -143,6 +152,11 @@ bool Sistema::lerComando() {
     }
 
     return true;
+}
+
+void Sistema::salvar() {
+    salvarUsuarios();
+    salvarServidores();
 }
 
 // ======================== COMANDOS ========================
@@ -715,5 +729,52 @@ void Sistema::listMessages() {
         std::cout << getUsuario(msg.getEnviadaPor())->getNome() << "<"
                   << msg.getDataHora() << ">: " << msg.getConteudo()
                   << std::endl;
+    }
+}
+
+// ==================== MÉTODOS PRIVADOS ====================
+
+void Sistema::salvarUsuarios() {
+    std::ofstream arquivo("data/usuarios.txt");
+
+    arquivo << usuarios.size() << std::endl;
+
+    for (auto& usuario : usuarios) {
+        arquivo << usuario.getId() << std::endl;
+        arquivo << usuario.getNome() << std::endl;
+        arquivo << usuario.getEmail() << std::endl;
+        arquivo << usuario.getSenha() << std::endl;
+    }
+}
+
+void Sistema::salvarServidores() {
+    std::ofstream arquivo("data/servidores.txt");
+
+    arquivo << servidores.size() << std::endl;
+
+    for (auto& servidor : servidores) {
+        arquivo << servidor.getDonoId() << std::endl;
+        arquivo << servidor.getNome() << std::endl;
+        arquivo << servidor.getDescricao() << std::endl;
+        arquivo << servidor.getCodigoConvite() << std::endl;
+        arquivo << servidor.getParticipantesIds().size() << std::endl;
+
+        for (auto& id : servidor.getParticipantesIds()) {
+            arquivo << id << std::endl;
+        }
+
+        arquivo << servidor.getCanais().size() << std::endl;
+
+        for (auto& canal : servidor.getCanais()) {
+            arquivo << canal->getNome() << std::endl;
+            arquivo << canal->getTipo() << std::endl;
+            arquivo << canal->getMensagens().size() << std::endl;
+
+            for (auto& mensagem : canal->getMensagens()) {
+                arquivo << mensagem.getEnviadaPor() << std::endl;
+                arquivo << mensagem.getDataHora() << std::endl;
+                arquivo << mensagem.getConteudo() << std::endl;
+            }
+        }
     }
 }

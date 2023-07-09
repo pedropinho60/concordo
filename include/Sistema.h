@@ -30,6 +30,7 @@ class Sistema {
     // Métodos
     void iniciar();
     bool lerComando();
+    void salvar();
 
     // Comandos
     void createUser(std::string args);
@@ -49,6 +50,10 @@ class Sistema {
     void leaveChannel();
     void sendMessage(std::string args);
     void listMessages();
+
+   private:
+    void salvarUsuarios();
+    void salvarServidores();
 };
 
 #endif  // SISTEMA_H
