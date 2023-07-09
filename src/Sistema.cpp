@@ -677,6 +677,8 @@ void Sistema::sendMessage(std::string conteudo) {
 
     Mensagem mensagem(dataHora.str(), usuarioLogado->getId(), conteudo);
     canalAtual->adicionarMensagem(mensagem);
+
+    std::cout << "Mensagem enviada" << std::endl;
 }
 
 /**
@@ -704,10 +706,11 @@ void Sistema::listMessages() {
 
     if (mensagens.size() == 0) {
         std::cout << "Sem mensagens para exibir" << std::endl;
+        return;
     }
 
-    std::cout << "Mensagens do canal '"
-              << canalAtual->getNome() << "':" << std::endl;
+    std::cout << "Mensagens do canal '" << canalAtual->getNome()
+              << "':" << std::endl;
     for (Mensagem& msg : mensagens) {
         std::cout << getUsuario(msg.getEnviadaPor())->getNome() << "<"
                   << msg.getDataHora() << ">: " << msg.getConteudo()
