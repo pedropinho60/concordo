@@ -822,6 +822,16 @@ void Sistema::carregarUsuarios() {
 }
 
 void Sistema::carregarServidores() {
+    std::string nomeServidorAtual;
+    std::string nomeCanalAtual;
+
+    if(servidorAtual != nullptr) {
+        nomeServidorAtual = servidorAtual->getNome();
+        if(canalAtual != nullptr) {
+            nomeCanalAtual = canalAtual->getNome();
+        }
+    }
+
     for (auto& servidor : servidores) {
         for (auto& canal : servidor.getCanais()) {
             delete canal;
@@ -912,5 +922,12 @@ void Sistema::carregarServidores() {
         }
 
         servidores.push_back(servidor);
+    }
+
+    if(servidorAtual != nullptr) {
+        servidorAtual = getServidor(nomeServidorAtual);
+        if(canalAtual != nullptr) {
+            canalAtual = servidorAtual->buscarCanal(nomeCanalAtual);
+        }
     }
 }
