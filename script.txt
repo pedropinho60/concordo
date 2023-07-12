@@ -39,7 +39,6 @@ enter-server server2
 list-participants
 disconnect
 login email1 password1
-remove-server server1
 list-servers
 disconnect
 quit

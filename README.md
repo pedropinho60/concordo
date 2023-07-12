@@ -1,15 +1,18 @@
-# Concordo - Versão 2
+# Concordo - Versão 3
 
 Projeto de "Linguagem de Programação I"
 
 ## Descrição
 
 Esse projeto é uma "imitação" do [**Discord**](https://www.discord.com), feita
-em C++. Esse repositório contém as versões 1 e 2 do projeto.
+em C++. Esse repositório contém as versões 1, 2 e 3 do projeto.
 
 Na versão 1, é possível fazer login, criar, configurar e entrar em servidores.
 A versão 2 adiciona as funcionalidades de canais, permitindo criar canais de 
 texto e voz dentro de um servidor, e enviar mensagens neles.
+A versão 3 adiciona funcionalidades de salvar e carregar, permitindo que o
+programa guarde informações mesmo após ser encerrado. Também é possível rodar
+o programa em dois terminais simultaneamente.
 
 ## Autoria
 
@@ -66,6 +69,13 @@ para enviar mensagens.
 - `list-messages` lista as mensagens do canal atual`. É necessário estar em um
 canal para listar mensagens.
 
+## Arquivo de salvamento padrão
+
+A pasta [**data**](data) contém arquivos com informações de salvamento.
+Ao executar o programa, as informações são lidas do arquivo. Se quiser remover
+o conteúdo salvo, apague o conteúdo de ambos arquivos e substitua por uma única
+linha contendo `0`.
+
 ## Compilação e execução
 
 Para compilar o programa, é utilizado o [**CMake**](https://cmake.org).
@@ -76,64 +86,6 @@ Na pasta principal do projeto, execute os comandos a seguir:
 - `cmake --build build` para compilar o programa
 
 Após a compilação, o programa pode ser executado com `./build/program`.
-
-Para utilizar o script de exemplo, explicado abaixo, utilize o comando
-`./build/program < script.txt`
-
-## Script de exemplo
-
-O repositório contém um [**script**](script.txt) de exemplo, que contém comandos
-para demonstrar as funcionalidades do programa.
-
-A seguir, está a explicação de cada linha do script:
-
-```bash
-create-user email1 password1 name1            # cria o usuário 1
-create-user email2 password2 name2            # cria o usuário 2
-create-user email3 password3 name3            # cria o usuário 3
-login email1 password1                        # faz login no usuário 1
-create-server server1                         # cria o servidor 1
-set-server-desc server1 "server1 description" # altera a descrição do servidor
-set-server-invite-code server1 invitecode     # adiciona o código de convite
-enter-server server1                          # entra no servidor 1
-create-channel canal1 texto                   # cria o canal de texto 1
-create-channel canal2 voz                     # cria o canal de voz 2
-create-channel canal3 texto                   # cria o canal de texto 3 
-enter-channel canal1                          # entra no canal de texto 1
-send-message mensagem1                        # envia mensagem
-send-message mensagem2                        # envia mensagem
-leave-channel                                 # sai do canal
-leave-server                                  # sai do servidor
-disconnect                                    # desconecta do sistema
-login email2 password2                        # faz login no usuário 2
-list-servers                                  # lista os servidores (servidor 1)
-create-server server2                         # cria o servidor 2
-enter-server server1 invitecode               # entra no servidor 1 com o código
-list-participants                             # lista os participantes (usuários 1 e 2)
-list-channels                                 # lista os canais
-enter-channel canal1                          # entra no canal de texto 1
-list-messages                                 # lista as mensagens
-send-message mensagem3                        # envia mensagem
-leave-channel                                 # sai do canal
-enter-channel canal2                          # entra no canal de voz 2
-send-message mensagem4                        # envia mensagem 4
-list-messages                                 # lista mensagem 4
-send-message mensagem5                        # envia mensagem 5
-list-messages                                 # lista apenas mensagem 5
-leave-channel                                 # sai do canal
-disconnect                                    # desconecta do sistema
-login email3 password3                        # faz login no usuário 3
-list-servers                                  # lista os servidores (servidores 1 e 2)
-enter-server server1                          # tenta entrar no servidor 1 sem o código (falha)
-enter-server server2                          # entra no servidor 2
-list-participants                             # lista os participantes (usuário 3)
-disconnect                                    # desconecta do sistema
-login email1 password1                        # faz login no usuário 1
-remove-server server1                         # apaga o servidor 1
-list-servers                                  # lista os servidores (servidor 2)
-disconnect                                    # desconecta do sistema
-quit                                          # encerra o programa
-```
 
 ## Limitações
 
