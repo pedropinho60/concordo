@@ -14,8 +14,13 @@ Classe que representa um servidor do sistema.
 \item 
 \mbox{\hyperlink{classServidor_a115c42c8bbb9b27a24949900a7ab19c7}{Servidor}} (std\+::string \mbox{\hyperlink{classServidor_a1141e0835dfba56f4d01f922d2a8b34f}{nome}}, \mbox{\hyperlink{classUsuario}{Usuario}} $\ast$usuario\+Dono)
 \begin{DoxyCompactList}\small\item\em Construtor padrão da classe. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classServidor_a0eaf7cbdb0eb415815c26acc922387a4}{Servidor}} (std\+::string \mbox{\hyperlink{classServidor_a1141e0835dfba56f4d01f922d2a8b34f}{nome}}, int id\+Dono)
+\begin{DoxyCompactList}\small\item\em Construtor padrão da classe. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{classServidor_a5ac1d9360e9c3010be4023f315cd64c1}{$\sim$\+Servidor}} ()
 \begin{DoxyCompactList}\small\item\em Destrutor padrão da classe. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classServidor_aec801155b7b94fd84d4063faeff54ea3}\label{classServidor_aec801155b7b94fd84d4063faeff54ea3}} 
+int {\bfseries get\+Dono\+Id} ()
+\begin{DoxyCompactList}\small\item\em Retorna o id do dono do servidor. \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{classServidor_af094e7503c4fd8e124679f03eae3f0cd}\label{classServidor_af094e7503c4fd8e124679f03eae3f0cd}} 
 std\+::string {\bfseries get\+Nome} ()
 \begin{DoxyCompactList}\small\item\em Retorna o nome do servidor. \end{DoxyCompactList}\item 
@@ -40,6 +45,8 @@ bool \mbox{\hyperlink{classServidor_aa92e5fb54887be66e9f9f4998a857356}{is\+Dono}
 bool \mbox{\hyperlink{classServidor_aa3fd3b1a663dd33238f10fdc48415bad}{is\+Participante}} (\mbox{\hyperlink{classUsuario}{Usuario}} $\ast$usuario)
 \begin{DoxyCompactList}\small\item\em Verifica se o usuário passado é participante do servidor. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{classServidor_a6f8ab7cda948090256d3aa099f67eff5}{adicionar\+Participante}} (\mbox{\hyperlink{classUsuario}{Usuario}} $\ast$usuario)
+\begin{DoxyCompactList}\small\item\em Adiciona um usuário como participante do servidor. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classServidor_a89fdefc3ac77648fe147f28ddddc624d}{adicionar\+Participante}} (int id)
 \begin{DoxyCompactList}\small\item\em Adiciona um usuário como participante do servidor. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{classServidor_a879bce89d59d1e0b68c7ea3bb88060f7}{adicionar\+Canal}} (\mbox{\hyperlink{classCanal}{Canal}} $\ast$canal)
 \begin{DoxyCompactList}\small\item\em Adiciona um canal ao servidor. \end{DoxyCompactList}\item 
@@ -77,7 +84,7 @@ Classe que representa um servidor do sistema.
 \mbox{\Hypertarget{classServidor_a115c42c8bbb9b27a24949900a7ab19c7}\label{classServidor_a115c42c8bbb9b27a24949900a7ab19c7}} 
 \index{Servidor@{Servidor}!Servidor@{Servidor}}
 \index{Servidor@{Servidor}!Servidor@{Servidor}}
-\doxysubsubsection{\texorpdfstring{Servidor()}{Servidor()}}
+\doxysubsubsection{\texorpdfstring{Servidor()}{Servidor()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
 {\footnotesize\ttfamily Servidor\+::\+Servidor (\begin{DoxyParamCaption}\item[{std\+::string}]{nome,  }\item[{\mbox{\hyperlink{classUsuario}{Usuario}} $\ast$}]{usuario\+Dono }\end{DoxyParamCaption})}
 
 
@@ -89,6 +96,23 @@ Construtor padrão da classe.
 {\em nome} & Nome do servidor. \\
 \hline
 {\em usuario\+Dono} & Usuário dono do servidor. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classServidor_a0eaf7cbdb0eb415815c26acc922387a4}\label{classServidor_a0eaf7cbdb0eb415815c26acc922387a4}} 
+\index{Servidor@{Servidor}!Servidor@{Servidor}}
+\index{Servidor@{Servidor}!Servidor@{Servidor}}
+\doxysubsubsection{\texorpdfstring{Servidor()}{Servidor()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Servidor\+::\+Servidor (\begin{DoxyParamCaption}\item[{std\+::string}]{nome,  }\item[{int}]{id\+Dono }\end{DoxyParamCaption})}
+
+
+
+Construtor padrão da classe. 
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em nome} & Nome do servidor. \\
+\hline
+{\em id\+Dono} & Id do usuário dono do servidor. \\
 \hline
 \end{DoxyParams}
 \mbox{\Hypertarget{classServidor_a5ac1d9360e9c3010be4023f315cd64c1}\label{classServidor_a5ac1d9360e9c3010be4023f315cd64c1}} 
@@ -122,10 +146,25 @@ Adiciona um canal ao servidor.
 {\em canal} & \mbox{\hyperlink{classCanal}{Canal}} a ser adicionado. \\
 \hline
 \end{DoxyParams}
+\mbox{\Hypertarget{classServidor_a89fdefc3ac77648fe147f28ddddc624d}\label{classServidor_a89fdefc3ac77648fe147f28ddddc624d}} 
+\index{Servidor@{Servidor}!adicionarParticipante@{adicionarParticipante}}
+\index{adicionarParticipante@{adicionarParticipante}!Servidor@{Servidor}}
+\doxysubsubsection{\texorpdfstring{adicionarParticipante()}{adicionarParticipante()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Servidor\+::adicionar\+Participante (\begin{DoxyParamCaption}\item[{int}]{id }\end{DoxyParamCaption})}
+
+
+
+Adiciona um usuário como participante do servidor. 
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em id} & Id do usuário a ser adicionado. \\
+\hline
+\end{DoxyParams}
 \mbox{\Hypertarget{classServidor_a6f8ab7cda948090256d3aa099f67eff5}\label{classServidor_a6f8ab7cda948090256d3aa099f67eff5}} 
 \index{Servidor@{Servidor}!adicionarParticipante@{adicionarParticipante}}
 \index{adicionarParticipante@{adicionarParticipante}!Servidor@{Servidor}}
-\doxysubsubsection{\texorpdfstring{adicionarParticipante()}{adicionarParticipante()}}
+\doxysubsubsection{\texorpdfstring{adicionarParticipante()}{adicionarParticipante()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
 {\footnotesize\ttfamily void Servidor\+::adicionar\+Participante (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classUsuario}{Usuario}} $\ast$}]{usuario }\end{DoxyParamCaption})}
 
 

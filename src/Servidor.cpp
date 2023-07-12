@@ -18,6 +18,12 @@ Servidor::Servidor(std::string nome, Usuario *usuarioDono) {
     this->adicionarParticipante(usuarioDono);
 }
 
+/**
+ * @brief Construtor padrão da classe.
+ *
+ * @param nome Nome do servidor.
+ * @param idDono Id do usuário dono do servidor.
+ */
 Servidor::Servidor(std::string nome, int idDono) {
     this->nome = nome;
     this->usuarioDonoId = idDono;
@@ -107,6 +113,11 @@ void Servidor::adicionarParticipante(Usuario *usuario) {
     participantesIds.push_back(usuario->getId());
 }
 
+/**
+ * @brief Adiciona um usuário como participante do servidor.
+ *
+ * @param id Id do usuário a ser adicionado.
+ */
 void Servidor::adicionarParticipante(int id) {
     participantesIds.push_back(id);
 }

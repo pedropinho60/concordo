@@ -26,6 +26,12 @@ void {\bfseries iniciar} ()
 \begin{DoxyCompactList}\small\item\em Inicia o sistema, que é encerrado apenas com o comando {\ttfamily quit}. \end{DoxyCompactList}\item 
 bool \mbox{\hyperlink{classSistema_abf27cbfaa2d2ae35a750955cdc8dd175}{ler\+Comando}} ()
 \begin{DoxyCompactList}\small\item\em Processa o comando inserido e seus argumentos, chamando a função correspondente. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classSistema_a118d16dc0bcefb5bbe29bdfd471def2c}\label{classSistema_a118d16dc0bcefb5bbe29bdfd471def2c}} 
+void {\bfseries salvar} ()
+\begin{DoxyCompactList}\small\item\em Salva os dados do programa. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classSistema_a811a732f691bb1d231ce11458dd42539}\label{classSistema_a811a732f691bb1d231ce11458dd42539}} 
+void {\bfseries carregar} ()
+\begin{DoxyCompactList}\small\item\em Carrega os dados do programa. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{classSistema_a0277e9f6395f90f25827d3a8d55089df}{create\+User}} (std\+::string args)
 \begin{DoxyCompactList}\small\item\em Cria usuário com o email, senha e nome especificados. Executado com {\ttfamily create-\/user \texorpdfstring{$<$}{<}email\texorpdfstring{$>$}{>} \texorpdfstring{$<$}{<}senha\texorpdfstring{$>$}{>} \texorpdfstring{$<$}{<}nome\texorpdfstring{$>$}{>}} \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{classSistema_a10a2cae24f39154b696c0f3491ee6196}{login}} (std\+::string args)
@@ -61,6 +67,21 @@ void \mbox{\hyperlink{classSistema_a3a2e6fee24f9793645a09a9ac8c25553}{send\+Mess
 \begin{DoxyCompactList}\small\item\em Envia uma mensagem no canal atual. Executado com {\ttfamily send-\/message \texorpdfstring{$<$}{<}mensagem\texorpdfstring{$>$}{>}}. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{classSistema_ae4036743e108c5ac50476d2ef306ffe4}{list\+Messages}} ()
 \begin{DoxyCompactList}\small\item\em Lista as mensagens do canal atual. Executado com {\ttfamily list-\/messages}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Membros Privados}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classSistema_a817ea823866d39461d33070b767fc8e6}\label{classSistema_a817ea823866d39461d33070b767fc8e6}} 
+void {\bfseries salvar\+Usuarios} ()
+\begin{DoxyCompactList}\small\item\em Salva os usuários no arquivo {\ttfamily data/usuarios.\+txt}. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classSistema_a2c089769cc448b35ef28af4fc1edc8d6}\label{classSistema_a2c089769cc448b35ef28af4fc1edc8d6}} 
+void {\bfseries salvar\+Servidores} ()
+\begin{DoxyCompactList}\small\item\em Salva os servidores no arquivo {\ttfamily data/servidores.\+txt}. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classSistema_aa3a447f5b25990c54a913124d3bb59dc}\label{classSistema_aa3a447f5b25990c54a913124d3bb59dc}} 
+void {\bfseries carregar\+Usuarios} ()
+\begin{DoxyCompactList}\small\item\em Carrega os usuários do arquivo {\ttfamily data/usuarios.\+txt}. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classSistema_aa74c5118001598df07380cf2a05f236e}\label{classSistema_aa74c5118001598df07380cf2a05f236e}} 
+void {\bfseries carregar\+Servidores} ()
+\begin{DoxyCompactList}\small\item\em Carrega os servidores do arquivo {\ttfamily data/servidores.\+txt}. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Atributos Privados}
 \begin{DoxyCompactItemize}
 \item 

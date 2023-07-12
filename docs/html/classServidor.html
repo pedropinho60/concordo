@@ -87,9 +87,16 @@ Membros Públicos</h2></td></tr>
 <tr class="memitem:a115c42c8bbb9b27a24949900a7ab19c7"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classServidor.html#a115c42c8bbb9b27a24949900a7ab19c7">Servidor</a> (std::string <a class="el" href="classServidor.html#a1141e0835dfba56f4d01f922d2a8b34f">nome</a>, <a class="el" href="classUsuario.html">Usuario</a> *usuarioDono)</td></tr>
 <tr class="memdesc:a115c42c8bbb9b27a24949900a7ab19c7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construtor padrão da classe.  <br /></td></tr>
 <tr class="separator:a115c42c8bbb9b27a24949900a7ab19c7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0eaf7cbdb0eb415815c26acc922387a4"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classServidor.html#a0eaf7cbdb0eb415815c26acc922387a4">Servidor</a> (std::string <a class="el" href="classServidor.html#a1141e0835dfba56f4d01f922d2a8b34f">nome</a>, int idDono)</td></tr>
+<tr class="memdesc:a0eaf7cbdb0eb415815c26acc922387a4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construtor padrão da classe.  <br /></td></tr>
+<tr class="separator:a0eaf7cbdb0eb415815c26acc922387a4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5ac1d9360e9c3010be4023f315cd64c1"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classServidor.html#a5ac1d9360e9c3010be4023f315cd64c1">~Servidor</a> ()</td></tr>
 <tr class="memdesc:a5ac1d9360e9c3010be4023f315cd64c1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destrutor padrão da classe.  <br /></td></tr>
 <tr class="separator:a5ac1d9360e9c3010be4023f315cd64c1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aec801155b7b94fd84d4063faeff54ea3"><td class="memItemLeft" align="right" valign="top"><a id="aec801155b7b94fd84d4063faeff54ea3" name="aec801155b7b94fd84d4063faeff54ea3"></a>
+int&#160;</td><td class="memItemRight" valign="bottom"><b>getDonoId</b> ()</td></tr>
+<tr class="memdesc:aec801155b7b94fd84d4063faeff54ea3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retorna o id do dono do servidor. <br /></td></tr>
+<tr class="separator:aec801155b7b94fd84d4063faeff54ea3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af094e7503c4fd8e124679f03eae3f0cd"><td class="memItemLeft" align="right" valign="top"><a id="af094e7503c4fd8e124679f03eae3f0cd" name="af094e7503c4fd8e124679f03eae3f0cd"></a>
 std::string&#160;</td><td class="memItemRight" valign="bottom"><b>getNome</b> ()</td></tr>
 <tr class="memdesc:af094e7503c4fd8e124679f03eae3f0cd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retorna o nome do servidor. <br /></td></tr>
@@ -125,6 +132,9 @@ const std::vector&lt; <a class="el" href="classCanal.html">Canal</a> * &gt; &amp
 <tr class="memitem:a6f8ab7cda948090256d3aa099f67eff5"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classServidor.html#a6f8ab7cda948090256d3aa099f67eff5">adicionarParticipante</a> (<a class="el" href="classUsuario.html">Usuario</a> *usuario)</td></tr>
 <tr class="memdesc:a6f8ab7cda948090256d3aa099f67eff5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Adiciona um usuário como participante do servidor.  <br /></td></tr>
 <tr class="separator:a6f8ab7cda948090256d3aa099f67eff5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a89fdefc3ac77648fe147f28ddddc624d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classServidor.html#a89fdefc3ac77648fe147f28ddddc624d">adicionarParticipante</a> (int id)</td></tr>
+<tr class="memdesc:a89fdefc3ac77648fe147f28ddddc624d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Adiciona um usuário como participante do servidor.  <br /></td></tr>
+<tr class="separator:a89fdefc3ac77648fe147f28ddddc624d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a879bce89d59d1e0b68c7ea3bb88060f7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classServidor.html#a879bce89d59d1e0b68c7ea3bb88060f7">adicionarCanal</a> (<a class="el" href="classCanal.html">Canal</a> *canal)</td></tr>
 <tr class="memdesc:a879bce89d59d1e0b68c7ea3bb88060f7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Adiciona um canal ao servidor.  <br /></td></tr>
 <tr class="separator:a879bce89d59d1e0b68c7ea3bb88060f7"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -166,7 +176,7 @@ std::vector&lt; int &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>p
 <div class="textblock"><p>Classe que representa um servidor do sistema. </p>
 </div><h2 class="groupheader">Construtores e Destrutores</h2>
 <a id="a115c42c8bbb9b27a24949900a7ab19c7" name="a115c42c8bbb9b27a24949900a7ab19c7"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a115c42c8bbb9b27a24949900a7ab19c7">&#9670;&#160;</a></span>Servidor()</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a115c42c8bbb9b27a24949900a7ab19c7">&#9670;&#160;</a></span>Servidor() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -196,6 +206,43 @@ std::vector&lt; int &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>p
   <table class="params">
     <tr><td class="paramname">nome</td><td>Nome do servidor. </td></tr>
     <tr><td class="paramname">usuarioDono</td><td>Usuário dono do servidor. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a0eaf7cbdb0eb415815c26acc922387a4" name="a0eaf7cbdb0eb415815c26acc922387a4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0eaf7cbdb0eb415815c26acc922387a4">&#9670;&#160;</a></span>Servidor() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Servidor::Servidor </td>
+          <td>(</td>
+          <td class="paramtype">std::string&#160;</td>
+          <td class="paramname"><em>nome</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>idDono</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Construtor padrão da classe. </p>
+<dl class="params"><dt>Parâmetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">nome</td><td>Nome do servidor. </td></tr>
+    <tr><td class="paramname">idDono</td><td>Id do usuário dono do servidor. </td></tr>
   </table>
   </dd>
 </dl>
@@ -257,8 +304,34 @@ std::vector&lt; int &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>p
 
 </div>
 </div>
+<a id="a89fdefc3ac77648fe147f28ddddc624d" name="a89fdefc3ac77648fe147f28ddddc624d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a89fdefc3ac77648fe147f28ddddc624d">&#9670;&#160;</a></span>adicionarParticipante() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Servidor::adicionarParticipante </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>id</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Adiciona um usuário como participante do servidor. </p>
+<dl class="params"><dt>Parâmetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">id</td><td>Id do usuário a ser adicionado. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 <a id="a6f8ab7cda948090256d3aa099f67eff5" name="a6f8ab7cda948090256d3aa099f67eff5"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a6f8ab7cda948090256d3aa099f67eff5">&#9670;&#160;</a></span>adicionarParticipante()</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a6f8ab7cda948090256d3aa099f67eff5">&#9670;&#160;</a></span>adicionarParticipante() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">

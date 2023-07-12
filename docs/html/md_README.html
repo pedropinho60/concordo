@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.6"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Concordo: Concordo - Versão 1</title>
+<title>Concordo: Concordo - Versão 3</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -69,14 +69,14 @@ $(function() {
 
 </div><!-- top -->
 <div><div class="header">
-  <div class="headertitle"><div class="title">Concordo - Versão 1 </div></div>
+  <div class="headertitle"><div class="title">Concordo - Versão 3 </div></div>
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><p>Projeto de "Linguagem de Programação I"</p>
 <h1><a class="anchor" id="autotoc_md1"></a>
 Descrição</h1>
-<p>Esse projeto é uma "imitação" do <a href="https://www.discord.com"><b>Discord</b></a>, feita em C++. Esse repositório contém as versões 1 e 2 do projeto.</p>
-<p>Na versão 1, é possível fazer login, criar, configurar e entrar em servidores. A versão 2 adiciona as funcionalidades de canais, permitindo criar canais de texto e voz dentro de um servidor, e enviar mensagens neles.</p>
+<p>Esse projeto é uma "imitação" do <a href="https://www.discord.com"><b>Discord</b></a>, feita em C++. Esse repositório contém as versões 1, 2 e 3 do projeto.</p>
+<p>Na versão 1, é possível fazer login, criar, configurar e entrar em servidores. A versão 2 adiciona as funcionalidades de canais, permitindo criar canais de texto e voz dentro de um servidor, e enviar mensagens neles. A versão 3 adiciona funcionalidades de salvar e carregar, permitindo que o programa guarde informações mesmo após ser encerrado. Também é possível rodar o programa em dois terminais simultaneamente.</p>
 <h1><a class="anchor" id="autotoc_md2"></a>
 Autoria</h1>
 <p>O projeto foi feito por Pedro Vinícius Oliveira Maciel Pinho.</p>
@@ -116,15 +116,18 @@ Dentro de um servidor</h2>
 </ul>
 <h2><a class="anchor" id="autotoc_md8"></a>
 Canais</h2>
-<p>Esses comandos só podem ser executados dentro de um canal.</p>
+<p>Esses comandos são relacionados a funcionalidades dos canais.</p>
 <ul>
 <li><code>create-channel &lt;nome&gt; &lt;tipo&gt;</code> cria um canal de tipo voz ou texto. É necessário ser dono do servidor para criar um canal.</li>
 <li><code>list-channels</code> lista todos os canais do servidor.</li>
 <li><code>enter-channel &lt;nome&gt;</code> entra em um canal.</li>
 <li><code>send-message &lt;conteúdo&gt;</code> envia uma mensagem. É necessário estar em um canal para enviar mensagens.</li>
-<li><code>list-messages</code> lista as mensagens do canal atual`. É necessário estar em um canal para enviar mensagens.</li>
+<li><code>list-messages</code> lista as mensagens do canal atual`. É necessário estar em um canal para listar mensagens.</li>
 </ul>
 <h1><a class="anchor" id="autotoc_md9"></a>
+Arquivo de salvamento padrão</h1>
+<p>A pasta [<b>data</b>](data) contém arquivos com informações de salvamento. Ao executar o programa, as informações são lidas do arquivo. Se quiser remover o conteúdo salvo, apague o conteúdo de ambos arquivos e substitua por uma única linha contendo <code>0</code>.</p>
+<h1><a class="anchor" id="autotoc_md10"></a>
 Compilação e execução</h1>
 <p>Para compilar o programa, é utilizado o <a href="https://cmake.org"><b>CMake</b></a>.</p>
 <p>Na pasta principal do projeto, execute os comandos a seguir:</p>
@@ -133,57 +136,7 @@ Compilação e execução</h1>
 <li><code>cmake --build build</code> para compilar o programa</li>
 </ul>
 <p>Após a compilação, o programa pode ser executado com <code>./build/program</code>.</p>
-<p>Para utilizar o script de exemplo, explicado abaixo, utilize o comando <code>./build/program &lt; script.txt</code></p>
-<h1><a class="anchor" id="autotoc_md10"></a>
-Script de exemplo</h1>
-<p>O repositório contém um <a href="script.txt"><b>script</b></a> de exemplo, que contém comandos para demonstrar as funcionalidades do programa.</p>
-<p>A seguir, está a explicação de cada linha do script:</p>
-<div class="fragment"><div class="line">create-user email1 password1 name1            # cria o usuário 1</div>
-<div class="line">create-user email2 password2 name2            # cria o usuário 2</div>
-<div class="line">create-user email3 password3 name3            # cria o usuário 3</div>
-<div class="line">login email1 password1                        # faz login no usuário 1</div>
-<div class="line">create-server server1                         # cria o servidor 1</div>
-<div class="line">set-server-desc server1 &quot;server1 description&quot; # altera a descrição do servidor</div>
-<div class="line">set-server-invite-code server1 invitecode     # adiciona o código de convite</div>
-<div class="line">enter-server server1                          # entra no servidor 1</div>
-<div class="line">create-channel canal1 texto                   # cria o canal de texto 1</div>
-<div class="line">create-channel canal2 voz                     # cria o canal de voz 2</div>
-<div class="line">create-channel canal3 texto                   # cria o canal de texto 3 </div>
-<div class="line">enter-channel canal1                          # entra no canal de texto 1</div>
-<div class="line">send-message mensagem1                        # envia mensagem</div>
-<div class="line">send-message mensagem2                        # envia mensagem</div>
-<div class="line">leave-channel                                 # sai do canal</div>
-<div class="line">leave-server                                  # sai do servidor</div>
-<div class="line">disconnect                                    # desconecta do sistema</div>
-<div class="line">login email2 password2                        # faz login no usuário 2</div>
-<div class="line">list-servers                                  # lista os servidores (servidor 1)</div>
-<div class="line">create-server server2                         # cria o servidor 2</div>
-<div class="line">enter-server server1 invitecode               # entra no servidor 1 com o código</div>
-<div class="line">list-participants                             # lista os participantes (usuários 1 e 2)</div>
-<div class="line">list-channels                                 # lista os canais</div>
-<div class="line">enter-channel canal1                          # entra no canal de texto 1</div>
-<div class="line">list-messages                                 # lista as mensagens</div>
-<div class="line">send-message mensagem3                        # envia mensagem</div>
-<div class="line">leave-channel                                 # sai do canal</div>
-<div class="line">enter-channel canal2                          # entra no canal de voz 2</div>
-<div class="line">send-message mensagem4                        # envia mensagem 4</div>
-<div class="line">list-messages                                 # lista mensagem 4</div>
-<div class="line">send-message mensagem5                        # envia mensagem 5</div>
-<div class="line">list-messages                                 # lista apenas mensagem 5</div>
-<div class="line">leave-channel                                 # sai do canal</div>
-<div class="line">disconnect                                    # desconecta do sistema</div>
-<div class="line">login email3 password3                        # faz login no usuário 3</div>
-<div class="line">list-servers                                  # lista os servidores (servidores 1 e 2)</div>
-<div class="line">enter-server server1                          # tenta entrar no servidor 1 sem o código (falha)</div>
-<div class="line">enter-server server2                          # entra no servidor 2</div>
-<div class="line">list-participants                             # lista os participantes (usuário 3)</div>
-<div class="line">disconnect                                    # desconecta do sistema</div>
-<div class="line">login email1 password1                        # faz login no usuário 1</div>
-<div class="line">remove-server server1                         # apaga o servidor 1</div>
-<div class="line">list-servers                                  # lista os servidores (servidor 2)</div>
-<div class="line">disconnect                                    # desconecta do sistema</div>
-<div class="line">quit                                          # encerra o programa</div>
-</div><!-- fragment --><h1><a class="anchor" id="autotoc_md11"></a>
+<h1><a class="anchor" id="autotoc_md11"></a>
 Limitações</h1>
 <p>O programa não verifica se o número de argumentos está correto para cada comando. Por exemplo, se um usuário digitar <code>create-user &lt;email&gt; &lt;senha&gt;</code>, e não especificar o nome do usuário, o programa criará um usuário com email e senha, mas com o nome vazio, ao invés de causar um erro.</p>
 <h1><a class="anchor" id="autotoc_md12"></a>

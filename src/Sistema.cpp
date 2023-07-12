@@ -157,11 +157,17 @@ bool Sistema::lerComando() {
     return true;
 }
 
+/**
+ * @brief Salva os dados do programa.
+ */
 void Sistema::salvar() {
     salvarUsuarios();
     salvarServidores();
 }
 
+/**
+ * @brief Carrega os dados do programa.
+ */
 void Sistema::carregar() {
     carregarUsuarios();
     carregarServidores();
@@ -742,6 +748,9 @@ void Sistema::listMessages() {
 
 // ==================== MÉTODOS PRIVADOS ====================
 
+/**
+ * @brief Salva os usuários no arquivo `data/usuarios.txt`.
+ */
 void Sistema::salvarUsuarios() {
     std::ofstream arquivo("data/usuarios.txt");
 
@@ -755,6 +764,9 @@ void Sistema::salvarUsuarios() {
     }
 }
 
+/**
+ * @brief Salva os servidores no arquivo `data/servidores.txt`.
+ */
 void Sistema::salvarServidores() {
     std::ofstream arquivo("data/servidores.txt");
 
@@ -787,6 +799,9 @@ void Sistema::salvarServidores() {
     }
 }
 
+/**
+ * @brief Carrega os usuários do arquivo `data/usuarios.txt`.
+ */
 void Sistema::carregarUsuarios() {
     usuarios.clear();
 
@@ -821,6 +836,9 @@ void Sistema::carregarUsuarios() {
     }
 }
 
+/**
+ * @brief Carrega os servidores do arquivo `data/servidores.txt`.
+ */
 void Sistema::carregarServidores() {
     std::string nomeServidorAtual;
     std::string nomeCanalAtual;
